@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ $TERM = rxvt-unicode-256color ]
+        then imgparam="w3m"
+elif [ $TERM = xterm-kitty ]
+        then imgparam="kitty"
+fi
+
+if [ $XDG_CURRENT_DESKTOP = KDE ]; then
+	wall="$(cat  ~/.config/plasma-org.kde.plasma.desktop-appletsrc | grep Image= | cut -d"=" -f2 | cut -d ":" -f2)"
+else
+	wall="$(cat ~/.fehbg | grep feh | cut -d"'" -f2)"
+fi
+
+neofetch --$imgparam "${wall}"

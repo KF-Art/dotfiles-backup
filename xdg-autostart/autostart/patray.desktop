@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/kevin/scripts/patray
+Hidden=true
+Name[es_US]=pasystray
+Name=pasystray
+Comment[es_US]=
+Comment=
+X-MATE-Autostart-Delay=0

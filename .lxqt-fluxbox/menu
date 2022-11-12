@@ -1,0 +1,212 @@
+#
+## Menu generated with fbmenugen v0.85
+#
+
+[begin] (Fluxbox)
+[encoding] {UTF-8}
+  [exec] (File Manager) {xdg-open .} </home/kevin/.config/fbmenugen/icons/1b270581f2814d8eaa338de0f626befc.png>
+  [exec] (Terminal) {xterm} </home/kevin/.config/fbmenugen/icons/37cce804ada9c6816e6c512bebd217c0.png>
+  [exec] (Web Browser) {xdg-open http://} </home/kevin/.config/fbmenugen/icons/a3c1ccd365e88ea03b2e3032fe308279.png>
+  [exec] (Run command) {fbrun} </home/kevin/.config/fbmenugen/icons/51501256fba305780fc38eca47fb73d6.png>
+[separator]
+[submenu] (Accessories) </home/kevin/.config/fbmenugen/icons/9b4aa6f059cf3027d42c6e66f7137c29.png>
+  [exec] (About Xfce) {xfce4-about} </home/kevin/.config/fbmenugen/icons/dfa52427aed1c7ac3e818a13c382f2d8.png>
+  [exec] (AntiMicroX) {antimicrox} </home/kevin/.config/fbmenugen/icons/8c058d2eacdfc3fa749ea2443683becf.png>
+  [exec] (Archive Manager) {file-roller} </home/kevin/.config/fbmenugen/icons/d29905ff054cae8b18b84c36732b216d.png>
+  [exec] (Azote) {azote} </home/kevin/.config/fbmenugen/icons/7d74ef2fabcd24b4597b81f5a9edc8b0.png>
+  [exec] (ClipIt) {clipit} </home/kevin/.config/fbmenugen/icons/fdd80ba459a370bd2d6c2feef3145dc2.png>
+  [exec] (Filelight) {filelight} </home/kevin/.config/fbmenugen/icons/bb793a3b772be55a29b1a76cc241a28b.png>
+  [exec] (Galculator) {galculator} </home/kevin/.config/fbmenugen/icons/f3c5249c35bdc4c60505b67f090afb37.png>
+  [exec] (Kate) {kate -b} </home/kevin/.config/fbmenugen/icons/89443fda9a429279a9f06f7f7b89d323.png>
+  [exec] (KeePassXC) {keepassxc} </home/kevin/.config/fbmenugen/icons/5a00fd1a4872fd3df31432a7319d3d11.png>
+  [exec] (Klipper) {klipper} </home/kevin/.config/fbmenugen/icons/9c14c053c4a1547c91916b0d7e31786d.png>
+  [exec] (Kvantum Manager) {kvantummanager} </home/kevin/.config/fbmenugen/icons/1ce7cc7756a64747dba01cee6ae6f530.png>
+  [exec] (LightDM GTK+ Greeter settings) {lightdm-gtk-greeter-settings-pkexec} </home/kevin/.config/fbmenugen/icons/cf3ae0164eef3ce8ad44193fe7f934f0.png>
+  [exec] (LXQt File Archiver) {lxqt-archiver} </home/kevin/.config/fbmenugen/icons/d29905ff054cae8b18b84c36732b216d.png>
+  [exec] (PCManFM-Qt File Manager) {pcmanfm-qt} </home/kevin/.config/fbmenugen/icons/1b270581f2814d8eaa338de0f626befc.png>
+  [exec] (pentablet) {/usr/lib/pentablet/pentablet.sh} </home/kevin/.config/fbmenugen/icons/49ddd4f059022d14c50819bfed041744.png>
+  [exec] (picom) {picom} </home/kevin/.config/fbmenugen/icons/1c4f9094c5e760fcce6199e7ca2532d5.png>
+  [exec] (Protontricks) {protontricks --no-term --gui} </home/kevin/.config/fbmenugen/icons/ffca31c373660a43d17bd17de5451569.png>
+  [exec] (Sakura) {sakura} </home/kevin/.config/fbmenugen/icons/37cce804ada9c6816e6c512bebd217c0.png>
+  [exec] (Text Editor) {xed} </home/kevin/.config/fbmenugen/icons/4e40731ddb88a117ca0be33a073f4e4c.png>
+  [exec] (Video Wallpaper) {gpu-video-wallpaper-gui} </home/kevin/.config/fbmenugen/icons/3cc7857c4b94545d5466e47541e8684a.png>
+  [exec] (Winetricks) {winetricks --gui} </home/kevin/.config/fbmenugen/icons/f26815b6c7ca931b3744b0c3ba77ca7e.png>
+  [exec] (Xarchiver) {xarchiver} </home/kevin/.config/fbmenugen/icons/d29905ff054cae8b18b84c36732b216d.png>
+[end]
+[submenu] (Development) </home/kevin/.config/fbmenugen/icons/be54b60625ecea57a2f577656b522256.png>
+  [exec] (Icon Browser) {gtk4-icon-browser} </home/kevin/.config/fbmenugen/icons/1532216a89762fef353c6defcb585cff.png>
+  [exec] (Kate) {kate -b} </home/kevin/.config/fbmenugen/icons/89443fda9a429279a9f06f7f7b89d323.png>
+  [exec] (Meld) {meld} </home/kevin/.config/fbmenugen/icons/42db7d6892b3b75288bce80d00c2a294.png>
+[end]
+[submenu] (Games) </home/kevin/.config/fbmenugen/icons/8c058d2eacdfc3fa749ea2443683becf.png>
+  [exec] (Apex Legends) {steam steam://rungameid/1172470} </home/kevin/.config/fbmenugen/icons/ce03ef726c15f5c3cdb70df51f2b4e5a.png>
+  [exec] (Fall Guys) {xdg-open heroic://launch/0a2d9f6403244d12969e11da6713137b} </home/kevin/.config/fbmenugen/icons/88b5debeffd0e037dd358aeec8cf61c2.png>
+  [exec] (Fightcade) {/media/DATOS/Desktop/Fightcade/Fightcade2.sh} </home/kevin/.config/fbmenugen/icons/9d77e88bf849153862f666ecca3561f7.png>
+  [exec] (Heroic Games Launcher) {heroic} </home/kevin/.config/fbmenugen/icons/29e9d22bf4b56e4f3d279cdc34328c07.png>
+  [exec] (Little Nightmares) {steam steam://rungameid/424840} </home/kevin/.config/fbmenugen/icons/52ddb5089c5d5f34b213787e0c535ea0.png>
+  [exec] (Lutris) {lutris} </home/kevin/.config/fbmenugen/icons/33cd77c93ed30af6ca5e44319ec025c9.png>
+  [exec] (Paladins) {steam steam://rungameid/444090} </home/kevin/.config/fbmenugen/icons/04ddc5c127f4c44f31af35586f52f82b.png>
+  [exec] (Proton BattlEye Runtime) {steam steam://rungameid/1161040} </home/kevin/.config/fbmenugen/icons/04ddc5c127f4c44f31af35586f52f82b.png>
+  [exec] (Proton EasyAntiCheat Runtime) {steam steam://rungameid/1826330} </home/kevin/.config/fbmenugen/icons/04ddc5c127f4c44f31af35586f52f82b.png>
+  [exec] (Steam) {/usr/bin/steam} </home/kevin/.config/fbmenugen/icons/04ddc5c127f4c44f31af35586f52f82b.png>
+  [exec] (Titan Souls) {steam steam://rungameid/297130} </home/kevin/.config/fbmenugen/icons/1eee14914a390d7cb456e4b3798d7b38.png>
+[end]
+[submenu] (Graphics) </home/kevin/.config/fbmenugen/icons/0306daaebda536cc195467e0972cdded.png>
+  [exec] (Document Scanner) {simple-scan} </home/kevin/.config/fbmenugen/icons/8e88c1046a9452be1d8ec14deaee0bf0.png>
+  [exec] (Flameshot) {/usr/bin/flameshot} </home/kevin/.config/fbmenugen/icons/907c6dec92ee15880a09bac1ac4a3c4f.png>
+  [exec] (GNU Image Manipulation Program) {gimp-2.10} </home/kevin/.config/fbmenugen/icons/3b9237364750ec7d9b0c38698d3f6ff6.png>
+  [exec] (Gpick) {gpick} </home/kevin/.config/fbmenugen/icons/32d1412e688597612fdc77ab96ec571e.png>
+  [exec] (Gwenview) {gwenview} </home/kevin/.config/fbmenugen/icons/4c8a8ac529085625aba4e3d8a451c824.png>
+  [exec] (Inkscape) {inkscape} </home/kevin/.config/fbmenugen/icons/2c07ba5fc302f410e4e8c7a24a0b9781.png>
+  [exec] (Krita) {krita} </home/kevin/.config/fbmenugen/icons/e6dc5952218f685c8893b5120f7bc5b2.png>
+  [exec] (LXImage) {lximage-qt} </home/kevin/.config/fbmenugen/icons/7b8f618d7c466d1331163bd253c1bc24.png>
+  [exec] (QElectroTech) {qelectrotech} </home/kevin/.config/fbmenugen/icons/bca32d2d6b6dd829bd4de9b39dc58272.png>
+[end]
+[submenu] (Multimedia) </home/kevin/.config/fbmenugen/icons/d42b43c8d348fff6ec00565372819ac8.png>
+  [exec] (ClipGrab) {clipgrab} </home/kevin/.config/fbmenugen/icons/dcc11c2d612cdc4fc872e2acd57dffb0.png>
+  [exec] (EasyEffects) {easyeffects} </home/kevin/.config/fbmenugen/icons/27011321f9d1ad4559e198160dc644a4.png>
+  [exec] (guvcview) {guvcview} </home/kevin/.config/fbmenugen/icons/22596646dd423eeeed3356a96736738c.png>
+  [exec] (mpv Media Player) {mpv --player-operation-mode=pseudo-gui --} </home/kevin/.config/fbmenugen/icons/04603dc4b95acfe4ccec26d2c49cba31.png>
+  [exec] (PulseAudio System Tray) {pasystray} </home/kevin/.config/fbmenugen/icons/d42b43c8d348fff6ec00565372819ac8.png>
+  [exec] (PulseAudio Volume Control) {pavucontrol} </home/kevin/.config/fbmenugen/icons/a500f5ecb225232fba8a46e9ec542113.png>
+  [exec] (SimpleScreenRecorder) {simplescreenrecorder --logfile} </home/kevin/.config/fbmenugen/icons/0bb017f6397b76c1e9bb6f8feefc4187.png>
+  [exec] (Strawberry) {strawberry} </home/kevin/.config/fbmenugen/icons/2f78adb7ddbf3fc9a84fdb5d5c7dd437.png>
+  [exec] (VLC media player) {/usr/bin/vlc --started-from-file} </home/kevin/.config/fbmenugen/icons/b2c945f8e246af24f877cb1c5811a720.png>
+  [exec] (Volctl) {volctl} </home/kevin/.config/fbmenugen/icons/a500f5ecb225232fba8a46e9ec542113.png>
+[end]
+[submenu] (Network) </home/kevin/.config/fbmenugen/icons/a3c1ccd365e88ea03b2e3032fe308279.png>
+  [exec] (Discord) {/usr/lib/discord/Discord} </home/kevin/.config/fbmenugen/icons/df5e448fa6f363bb729eef0600bdba62.png>
+  [exec] (Firefox Web Browser) {firefox} </home/kevin/.config/fbmenugen/icons/1b8c0082ae20dc30e8e387a8dd7b73f5.png>
+  [exec] (Kotatogram Desktop) {/media/DATOS/Descargas/Kotatogram/Kotatogram -workdir /home/kevin/.local/share/KotatogramDesktop/ --} </home/kevin/.config/fbmenugen/icons/aeea4f3b5f8c8f7a9f48390ff8ad55fa.png>
+  [exec] (MEGAsync) {megasync} </home/kevin/.config/fbmenugen/icons/37eaf1fde0d3f2a78bd6c20627b98d13.png>
+  [exec] (Midori) {midori} </home/kevin/.config/fbmenugen/icons/a0e4a8989f7f281fc6dc0ff6be7e1a2f.png>
+  [exec] (qBittorrent) {qbittorrent} </home/kevin/.config/fbmenugen/icons/a9818ef328dcf8bee7e3dde8b5e676e1.png>
+  [exec] (Steam) {/usr/bin/steam} </home/kevin/.config/fbmenugen/icons/04ddc5c127f4c44f31af35586f52f82b.png>
+  [exec] (Vivaldi) {/usr/bin/vivaldi-stable} </home/kevin/.config/fbmenugen/icons/4f8f35f7807eae29adc8e1b0015e5ed5.png>
+  [exec] (wpaCute) {wpa-cute} </home/kevin/.config/fbmenugen/icons/1c4f9094c5e760fcce6199e7ca2532d5.png>
+  [exec] (Zoom) {/usr/bin/zoom} </home/kevin/.config/fbmenugen/icons/31dce725716baa1165e441351534e287.png>
+[end]
+[submenu] (Office) </home/kevin/.config/fbmenugen/icons/5e38306a706a6994367cfdd6677bd821.png>
+  [exec] (LibreOffice Calc) {libreoffice --calc} </home/kevin/.config/fbmenugen/icons/8e53d3659cb8a83e44ba7ca55315fc1e.png>
+  [exec] (LibreOffice Writer) {libreoffice --writer} </home/kevin/.config/fbmenugen/icons/2f793f9829440076352eb732662c4ee8.png>
+  [exec] (LibreOffice) {libreoffice} </home/kevin/.config/fbmenugen/icons/3b40381ee17e89622bf2f3e7f8fa1510.png>
+  [exec] (ONLYOFFICE Desktop Editors) {/usr/bin/onlyoffice-desktopeditors} </home/kevin/.config/fbmenugen/icons/661d53947eb05e31525ca448547522d7.png>
+  [exec] (qpdfview) {qpdfview --unique} </home/kevin/.config/fbmenugen/icons/2ff2825b3b65bdf534dcb39a2b78249b.png>
+  [exec] (WPS 2019) {/usr/bin/wps} </home/kevin/.config/fbmenugen/icons/d917801112e6f2a2e24afcc3013b02be.png>
+  [exec] (WPS PDF) {/usr/bin/wpspdf} </home/kevin/.config/fbmenugen/icons/40df07ea70cdc2e17fb855f497be68b4.png>
+  [exec] (WPS Presentation) {/usr/bin/wpp} </home/kevin/.config/fbmenugen/icons/3a56e86971626cae4396ce59014c6f21.png>
+  [exec] (WPS Spreadsheets) {/usr/bin/et} </home/kevin/.config/fbmenugen/icons/662fafa6ef9e39687228724636a3a84d.png>
+  [exec] (WPS Writer) {/usr/bin/wps} </home/kevin/.config/fbmenugen/icons/949faa3a30d11082ae8f15ff450012ff.png>
+[end]
+[submenu] (Other) </home/kevin/.config/fbmenugen/icons/48a68df15858ba573b7d2a359c844f70.png>
+  [exec] (Fightcade Replay) {/media/DATOS/Desktop/Fightcade/emulator/fcade.sh} </home/kevin/.config/fbmenugen/icons/1c4f9094c5e760fcce6199e7ca2532d5.png>
+  [exec] (Fluxbox) {fluxbox} </home/kevin/.config/fbmenugen/icons/1c4f9094c5e760fcce6199e7ca2532d5.png>
+  [exec] (Telegram Desktop) {flatpak run org.telegram.desktop} </home/kevin/.config/fbmenugen/icons/a8ff7e40fce9b163eb5794a85800a3d3.png>
+[end]
+[submenu] (Settings) </home/kevin/.config/fbmenugen/icons/21c20245c9b1cddc06a3a67e4fb0503c.png>
+  [exec] (Appearance) {lxqt-config-appearance} </home/kevin/.config/fbmenugen/icons/33758355fd4a7905096f10ffc6a2cb65.png>
+  [exec] (ARandR) {arandr} </home/kevin/.config/fbmenugen/icons/98aaa507a9effdb63617807cc51364e5.png>
+  [exec] (Bluetooth Adapters) {blueman-adapters} </home/kevin/.config/fbmenugen/icons/69791ebf15d944d504a2a358832124d2.png>
+  [exec] (Bluetooth Manager) {blueman-manager} </home/kevin/.config/fbmenugen/icons/69791ebf15d944d504a2a358832124d2.png>
+  [exec] (Brightness) {lxqt-config-brightness} </home/kevin/.config/fbmenugen/icons/ccbe41cd624aa408cc1df39c14a33644.png>
+  [exec] (Customize Look and Feel) {lxappearance} </home/kevin/.config/fbmenugen/icons/33758355fd4a7905096f10ffc6a2cb65.png>
+  [exec] (Desktop Notifications) {lxqt-config-notificationd} </home/kevin/.config/fbmenugen/icons/89439b8916b3a7c889376b637f100f20.png>
+  [exec] (Desktop) {pcmanfm-qt --desktop-pref=general} </home/kevin/.config/fbmenugen/icons/997f40cfd86a3f08a6a179bb391290c1.png>
+  [exec] (File Associations) {lxqt-config-file-associations} </home/kevin/.config/fbmenugen/icons/6c6f99e1f0fc2fb0b3f465e3bc7a21d9.png>
+  [exec] (Keyboard and Mouse) {lxqt-config-input} </home/kevin/.config/fbmenugen/icons/a1bab92469d184b8ea8f796efd103c5a.png>
+  [exec] (Kvantum Manager) {kvantummanager} </home/kevin/.config/fbmenugen/icons/1ce7cc7756a64747dba01cee6ae6f530.png>
+  [exec] (LightDM GTK+ Greeter settings) {lightdm-gtk-greeter-settings-pkexec} </home/kevin/.config/fbmenugen/icons/cf3ae0164eef3ce8ad44193fe7f934f0.png>
+  [exec] (Locale) {lxqt-config-locale} </home/kevin/.config/fbmenugen/icons/36a4d3067879467aba7fd7e085554371.png>
+  [exec] (LXQt Configuration Center) {lxqt-config} </home/kevin/.config/fbmenugen/icons/b1a9441c17b32c9599a3431e067865e4.png>
+  [exec] (Monitor settings) {lxqt-config-monitor} </home/kevin/.config/fbmenugen/icons/e425a8dffa144b938f1513de06f56fbb.png>
+  [exec] (Notifications) {xfce4-notifyd-config} </home/kevin/.config/fbmenugen/icons/89439b8916b3a7c889376b637f100f20.png>
+  [exec] (Openbox Settings) {obconf-qt} </home/kevin/.config/fbmenugen/icons/9ecb01a25fa3c11818ae3a0e0ecde81a.png>
+  [exec] (Power Management) {lxqt-config-powermanagement} </home/kevin/.config/fbmenugen/icons/b41bf78eae8cdf65868a6a4b97f1ddc5.png>
+  [exec] (Power Management) {mate-power-preferences} </home/kevin/.config/fbmenugen/icons/b41bf78eae8cdf65868a6a4b97f1ddc5.png>
+  [exec] (Print Settings) {system-config-printer} </home/kevin/.config/fbmenugen/icons/b3ed42bd8f998257635bcd72a34985b5.png>
+  [exec] (PulseAudio Volume Control) {pavucontrol} </home/kevin/.config/fbmenugen/icons/a500f5ecb225232fba8a46e9ec542113.png>
+  [exec] (Qt5 Settings) {qt5ct} </home/kevin/.config/fbmenugen/icons/33758355fd4a7905096f10ffc6a2cb65.png>
+  [exec] (Session Settings) {lxqt-config-session} </home/kevin/.config/fbmenugen/icons/f37dc00766337a314e851143df28f4d9.png>
+  [exec] (Shortcut Keys) {lxqt-config-globalkeyshortcuts} </home/kevin/.config/fbmenugen/icons/3f391e0114c94995da099dc663b3c45d.png>
+  [exec] (Tint2 Settings) {tint2conf} </home/kevin/.config/fbmenugen/icons/24d8f1cd37e060be7cc7f857a8966058.png>
+  [exec] (Touchégg-GCE) {touchegg-gce} </home/kevin/.config/fbmenugen/icons/9142ccbf557c9c14776b9b56a164fa64.png>
+  [exec] (Users and Groups) {lxqt-admin-user} </home/kevin/.config/fbmenugen/icons/c3af1f47d935c689f76f6eec38f148f4.png>
+  [exec] (Window Manager Tweaks) {xfwm4-tweaks-settings} </home/kevin/.config/fbmenugen/icons/e516f20d4e556475e7fb17d3c06d4399.png>
+  [exec] (Window Manager) {xfwm4-settings} </home/kevin/.config/fbmenugen/icons/9ecb01a25fa3c11818ae3a0e0ecde81a.png>
+  [exec] (Workspaces) {xfwm4-workspace-settings} </home/kevin/.config/fbmenugen/icons/275531970e89a5ccfa14c85f5d1b2ca7.png>
+[end]
+[submenu] (System) </home/kevin/.config/fbmenugen/icons/140b662b638bc00e54bd4f0b3f608edb.png>
+  [exec] (About LXQt) {lxqt-about} </home/kevin/.config/fbmenugen/icons/057558aa8dcfa724bd6f3b14638ac45d.png>
+  [exec] (CPU-X) {cpu-x} </home/kevin/.config/fbmenugen/icons/6f392a77ce697c2369fbaa05f812da26.png>
+  [exec] (dconf Editor) {dconf-editor} </home/kevin/.config/fbmenugen/icons/cfddb916b145b034bbfb474b4d6f3145.png>
+  [exec] (GParted) {/usr/bin/gparted-pkexec} </home/kevin/.config/fbmenugen/icons/82f1b779b12458ec8378e0353adc638d.png>
+  [exec] (Hibernate) {lxqt-leave --hibernate} </home/kevin/.config/fbmenugen/icons/21b16e7ee6b9b2234dbf88987524d775.png>
+  [exec] (Htop) {xterm -e 'htop'} </home/kevin/.config/fbmenugen/icons/0a3ee075d030a3dc1999aea37fe5213e.png>
+  [exec] (Install System) {sh -c "pkexec calamares"} </home/kevin/.config/fbmenugen/icons/87698a6033e941859e9f2208d034ae21.png>
+  [exec] (Leave) {lxqt-leave} </home/kevin/.config/fbmenugen/icons/bc56eb10a3512b401f22dcc0498636fa.png>
+  [exec] (LightDM GTK+ Greeter settings) {lightdm-gtk-greeter-settings-pkexec} </home/kevin/.config/fbmenugen/icons/cf3ae0164eef3ce8ad44193fe7f934f0.png>
+  [exec] (Lock Screen) {lxqt-leave --lockscreen} </home/kevin/.config/fbmenugen/icons/0fa269bb331ae3997cb83c3d84370d9c.png>
+  [exec] (Logout) {lxqt-leave --logout} </home/kevin/.config/fbmenugen/icons/dadfcd221e0e2deb3f88d531a1f393ff.png>
+  [exec] (MEGAsync) {megasync} </home/kevin/.config/fbmenugen/icons/37eaf1fde0d3f2a78bd6c20627b98d13.png>
+  [exec] (OctoXBPS Notifier) {/usr/bin/octoxbps-notifier} </home/kevin/.config/fbmenugen/icons/fad511a6e46a2049e4e7b2467b39b66d.png>
+  [exec] (OctoXBPS) {/usr/bin/octoxbps} </home/kevin/.config/fbmenugen/icons/fad511a6e46a2049e4e7b2467b39b66d.png>
+  [exec] (Power Statistics) {gnome-power-statistics} </home/kevin/.config/fbmenugen/icons/b41bf78eae8cdf65868a6a4b97f1ddc5.png>
+  [exec] (Power Statistics) {mate-power-statistics} </home/kevin/.config/fbmenugen/icons/b41bf78eae8cdf65868a6a4b97f1ddc5.png>
+  [exec] (Print Settings) {system-config-printer} </home/kevin/.config/fbmenugen/icons/b3ed42bd8f998257635bcd72a34985b5.png>
+  [exec] (QTerminal drop down) {qterminal --drop} </home/kevin/.config/fbmenugen/icons/37cce804ada9c6816e6c512bebd217c0.png>
+  [exec] (QTerminal) {qterminal} </home/kevin/.config/fbmenugen/icons/37cce804ada9c6816e6c512bebd217c0.png>
+  [exec] (ranger) {xterm -e 'ranger'} </home/kevin/.config/fbmenugen/icons/37cce804ada9c6816e6c512bebd217c0.png>
+  [exec] (Reboot) {lxqt-leave --reboot} </home/kevin/.config/fbmenugen/icons/02acaf55b9358e2972764334c6a9ce19.png>
+  [exec] (rxvt-unicode) {urxvt} </home/kevin/.config/fbmenugen/icons/052a661333dda9fffea1c89731de1c05.png>
+  [exec] (Sakura) {sakura} </home/kevin/.config/fbmenugen/icons/37cce804ada9c6816e6c512bebd217c0.png>
+  [exec] (Shutdown) {lxqt-leave --shutdown} </home/kevin/.config/fbmenugen/icons/bc56eb10a3512b401f22dcc0498636fa.png>
+  [exec] (Suspend) {lxqt-leave --suspend} </home/kevin/.config/fbmenugen/icons/25a282e772e5e228c7890eb3c37eda27.png>
+  [exec] (System Profiler and Benchmark) {hardinfo} </home/kevin/.config/fbmenugen/icons/5a553c49b877d72cf5cbb22b98ef3e5a.png>
+  [exec] (Task Manager) {lxtask} </home/kevin/.config/fbmenugen/icons/8212198efc508909387a9763719497f1.png>
+  [exec] (Tilix) {tilix} </home/kevin/.config/fbmenugen/icons/9547452910a5b01a51cfdfe2ea8c46bf.png>
+  [exec] (Timeshift) {timeshift-launcher} </home/kevin/.config/fbmenugen/icons/e9a1dd97652aa63b520943861ebf3a87.png>
+  [exec] (Tint2) {tint2} </home/kevin/.config/fbmenugen/icons/24d8f1cd37e060be7cc7f857a8966058.png>
+  [exec] (Virtual Machine Manager) {virt-manager} </home/kevin/.config/fbmenugen/icons/0de847583295afbcdf8ae673768f2f37.png>
+[end]
+[separator]
+[submenu] (Advanced Settings) </home/kevin/.config/fbmenugen/icons/8c0d3820b4e9cdae9482fd23e2d8dc4b.png>
+  [exec] (Conky RC) {geany ~/.conkyrc} </home/kevin/.config/fbmenugen/icons/b058d5f0952d218fd0073aee6c20ce8d.png>
+  [exec] (Tint2 Panel) {geany ~/.config/tint2/tint2rc} </home/kevin/.config/fbmenugen/icons/b058d5f0952d218fd0073aee6c20ce8d.png>
+[submenu] (Fbmenugen) </home/kevin/.config/fbmenugen/icons/4e40731ddb88a117ca0be33a073f4e4c.png>
+  [exec] (Menu Schema) {geany ~/.config/fbmenugen/schema.pl} </home/kevin/.config/fbmenugen/icons/b058d5f0952d218fd0073aee6c20ce8d.png>
+  [exec] (Menu Config) {geany ~/.config/fbmenugen/config.pl} </home/kevin/.config/fbmenugen/icons/b058d5f0952d218fd0073aee6c20ce8d.png>
+[separator]
+  [exec] (Generate a menu with icons) {fbmenugen -i} </home/kevin/.config/fbmenugen/icons/4e40731ddb88a117ca0be33a073f4e4c.png>
+  [exec] (Generate a menu without icons) {fbmenugen -g} </home/kevin/.config/fbmenugen/icons/4e40731ddb88a117ca0be33a073f4e4c.png>
+[separator]
+  [exec] (Refresh cache) {fbmenugen -d} </home/kevin/.config/fbmenugen/icons/90107cef0ec469e35981cab81194ad4e.png>
+[end]
+[submenu] (Fluxbox) </home/kevin/.config/fbmenugen/icons/9982fccef3b72549eb0fc7ec5c5af4a8.png>
+[config] (Configure)
+[submenu] (System Styles) {Choose a style...}
+  [stylesdir] (/usr/share/fluxbox/styles)
+[end]
+[submenu] (User Styles) {Choose a style...}
+  [stylesdir] (~/.fluxbox/styles)
+[end]
+[workspaces] (Workspace List)
+[submenu] (Tools)
+  [exec] (Screenshot - JPG) {import screenshot.jpg && display -resize 50% screenshot.jpg}
+  [exec] (Screenshot - PNG) {import screenshot.png && display -resize 50% screenshot.png}
+  [exec] (Run) {fbrun}
+  [exec] (Regen Menu) {fluxbox-generate_menu}
+[end]
+[commanddialog] (Fluxbox Command)
+  [reconfig] (Reload config)
+  [restart] (Restart)
+  [exec] (About) {(fluxbox -v; fluxbox -info | sed 1d) | xmessage -file - -center}
+  [separator]
+  [exit] (Exit)
+[end]
+[end]
+[separator]
+  [exec] (Refresh) {/usr/bin/perl \/usr\/bin\/fbmenugen -i -S \/home\/kevin\/\.config\/fbmenugen\/schema\.pl -C \/home\/kevin\/\.config\/fbmenugen\/config\.pl -o \/home\/kevin\/\.fluxbox\/menu} </home/kevin/.config/fbmenugen/icons/90107cef0ec469e35981cab81194ad4e.png>
+[exit] (Exit) </home/kevin/.config/fbmenugen/icons/9a8474e7a94817db167ca79f0e853de3.png>
+
+[endencoding]
+[end]

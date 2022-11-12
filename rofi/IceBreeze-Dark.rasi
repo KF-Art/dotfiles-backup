@@ -1,0 +1,162 @@
+/* theme by ItzSelenux based on Mint-Y https://github.com/ItzSelenux */
+
+configuration {
+    show-icons:                     true;
+    display-drun: 					"🔎";
+    display-window: 				"🪟️";
+    display-run: 					"⚙️";
+    display-ssh: 					"🖥️";
+    display-filebrowser:			"📁️";
+    drun-display-format:            "{name}";
+    disable-history:                false;
+    fullscreen:                     false;
+	hide-scrollbar: 				false;
+	sidebar-mode: 					true;
+    modes: [drun,filebrowser,window];
+	
+}
+* {
+
+    bg: rgba(49, 52, 56, 100%);
+    fg: rgba(239, 240, 241, 100%);
+    br: rgba(97, 101, 105, 100%);
+    al: rgba(35, 38, 41, 100%);
+    zero: rgba(0, 0, 0, 0%);
+
+
+    bdr: rgba(61, 174, 233, 100%);
+    sel: rgba(51, 110, 141, 100%);
+    bdrr: rgba(141, 58, 80, 100%);
+    selr: rgba(77, 31, 37, 100%);
+    bdrg: rgba(39, 161, 69, 100%);
+    selg: rgba(19, 55, 35, 100%);
+
+
+    background-color: @zero;
+    border-color: @br;
+    font: "Noto Sans 10";
+    text-color: @fg;
+}
+
+window {
+    background-color: @bg;
+    border: 1;
+    border-radius: 3;
+    border-color: @br;
+    padding: 7;
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+message {
+    border: 1;
+    border-radius: 3;
+    padding: 5;
+    background-color: @al;
+}
+
+
+
+listview {
+    scrollbar:                      @sel;
+    background-color:               @zero;
+    padding:                        0px;
+    columns:                        4;
+    lines:                          5;
+    spacing:                        0px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         vertical;
+    text-color: 					@fg;
+   
+}
+
+element {
+    background-color:               @zero;
+   Text-color:                          #000000;
+    orientation:                    vertical;
+    border-radius:                  0px;
+    padding:                        15px;
+}
+
+element-icon {
+    size:                              50px;
+    border:                         0px;
+    horizontal-align:               0.5;
+    horizontal-align:               0.5;
+    background-color:               @zero;
+    Text-color:                          #000000;
+}
+
+element selected {
+    border-radius:                  4px;
+
+}
+
+element.normal.normal {
+    background-color: @zero;
+}
+
+element.normal.urgent {
+    background-color: @selr;
+}
+
+element.normal.active {
+    background-color: @selg;
+}
+
+element.selected.normal {
+    background-color: @sel;
+    border-color:     @bdr;
+}
+
+element.selected.urgent {
+    background-color: @selr;
+    border-color:     @bdrr;
+}
+
+element.selected.active {
+    background-color: @selg;
+    border-color:     @bdrg;
+}
+
+mode-switcher {
+    spacing: 0;
+}
+
+button {
+    border: 0 0 3 0;
+    border-color: @zero;
+    padding: 3;
+}
+
+button.selected {
+    border-color: @bdr;
+}
+
+inputbar {
+    spacing: 0;
+    padding: 1;
+}
+
+case-indicator {
+    spacing: 0;
+    padding: 3px;
+    background-color: @al;
+    border: 1 1 1 0;
+    border-radius: 0 2 2 0;
+}
+
+entry {
+    background-color: @al;
+    padding: 3px;
+    border: 1 0 1 1;
+    border-radius: 2 0 0 2;
+}
+
+prompt {
+    padding: 3 7 3 0;
+}

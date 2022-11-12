@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/kevin/Im\u00e1genes/Wallpapers/mcOS-BS7.jpeg",
+    "alpha": "100",
+    "special": {
+        "background": "#071016",
+        "foreground": "#accad6",
+        "cursor": "#accad6"
+    },
+    "colors": {
+        "color0": "#071016",
+        "color1": "#966A47",
+        "color2": "#7D817A",
+        "color3": "#BC9870",
+        "color4": "#2D6490",
+        "color5": "#4C7897",
+        "color6": "#5990AF",
+        "color7": "#accad6",
+        "color8": "#788d95",
+        "color9": "#966A47",
+        "color10": "#7D817A",
+        "color11": "#BC9870",
+        "color12": "#2D6490",
+        "color13": "#4C7897",
+        "color14": "#5990AF",
+        "color15": "#accad6"
+    }
+}

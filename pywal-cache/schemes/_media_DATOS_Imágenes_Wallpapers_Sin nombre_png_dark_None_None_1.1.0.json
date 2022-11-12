@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Wallpapers/Sin nombre.png",
+    "alpha": "100",
+    "special": {
+        "background": "#34151e",
+        "foreground": "#ecd9d2",
+        "cursor": "#ecd9d2"
+    },
+    "colors": {
+        "color0": "#34151e",
+        "color1": "#C13F56",
+        "color2": "#9E6765",
+        "color3": "#B98679",
+        "color4": "#C06595",
+        "color5": "#B78D8B",
+        "color6": "#D1A199",
+        "color7": "#ecd9d2",
+        "color8": "#a59793",
+        "color9": "#C13F56",
+        "color10": "#9E6765",
+        "color11": "#B98679",
+        "color12": "#C06595",
+        "color13": "#B78D8B",
+        "color14": "#D1A199",
+        "color15": "#ecd9d2"
+    }
+}

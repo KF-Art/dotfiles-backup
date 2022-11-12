@@ -1,0 +1,76 @@
+------------------------------------------
+Log File: /home/kevin/.mate-fluxbox/log
+Fluxbox version: 1.3.7
+GIT Revision: unknown
+Compiled: Aug 21 2022 19:05:59
+Compiler: GCC
+Compiler version: 10.2.1 20201203
+
+Defaults: 
+       menu: /usr/share/fluxbox/menu
+ windowmenu: /usr/share/fluxbox/windowmenu
+      style: /usr/share/fluxbox/styles/bloe
+       keys: /usr/share/fluxbox/keys
+       init: /usr/share/fluxbox/init
+         nls: /usr/share/fluxbox/nls
+
+Compiled options (- => disabled): 
+BIDI
+-DEBUG
+EWMH
+IMLIB2
+NLS
+REMEMBER
+RENDER
+SHAPE
+SLIT
+SYSTEMTRAY
+TOOLBAR
+RANDR
+XFT
+XINERAMA
+XMB
+XPM
+
+------------------------------------------
+Keys: Invalid key/modifier on line 30): OnTitlebar Mouse1 :MacroCmd {Focus} {Raise} {ActivateTab}
+Keys: Invalid key/modifier on line 32): OnTitlebar Move1 :StartMoving
+Keys: Invalid key/modifier on line 33): OnLeftGrip Move1 :StartResizing bottomleft
+Keys: Invalid key/modifier on line 34): OnRightGrip Move1 :StartResizing bottomright
+Keys: Invalid key/modifier on line 35): OnWindowBorder Move1 :StartMoving
+Keys: Invalid key/modifier on line 38): OnTitlebar Mouse2 :StartTabbing
+Keys: Invalid key/modifier on line 41): OnTitlebar Double Mouse1 :Shade
+Keys: Invalid key/modifier on line 42): OnTitlebar Mouse3 :WindowMenu
+Keys: Invalid key/modifier on line 49): OnDesktop Mouse1 :HideMenus
+Keys: Invalid key/modifier on line 50): OnDesktop Mouse2 :WorkspaceMenu
+Keys: Invalid key/modifier on line 51): OnDesktop Mouse3 :RootMenu
+Keys: Invalid key/modifier on line 52): OnDesktop Mouse4 :NextWorkspace
+Keys: Invalid key/modifier on line 53): OnDesktop Mouse5 :PrevWorkspace
+Keys: Invalid key/modifier on line 58): OnTitlebar Mouse1 :MacroCmd {Focus} {Raise} {ActivateTab}
+Keys: Invalid key/modifier on line 60): OnTitlebar Move1 :StartMoving
+Keys: Invalid key/modifier on line 61): OnLeftGrip Move1 :StartResizing bottomleft
+Keys: Invalid key/modifier on line 62): OnRightGrip Move1 :StartResizing bottomright
+Keys: Invalid key/modifier on line 63): OnWindowBorder Move1 :StartMoving
+Keys: Invalid key/modifier on line 66): OnTitlebar Mouse2 :StartTabbing
+Keys: Invalid key/modifier on line 69): OnTitlebar Double Mouse1 :Shade
+Keys: Invalid key/modifier on line 70): OnTitlebar Mouse3 :WindowMenu
+Keys: Invalid key/modifier on line 74): OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing BottomRight}
+Keys: Invalid key/modifier on line 77): OnDesktop Mouse1 :HideMenus
+Keys: Invalid key/modifier on line 78): OnDesktop Mouse2 :WorkspaceMenu
+Keys: Invalid key/modifier on line 79): OnDesktop Mouse3 :RootMenu
+Keys: Invalid key/modifier on line 80): OnDesktop Mouse4 :NextWorkspace
+Keys: Invalid key/modifier on line 81): OnDesktop Mouse5 :PrevWorkspace
+Keys: Invalid key/modifier on line 84): OnDesktop Mouse1 :HideMenus
+Keys: Invalid key/modifier on line 85): OnDesktop Mouse2 :WorkspaceMenu
+Keys: Invalid key/modifier on line 90): OnDesktop Mouse4 :PrevWorkspace
+Keys: Invalid key/modifier on line 91): OnDesktop Mouse5 :NextWorkspace
+Keys: Invalid key/modifier on line 98): OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
+Keys: Invalid key/modifier on line 99): OnWindowBorder Move1 :StartMoving
+Keys: Invalid key/modifier on line 101): OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
+Keys: Invalid key/modifier on line 102): OnLeftGrip Move1 :StartResizing bottomleft
+Keys: Invalid key/modifier on line 103): OnRightGrip Move1 :StartResizing bottomright
+Keys: Invalid key/modifier on line 112): OnTitlebar Double Mouse1 :Shade
+Keys: Invalid key/modifier on line 115): OnTitlebar Mouse1 :MacroCmd {Raise} {Focus} {ActivateTab}
+Keys: Invalid key/modifier on line 116): OnTitlebar Move1  :StartMoving
+Keys: Invalid key/modifier on line 119): OnTitlebar Mouse2 :Lower
+Keys: Invalid key/modifier on line 122): OnTitlebar Mouse3 :WindowMenu

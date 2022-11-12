@@ -1,0 +1,17 @@
+#!/bin/bash
+function checkwm {
+    pgrep -x nemo-desktop
+    exitstatus=$?
+}
+
+checkwm
+
+ if [ "$exitstatus" = 0 ]; then
+    echo "Setting wallpaper"
+    while [ "$exitstatus" = 1 ]; do checkwm; sleep 1; done
+    nitrogen --restore &
+ else
+    echo "Window manager not running"
+    while [ "$exitstatus" = 1 ]; do checkwm; sleep 1; done
+    nitrogen --restore &
+ fi

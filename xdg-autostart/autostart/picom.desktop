@@ -1,0 +1,9 @@
+[Desktop Entry]
+Comment=
+Comment[es_US]=
+Exec=picom -b
+Hidden=false
+Name=Compositor
+Name[es_US]=Compositor
+Type=Application
+X-MATE-Autostart-Delay=0

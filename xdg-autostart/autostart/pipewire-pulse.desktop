@@ -1,0 +1,8 @@
+[Desktop Entry]
+Exec=pipewire-pulse
+Icon=dialog-scripts
+Name=pipewire-pulse
+Path=
+Type=Application
+X-KDE-AutostartScript=true
+X-GNOME-Autostart-Delay=2

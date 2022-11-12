@@ -1,0 +1,41 @@
+#!/bin/mksh
+backup_dir=/dotfiles-backup
+
+cp ~/.Xresources ${backup_dir}/urxvt/
+cp ~/.{bash,mksh}rc ${backup_dir}/shellrc/
+cp ~/.gtkrc-2.0 ${backup_dir}/gtk/
+cp ~/.fehbg ${backup_dir}/wallpaper/
+cp ~/.emptty ${backup_dir}/emptty/
+cp /etc/emptty/conf ${backup_dir}/emptty/
+cp -r ~/.config/Kvantum ${backup_dir}/
+cp -r ~/.config/autostart ${backup_dir}/xdg-autostart
+cp -r ~/.config/dunst ${backup_dir}/
+cp -r ~/.config/fbmenugen ${backup_dir}/
+cp -r ~/.config/i3 ${backup_dir}/
+cp -r ~/.config/kitty ${backup_dir}/
+cp -r ~/.config/lxqt ${backup_dir}/
+cp -r ~/.config/neofetch ${backup_dir}/
+cp -r ~/.config/octoxbps ${backup_dir}/
+cp -r ~/.config/openbox ${backup_dir}/
+cp -r ~/.config/polybar ${backup_dir}/
+cp -r ~/.config/qt5ct ${backup_dir}/
+cp -r ~/.config/qterminal.org ${backup_dir}/
+cp -r ~/.config/rofi ${backup_dir}/
+cp -r ~/.config/tint2 ${backup_dir}/
+cp -r ~/.config/touchegg ${backup_dir}/
+cp -r ~/.config/video-wallpaper ${backup_dir}/
+cp -r ~/.config/wal ${backup_dir}/
+cp -r ~/.config/xed ${backup_dir}/
+cp ~/.config/*wall*.conf ${backup_dir}/wallpaper-config
+cp ~/.config/gtkrc ${backup_dir}/gtk/
+cp ~/.config/picom.conf ${backup_dir}/picom/
+cp -r ~/.local/share/nemo ${backup_dir}/
+cp -r ~/.cache/wal/* ${backup_dir}/pywal-cache/
+cp -r ~/.*fluxbox ${backup_dir}/
+cp -r ~/scripts ${backup_dir}/
+cp ~/.profile ${backup_dir}/profile/
+
+cd ${backup_dir}
+git add .
+git commit -m "Update dotfiles $(date +%Y.%m.%d.%H:%M:%S)"
+git push

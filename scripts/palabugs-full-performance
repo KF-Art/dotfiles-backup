@@ -1,0 +1,4 @@
+#!/bin/mksh
+blueman-manager &
+steam steam://rungameid/444090 &
+exec fluxbox

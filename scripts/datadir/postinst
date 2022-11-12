@@ -1,0 +1,47 @@
+#! /bin/bash
+appDir=/usr/lib/pentablet
+confPath=$appDir/conf/xppen
+libPath=$appDir/lib
+platPath=$appDir/platforms
+
+
+chmod +0777 /etc/xdg/autostart/xppentablet.desktop
+chmod +0777 /usr/share/applications/xppentablet.desktop
+chmod +0777 /usr/share/icons/pentablet.png
+
+chmod +0777 $appDir/pentablet
+chmod +0777 $appDir/pentablet.sh
+chmod +0666 $appDir/resource.rcc
+
+chmod +0777 $confPath
+chmod +0777 $libPath
+chmod +0777 $platPath
+
+chmod +0666 $confPath/config.xml
+chmod +0666 $confPath/language.ini
+chmod +0666 $confPath/name_config.ini
+
+chmod +0666 $libPath/libicudata.so.56
+chmod +0666 $libPath/libicui18n.so.56
+chmod +0666 $libPath/libicuuc.so.56
+chmod +0666 $libPath/libQt5Core.so.5
+chmod +0666 $libPath/libQt5DBus.so.5
+chmod +0666 $libPath/libQt5Gui.so.5
+chmod +0666 $libPath/libQt5Network.so.5
+chmod +0666 $libPath/libQt5Widgets.so.5
+chmod +0666 $libPath/libQt5X11Extras.so.5
+chmod +0666 $libPath/libQt5XcbQpa.so.5
+chmod +0666 $libPath/libQt5Xml.so.5
+
+chmod +0666 $platPath/libqxcb.so
+
+lockfile="/tmp/qtsingleapp-Pentab-9c9b-lockfile"
+touch $lockfile
+chmod +0666 $lockfile
+
+if [ -f "/etc/xdg/autostart/pentablet.desktop" ]; then
+	rm /etc/xdg/autostart/ugee-pentablet.desktop
+fi
+
+echo "Installation successful!"
+echo "If you are installing for the first time, please use it after restart."

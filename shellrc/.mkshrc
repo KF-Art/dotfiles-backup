@@ -1,0 +1,50 @@
+HISTFILE=~/.mksh_history
+
+### ALIASES ###
+# XBPS
+alias xqs="xbps-query -s"               # Busca localmente.
+alias xqrs="xbps-query -Rs"             # Busca en los repositorios.
+alias xisu="doas xbps-install -Su"      # Actualiza el sistema.
+alias xrr="doas xbps-remove -R"         # Elimina un paquete y sus dependencias.
+alias xrro="doas xbps-remove -RoO"      # Elimina un paquete y limpia la caché.
+alias xra="xbps-rindex -a *.xbps"       # Indexa los paquetes en el directorio actual.
+alias xsrc="~/void-packages/xbps-src"   # xbps-src
+
+alias ls="ls --color=auto"
+alias su='su -c "/bin/bash"'
+alias xi="doas xbps-install"
+
+alias lszfs="dfc -dt zfs"
+
+PATH=$PATH:~/scripts:~/cereus/scripts/
+
+if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
+     exec startx
+fi
+
+# . ~/DATOS/install/polyglot/polyglot.sh
+. /usr/share/polyglot-prompt/polyglot.sh
+
+if [ $TERM == rxvt-unicode-256color ]
+	then imgparam="w3m"
+elif [ $TERM == xterm-kitty ]
+	then imgparam="kitty"
+fi
+
+alias kittyfetch="neofetch --$imgparam ~/Desktop/surtr/face.png"
+alias surtrfetch="neofetch --$imgparam ~/Desktop/surtr/face-full.png"
+alias surtrfetch2="neofetch --$imgparam /home/kevin/Desktop/surtr/Surtr\ elegant\ dress-3.png"
+alias surtrfetch3="neofetch --$imgparam /home/kevin/Desktop/surtr/Surtr\ elegant\ dress-4.png"
+
+(cat ~/.cache/wal/sequences &)
+# source ~/.cache/wal/colors-tty.sh
+
+function getwall {
+	if [ $XDG_CURRENT_DESKTOP = KDE ]; then
+        	wall="$(cat  ~/.config/plasma-org.kde.plasma.desktop-appletsrc | grep Image= | cut -d"=" -f2 | cut -d ":" -f2)"
+	else
+        	wall="$(cat ~/.fehbg | grep feh | cut -d"'" -f2)"
+	fi
+
+	echo ${wall}
+}

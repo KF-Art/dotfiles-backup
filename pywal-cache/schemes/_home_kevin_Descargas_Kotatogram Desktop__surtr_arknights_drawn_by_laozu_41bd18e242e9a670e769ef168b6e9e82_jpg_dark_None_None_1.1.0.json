@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/kevin/Descargas/Kotatogram Desktop/_surtr_arknights_drawn_by_laozu_41bd18e242e9a670e769ef168b6e9e82.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0f1018",
+        "foreground": "#b1bec6",
+        "cursor": "#b1bec6"
+    },
+    "colors": {
+        "color0": "#0f1018",
+        "color1": "#976F64",
+        "color2": "#CF634C",
+        "color3": "#B38E71",
+        "color4": "#DA976D",
+        "color5": "#54738B",
+        "color6": "#987788",
+        "color7": "#b1bec6",
+        "color8": "#7b858a",
+        "color9": "#976F64",
+        "color10": "#CF634C",
+        "color11": "#B38E71",
+        "color12": "#DA976D",
+        "color13": "#54738B",
+        "color14": "#987788",
+        "color15": "#b1bec6"
+    }
+}

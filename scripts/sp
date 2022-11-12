@@ -1,0 +1,22 @@
+#!/bin/mksh
+
+#if [ $XDG_CURRENT_DESKTOP == "KDE" ]; then
+#	echo "Plasma already provides Super key support"
+#else
+#	ksuperkey &
+#fi
+
+function checkwm {
+	current_wm=$(wmctrl -m | grep Name | cut -d":" -f2 | cut -d" " -f2)
+}
+
+checkwm
+
+ if [ "$current_wm" == "Fluxbox" ]; then
+    echo "Opening Fluxbox apps"
+	ksuperkey &
+ fi
+
+  if [ "$current_wm" == "Kwin" ]; then
+    echo "Kwin is running"
+ fi

@@ -1,0 +1,93 @@
+wpa-cute
+cbatticon
+kvantummanager
+megasync
+picom -b
+killall flameshot
+pipewire
+pipewire-pulse
+pcmanfm --desktop
+pcmanfm-qr
+setxkbmap latam
+kate /home/kevin/.profile
+xfce4-power-manager
+gpu-video-wallpaper-gui
+killall xidlehook
+sleep 3; flameshot gui
+urxvtd -o -f -q
+killall mate-panel
+nemo-desktop
+killall latte-dock
+latte-dock
+zenity --calendar
+xfce4-powermanager
+loginctl poweroff
+volctl
+killall lxqt-powermanagement
+killall xfce4-powermanager
+killall xfce4-power-manager
+urxvtd -f -o -q
+polybar-fluxbox.sh
+killall polybar
+xfce4-panel
+killall xfce4-panel
+budgie-panel
+killall budgie-panel
+killall pasystray
+killall steam
+killall ppicom
+killall nemo-desktop
+xcompmgr
+killall xcompmgr
+xcompmgr -cfC
+steam
+urxvt
+kilalll tint2
+killall -u kevin
+plasmashell
+pcmanfm-qt
+killall fluxbox
+killall ksuperkey
+tint
+killalll tint2
+pcmanfm-qt --desktop
+killall picom
+picom --experimental-backends -b
+pkill pcmanfm-qt
+picom --experimental-backends
+killall tint2
+lxqt-panel
+killall lxqt-panel
+ksuperkey
+pkill plasmashell
+wpa-cute -qt
+krita
+patray
+lxqt-powermanagement
+lxqt-notificationd
+pavucontrol
+/home/kevin/scripts/patray
+azote
+nemo
+q5ct
+qt5ct
+lxtask
+xed
+pkill pasystray
+dconf-editor
+pkill udiskie
+pkill devmon
+pkill tint2
+kinfocenter
+lxappearance
+kitty
+/home/kevin/.fehbg
+mate-panel
+pkill mate-panel
+pkill -u kevin
+picom
+firefox
+setxkbmap  latam
+pkill vala-panel
+vala-panel
+tint2

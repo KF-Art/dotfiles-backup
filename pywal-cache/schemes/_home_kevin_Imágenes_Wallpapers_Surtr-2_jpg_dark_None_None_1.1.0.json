@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/kevin/Im\u00e1genes/Wallpapers/Surtr-2.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#090507",
+        "foreground": "#e0cbc7",
+        "cursor": "#e0cbc7"
+    },
+    "colors": {
+        "color0": "#090507",
+        "color1": "#CA364E",
+        "color2": "#B1565B",
+        "color3": "#DE5365",
+        "color4": "#C5867A",
+        "color5": "#635793",
+        "color6": "#C26EA2",
+        "color7": "#e0cbc7",
+        "color8": "#9c8e8b",
+        "color9": "#CA364E",
+        "color10": "#B1565B",
+        "color11": "#DE5365",
+        "color12": "#C5867A",
+        "color13": "#635793",
+        "color14": "#C26EA2",
+        "color15": "#e0cbc7"
+    }
+}

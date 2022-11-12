@@ -1,0 +1,49 @@
+#!/bin/mksh
+for color in black{,-compact} dark{,-compact} light{,-compact} nord-{dark,light} nord-dark-compact nord-light-compact; do
+
+    case ${color} in
+        black)
+            tweak_arg=black
+	        variant=dark
+            size=standard ;;
+        black-compact)
+            tweak_arg=black
+	        variant=dark
+            size=compact ;;
+	    nord-dark)
+            tweak_arg=nord
+	        variant=dark
+            size=standard ;;
+	    nord-dark-compact)
+            tweak_arg=nord
+	        variant=dark
+            size=compact ;;
+	    nord-light)
+            tweak_arg=nord
+	        variant=light
+            size=standard ;;
+	    nord-light-compact)
+            tweak_arg=nord
+	        variant=light
+            size=compact ;;
+	    dark)
+            tweak_arg=nord
+	        variant=dark
+            size=standard ;;
+	    dark-compact)
+            tweak_arg=nord
+	        variant=dark
+            size=compact ;;
+	    light)
+            tweak_arg=nord
+	        variant=light
+            size=standard ;;
+	    light-compact)
+            tweak_arg=nord
+	        variant=light
+            size=compact ;;
+    esac
+
+echo "Graphite-gtk-theme-${color}_package() {\n    nostrip=yes\n    short_desc+=' - ${color} variant'\n    pkg_install() {\n        ./install.sh -t all -c ${variant} -s ${size} --tweaks rimless ${tweak_arg} -d {DESTDIR}/{theme_dir}\n    vlicense LICENSE\n	}\n}" | sed 's/{DESTDIR}/${DESTDIR}/g' | sed 's/{theme_dir}/${theme_dir}/g' | tee -a template
+
+done

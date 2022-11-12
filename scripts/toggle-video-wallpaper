@@ -1,0 +1,22 @@
+#!/bin/bash
+
+function detect {
+	 pgrep -u $UID -x wallengine
+	 exitstatus=$?
+}
+
+detect
+
+if [ $exitstatus = 0 ]; then
+	echo "Stopping video wallpaper"
+	#gpu-video-wallpaper --stop
+	pkill wallengine
+	#while pgrep -u $UID -x wallengine >/dev/null; do sleep 1; done
+	# ~/.fehbg
+else
+	#pkill lxqt-panel
+	#while pgrep -u $UID -x lxqt-panel >/dev/null; do sleep 0.1; done
+	# gpu-video-wallpaper --start "$(cat ~/.config/video-wallpaper/settings.conf | grep lastfile | cut -d"=" -f2 | cut -d'"' -f2)" &
+	install/linux-wallpaperengine/build/wallengine --screen-root eDP-1 Vídeos/1631259924_2435166184_surtr_no_letterbox/ & 
+	#lxqt-panel &
+fi

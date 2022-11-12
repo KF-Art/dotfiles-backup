@@ -1,0 +1,9 @@
+[Desktop Entry]
+Categories=GNOME;GTK;System;
+Exec=/usr/bin/octoxbps-notifier
+Icon=octopi
+Name=OctoXBPS Notifier
+StartupNotify=true
+Terminal=false
+Type=Application
+X-LXQt-Need-Tray=true

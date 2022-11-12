@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Wallpapers/Surtr-40.1.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0F080A",
+        "foreground": "#e3c8c7",
+        "cursor": "#e3c8c7"
+    },
+    "colors": {
+        "color0": "#0F080A",
+        "color1": "#A53040",
+        "color2": "#9E6564",
+        "color3": "#C68879",
+        "color4": "#612DA6",
+        "color5": "#C4689A",
+        "color6": "#C69D96",
+        "color7": "#e3c8c7",
+        "color8": "#9e8c8b",
+        "color9": "#A53040",
+        "color10": "#9E6564",
+        "color11": "#C68879",
+        "color12": "#612DA6",
+        "color13": "#C4689A",
+        "color14": "#C69D96",
+        "color15": "#e3c8c7"
+    }
+}

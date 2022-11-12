@@ -1,0 +1,7 @@
+#!/bin/bash
+partuuid="e728c1e1-4cb7-43dd-b1d7-b5fcb2a9231d"
+umount UUID=${partuuid}
+mount UUID=${partuuid} /chr/bedrock
+for i in proc sys dev; do mount --rbind /$i /chr/bedrock/$i ; done
+cp /etc/resolv.conf /chr/bedrock/etc/
+chroot /chr/bedrock

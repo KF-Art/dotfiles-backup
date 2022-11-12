@@ -1,0 +1,5 @@
+[Desktop Entry]
+Exec=urxvtd -o -f -q
+Name=Urxvt daemon
+Type=Application
+Version=1.0

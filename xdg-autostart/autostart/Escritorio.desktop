@@ -1,0 +1,9 @@
+[Desktop Entry]
+Comment[es_US]=Iconos de escritorio
+Exec=nemo-desktop
+Hidden=true
+Name[es_US]=Escritorio
+NoDisplay=false
+Type=Application
+X-GNOME-Autostart-Delay=0
+X-GNOME-Autostart-enabled=true

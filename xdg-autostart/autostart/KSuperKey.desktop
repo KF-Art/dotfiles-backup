@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=ksuperkey
+Hidden=true
+Name=KSuperKey
+Type=Application
+Version=1.0
+X-GNOME-Autostart-enabled=false

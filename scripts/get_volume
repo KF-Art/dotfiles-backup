@@ -1,0 +1,9 @@
+#!/bin/sh
+pactl list sinks | \
+            awk -W posix '/^[ \t]+Nombre: / {insink = $2 == "'"alsa_output.pci-0000_00_01.1.hdmi-stereo"'"}
+                          /^[ \t]+Volumen: / && insink {gsub("%,?", ""); print $5; exit}'
+
+pactl list sinks | \
+            awk -W posix '/^[ \t]+Nombre: / {insink = $2 == "'"alsa_output.pci-0000_00_09.2.analog-stereo.monitor"'"}
+                          /^[ \t]+Volumen: / && insink {gsub("%,?", ""); print $5; exit}'
+

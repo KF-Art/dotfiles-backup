@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/kevin/Im\u00e1genes/Surtr/Surtr.(Arknights).full.3566753.png",
+    "alpha": "100",
+    "special": {
+        "background": "#190a10",
+        "foreground": "#e9cce0",
+        "cursor": "#e9cce0"
+    },
+    "colors": {
+        "color0": "#190a10",
+        "color1": "#ED935E",
+        "color2": "#78628A",
+        "color3": "#A27197",
+        "color4": "#AE89AF",
+        "color5": "#E59FA1",
+        "color6": "#D9B4B9",
+        "color7": "#e9cce0",
+        "color8": "#a38e9c",
+        "color9": "#ED935E",
+        "color10": "#78628A",
+        "color11": "#A27197",
+        "color12": "#AE89AF",
+        "color13": "#E59FA1",
+        "color14": "#D9B4B9",
+        "color15": "#e9cce0"
+    }
+}

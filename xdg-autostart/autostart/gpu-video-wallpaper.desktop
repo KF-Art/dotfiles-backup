@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=bash -c '"gpu-video-wallpaper" --start "/home/kevin/Vídeos/Tomorrows-Art-Surtr.mp4"'
+Hidden=true
+Name=gpu-video-wallpaper
+NoDisplay=false
+Type=Application
+X-GNOME-Autostart-enabled=true

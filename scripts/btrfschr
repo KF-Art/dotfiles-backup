@@ -1,0 +1,5 @@
+#!/bin/bash
+mount UUID="ffce4436-09e6-433e-8b63-a61a1243d7ac" /chr/opensuse
+for i in proc sys dev; do mount --rbind /$i /chr/opensuse/@/$i ; done
+cp /etc/resolv.conf /chr/opensuse/@/etc/
+chroot /chr/opensuse/@ /bin/bash

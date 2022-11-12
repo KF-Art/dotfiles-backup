@@ -1,0 +1,69 @@
+! special colors
+URxvt.cursorColor:  #FFFFFF
+! black #1A1A1A 
+URxvt.color0:      [60]#000000
+!URxvt.color0:      #0f0f0f
+URxvt.color8:      #767676
+! red
+! URxvt.color1:      #B9273F
+URxvt.color1:      #5F161F
+URxvt.color9:      #D8465E 
+! green
+URxvt.color2:      #00875F
+URxvt.color10:     #2DBE6C
+! yellow
+URxvt.color3:      #C4B027
+URxvt.color11:     #DCDD55
+! blue
+URxvt.color4:      #0D73CC
+URxvt.color12:     #1A8FFF
+! magenta
+URxvt.color5:      #7337D7
+URxvt.color13:     #8855DD
+! cyan
+URxvt.color6:      #2DAABE
+URxvt.color14:     #49C1D4
+! white
+URxvt.color7:      #DDDDDD
+URxvt.color15:     #FFFFFF
+
+URxvt*scrollBar:         false
+! URxvt*scrollBar_right:   
+
+URxvt*transparent:       false
+
+URxvt.depth: 32
+URxvt.foreground:  white
+URxvt.background: 0
+! URxvt*background: black
+! URXVT*ColorIT: black
+! URxvt*reverseVideo: true
+URxvt.highlightTextColor: black
+URxvt.highlightColor: white
+! URxvt.shading:  10  
+! URxvt.fadding:  20
+
+URxvt.font: xft:JetBrains Mono NL:pixelsize=17.3
+URxvt.letterSpace: 0
+
+URxvt.perl-ext-common: tabbedex,keyboard-select,selection
+URxvt.tabbedex.autohide: true
+URxvt.tabbedex.tabbar-fg: 1
+URxvt.tabbedex.tabbar-bg: 0 
+URxvt.tabbedex.tab-fg: 15
+URxvt.tabbedex.tab-bg: 1
+URxvt.tabbedex.new-button: true
+
+URxvt.keysym.Shift-Down: perl:tabbedex:new_tab
+URxvt.keysym.Shift-Left: perl:tabbedex:prev_tab
+URxvt.keysym.Shift-Right: perl:tabbedex:next_tab
+
+URxvt.keysym.Control-Shift-Left: perl:tabbedex:move_tab_left
+URxvt.keysym.Control-Shift-Right: perl:tabbedex:move_tab_right
+URxvt.keysym.Meta-Control-R: perl:tabbedex:rename_tab
+
+URxvt.iconFile:    /usr/share/icons/Flat-Remix-Green-Dark/apps/scalable/terminal.svg
+URxvt.title:	URxvt Terminal
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keyboard-select.clipboard: true

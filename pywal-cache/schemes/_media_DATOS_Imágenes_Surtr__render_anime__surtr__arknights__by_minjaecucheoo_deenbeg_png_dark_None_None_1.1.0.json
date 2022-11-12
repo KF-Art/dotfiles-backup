@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Surtr/_render_anime__surtr__arknights__by_minjaecucheoo_deenbeg.png",
+    "alpha": "100",
+    "special": {
+        "background": "#6f4947",
+        "foreground": "#f5ead6",
+        "cursor": "#f5ead6"
+    },
+    "colors": {
+        "color0": "#6f4947",
+        "color1": "#A7595A",
+        "color2": "#BD5551",
+        "color3": "#C77D8A",
+        "color4": "#BA9DB0",
+        "color5": "#EAA798",
+        "color6": "#F9C8B8",
+        "color7": "#f5ead6",
+        "color8": "#aba395",
+        "color9": "#A7595A",
+        "color10": "#BD5551",
+        "color11": "#C77D8A",
+        "color12": "#BA9DB0",
+        "color13": "#EAA798",
+        "color14": "#F9C8B8",
+        "color15": "#f5ead6"
+    }
+}

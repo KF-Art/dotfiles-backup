@@ -1,0 +1,35 @@
+#!/bin/bash
+
+function detect {
+	cat ~/.fehbg | grep feh | cut -d"'" -f2
+}
+
+detect
+echo "detect step"
+
+current="$(detect)"
+formal="$(cat ~/.config/formal-wall.conf)"
+sexy="$(cat ~/.config/sexy-wall.conf)"
+last="$(cat ~/.config/last-wallpaper.conf)"
+
+echo "current $current"
+echo "formal $formal"
+echo "sexy $sexy"
+echo "last $last"
+
+if [[ "$current" == "$sexy" ]]; then
+	wall=$formal
+	echo $(detect) > ~/.config/last-wallpaper.conf
+elif [[ "$current" == "$formal" ]]; then
+	wall="$last"
+elif [[ "$current" = "$last" ]]; then
+	wall=$formal
+	echo $(detect) > ~/.config/last-wallpaper.conf
+else
+    wall=$formal
+	echo $(detect) > ~/.config/last-wallpaper.conf
+fi
+
+echo "wall $wall"
+feh --bg-fill "$wall"
+# betterlockscreen -u $wall

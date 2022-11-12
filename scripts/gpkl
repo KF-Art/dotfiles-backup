@@ -1,0 +1,11 @@
+#!/bin/bash
+original=/media/DATOS-2/git/void-packages-master/srcpkgs
+fork=/media/DATOS-2/BK/cereus-packages/srcpkgs
+
+touch pkglist
+echo "These are the packages we are maintaining in both Core and Extra repositories.
+The rest of them are from Void team.
+" > pkglist
+
+diff --brief ${original} ${fork} | grep "Sólo" >> pkglist
+sed -i 's|Sólo en '"${fork}"': ||g' pkglist

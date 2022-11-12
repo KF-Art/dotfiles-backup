@@ -1,0 +1,8 @@
+Package:xp-pen-pentablet
+Version:3.2.3.220323
+Section:utils
+Priority:extra
+Maintainer:tech@xp-pen.com
+Architecture:amd64
+Description: XP-Pen tablet setting software from tech@xp-pen.com
+

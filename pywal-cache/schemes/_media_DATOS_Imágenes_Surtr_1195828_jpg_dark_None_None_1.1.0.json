@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Surtr/1195828.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#100a0d",
+        "foreground": "#c8c8c2",
+        "cursor": "#c8c8c2"
+    },
+    "colors": {
+        "color0": "#100a0d",
+        "color1": "#694D50",
+        "color2": "#9A5956",
+        "color3": "#BF534C",
+        "color4": "#CC9571",
+        "color5": "#7E718D",
+        "color6": "#6F98A3",
+        "color7": "#c8c8c2",
+        "color8": "#8c8c87",
+        "color9": "#694D50",
+        "color10": "#9A5956",
+        "color11": "#BF534C",
+        "color12": "#CC9571",
+        "color13": "#7E718D",
+        "color14": "#6F98A3",
+        "color15": "#c8c8c2"
+    }
+}

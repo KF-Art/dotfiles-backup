@@ -1,0 +1,21 @@
+set $wallpaper /home/kevin/Imágenes/Surtr/Arknights-Surtr-Icon.png
+
+set $background #000000
+set $foreground #e9d6d3
+
+set $color0 #000000
+set $color1 #AE3134
+set $color2 #BE4A4C
+set $color3 #AF5858
+set $color4 #D3585D
+set $color5 #CE7C87
+set $color6 #DFA99E
+set $color7 #e9d6d3
+set $color8 #a39593
+set $color9 #AE3134
+set $color10 #BE4A4C
+set $color11 #AF5858
+set $color12 #D3585D
+set $color13 #CE7C87
+set $color14 #DFA99E
+set $color15 #e9d6d3

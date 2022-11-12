@@ -1,0 +1,326 @@
+Kitty + zsh + Oh my zsh + Powerlevel10k
+---------------------------------------
+
+[A]Instalamos fuentes necesarias
+[B]Instalamos y configuramos la kitty
+[C]Instalamos y configuramos la ZSH
+[D]Le metemos a la zsh el -> Oh my zsh
+[E]Le metemos a la zsh el tema de PowerLevel10k para que quede bien bonito
+
+
+                  ******************[A]******************
+*********************Instalamos las fuentes necesarias**********************
+****************************************************************************
+[*]Puedes usar WGET para obtener todos los archivos (Recuerda crear y posicionarte en el directorio)
+    1.MesloLGS NF Regular.ttf
+    2.MesloLGS NF Bold.ttf
+    3.MesloLGS NF Italic.ttf
+    4.MesloLGS NF Bold Italic.ttf
+
+    1.https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+    2.https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
+    3.https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
+    4.https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
+
+[*]Ve donde las descargaste e instalalas con doble click 1 a 1 (Después puedes borrarlas)
+
+[*]Luego bajar este comprimido: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip (tmb puedes usar WGET)
+    Al descomprimir este archivo, la carpeta HACK -> la metes en el siguiente directorio:
+
+        [*]/usr/share/fonts/truetype
+
+vas a necesitar abrirla como root (de manera visual click derecho y abrir esa carpeta como root)
+
+Al terminar puedes borrar el comprimido y la carpeta hack si aún la conservas.
+
+
+                  ******************[B]******************
+********************Instalamos y configuramos la kitty**********************
+**************************$sudo apt install kitty***************************
+
+[ESTO VA EN EL ARCHIVO DE CONFIG DE LA KITTY] -> ALT+F2 || nano ~/.config/kitty/kitty.conf
+
+########HAY QUE CREAR EL ARCHIVO
+----------------------------------------------------------------------------------------
+enable_audio_bell no
+
+#include color.ini
+
+#font_family      HackNerdFonts
+font_family JetBrains Mono NL
+font_size 13
+#El 13 es el tamaño letra 13 está bien pero puedes jugar (recuerda reiniciar la kitty)
+
+disable_ligatures never
+
+url_color #61afef
+
+url_style curly
+
+map ctrl+left neighboring_window left
+map ctrl+right neighboring_window right
+map ctrl+up neighboring_window up
+map ctrl+down neighboring_window down
+
+map f1 copy_to_buffer a
+map f2 paste_from_buffer a
+map f3 copy_to_buffer b
+map f4 paste_from_buffer b
+
+cursor_shape beam
+cursor_beam_thickness 1.8
+
+mouse_hide_wait 3.0
+detect_urls yes
+
+repaint_delay 3
+sync_to_monitor yes
+
+map ctrl+shift+z toggle_layout stack
+tab_bar_style powerline
+
+inactive_tab_background #e06c75
+active_tab_background #98c379
+inactive_tab_foreground #000000
+tab_bar_margin_color black
+
+map ctrl+shift+enter new_window_with_cwd
+map shift+down new_tab_with_cwd
+
+background_opacity 0.60
+
+# shell zsh
+
+
+                  ******************[C]******************
+**********************Instalamos ZSH y la configuramos**********************
+***************************$sudo apt install zsh****************************
+[*]Hacer la zsh como shell por defecto: 
+    chsh -s $(which zsh)
+    sudo su
+    chsh -s $(which zsh)
+    ln -s -f /home/TU_USER_NAME/.zshrc /root/.zshrc
+Reiniciar
+
+
+[*]Configuración del ~/.zshrc
+
+--------------------------------------------------------------------------
+# Fix the Java Problem
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Enable Powerlevel10k instant prompt. Should stay at the top of ~/.zshrc.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Set up the prompt
+
+autoload -Uz promptinit
+promptinit
+prompt adam1
+
+setopt histignorealldups sharehistory
+
+# Use emacs keybindings even if our EDITOR is set to vi
+bindkey -e
+
+# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
+
+# Use modern completion system
+autoload -Uz compinit
+compinit
+
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' menu select=2
+eval "$(dircolors -b)"
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+# Manual configuration
+
+PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+
+# Manual aliases
+alias ll='lsd -lh --group-dirs=first'
+alias la='lsd -a --group-dirs=first'
+alias l='lsd --group-dirs=first'
+alias lla='lsd -lha --group-dirs=first'
+alias ls='lsd --group-dirs=first'
+alias cat='batcat'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Plugins
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-sudo/sudo.plugin.zsh
+
+# Functions
+function mkt(){
+	mkdir {nmap,content,exploits,scripts}
+}
+
+# Extract nmap information
+function extractPorts(){
+	ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
+	ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
+	echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
+	echo -e "\t[*] IP Address: $ip_address"  >> extractPorts.tmp
+	echo -e "\t[*] Open ports: $ports\n"  >> extractPorts.tmp
+	echo $ports | tr -d '\n' | xclip -sel clip
+	echo -e "[*] Ports copied to clipboard\n"  >> extractPorts.tmp
+	cat extractPorts.tmp; rm extractPorts.tmp
+}
+
+# Set 'man' colors
+function man() {
+    env \
+    LESS_TERMCAP_mb=$'\e[01;31m' \
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    man "$@"
+}
+
+# fzf improvement
+function fzf-lovely(){
+
+	if [ "$1" = "h" ]; then
+		fzf -m --reverse --preview-window down:20 --preview '[[ $(file --mime {}) =~ binary ]] &&
+ 	                echo {} is a binary file ||
+	                 (bat --style=numbers --color=always {} ||
+	                  highlight -O ansi -l {} ||
+	                  coderay {} ||
+	                  rougify {} ||
+	                  cat {}) 2> /dev/null | head -500'
+
+	else
+	        fzf -m --preview '[[ $(file --mime {}) =~ binary ]] &&
+	                         echo {} is a binary file ||
+	                         (bat --style=numbers --color=always {} ||
+	                          highlight -O ansi -l {} ||
+	                          coderay {} ||
+	                          rougify {} ||
+	                          cat {}) 2> /dev/null | head -500'
+	fi
+}
+
+function rmk(){
+	scrub -p dod $1
+	shred -zun 10 -v $1
+}
+
+# Finalize Powerlevel10k instant prompt. Should stay at the bottom of ~/.zshrc.
+(( ! ${+functions[p10k-instant-prompt-finalize]} )) || p10k-instant-prompt-finalize
+
+---------------------------------------ESTO_NO_VA_DENTRO_DEL_ARCHIVO------------------------------------------------
+[*]Instalamos plugins
+
+    sudo apt install zsh-autosuggestions
+    sudo apt install zsh-syntax-highlighting
+    sudo apt install locate
+    sudo apt install bat
+
+[*]Creamos una nueva carpeta para instalar un nuevo plugin
+    sudo su
+    cd /usr/share
+    mkdir zsh-sudo
+    chown NOMBRE_DE_USUARIO:NOMBRE_DE_USUARIO zsh-sudo/
+    exit
+    #CON CD NOS METEOS DENTRO DE "zsh-sudo"
+
+    wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
+
+-------------------------------------------------------------
+
+[*]Instalamos LSD un LS pero con esteroides todo colorido
+    Descargar uno de los siguientes:
+
+    Si no sabes cual es tu procesador usa: neofetch
+    AMD(64)
+    https://github.com/Peltoche/lsd/releases/download/0.22.0/lsd_0.22.0_amd64.deb
+
+    ARM(64)
+    https://github.com/Peltoche/lsd/releases/download/0.22.0/lsd_0.22.0_arm64.deb
+
+
+    Instalar (desde terminal) Puedes usar manera gráfica
+    sudo dpkg -i lsd_0.22.0_amd64.deb
+
+
+
+                  ******************[D]******************
+********************Instalamos Oh my zsh + powerlevel10k************************
+URL (Por si las dudas): https://github.com/romkatv/powerlevel10k
+
+[*]Comandos para instalar el powerlevel
+    [NOTA]Asegurate de tener GIT instalado, si no: sudo apt install git
+
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+
+[*]Configuramos powerlevel10k
+    
+    $:zsh
+
+    [*]pasos ve poniendo que si (y) si todo se ve bien y no ves cosas raras
+    [*]En el "Promt Style" (Como lo prefieras, esta es mi configuracion)
+        2, 1, 3, 1, 1, 1, 4, 1, 2, 2, 2, y, 1
+
+[*]Instalamos y configuramos powerlevel10k para el root
+    [NOTA] Por si las dudas cierra y abre una nueva terminal
+    sudo su
+    cd
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+    
+    [*]Preciona (q) para salir
+    [*]Pon el comando: p10k configure 
+    [*]Ahora la misma configuración que el usuario normal
+
+[*]Configuración para el archivo .p10k.zsh
+    $:nano .p10k.zsh
+    [*]Para POWERLEVEL9K_LEFT_PROMPT_ELEMENTS
+        command_execution_time
+        context  
+    
+    [*]Tambien comentamos todo lo de POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS
+
+    [NOTA]Guarda y cierra el archio anterior y haz lo mismo con el de root
+        sudo su
+        cd
+        nano .p10k.zsh
+
+    [*]Configuramos la llama para el root en: ROOT_TEMPLATE (filtralo para encontrarlo rápido -> vim: /ROOT_TEMPLATE)
+
+    [*]Esta linea
+        # Context format when running with privileges: bold user@hostname.
+        typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE='%B%n@%m'
+
+        [*]En el root template: remplazar: '%B%n@%m' por -> ''
+
+        [*]Comenta la linea:   
+            # Custom prefix.
+        --> #typeset -g POWERLEVEL9K_CONTEXT_PREFIX='%246Fwith '
+

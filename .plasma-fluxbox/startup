@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+# fluxbox startup-script:
+#
+# Lines starting with a '#' are ignored.
+
+# Change your keymap:
+# xmodmap "/home/kevin/.Xmodmap"
+
+# Applications you want to run with fluxbox.
+# MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
+#
+# unclutter -idle 2 &
+# wmnd &
+# wmsmixer -w &
+# idesk &
+
+###
+### PERSONAL AUTOSTART ###
+###
+
+# wpa-cute
+# wpa-cute -qt &
+
+#Blur Compositor
+picom --experimental-backends -b &
+
+# Enable Super key for menu
+ksuperkey &
+
+#Reload URxvt configs
+xrdb -merge ~/.Xresources &
+
+# rxvt-unicode daemon 
+urxvtd -q -f -o &
+
+###
+### END OF PERSONAL AUTOSTART ###
+###
+
+
+# And last but not least we start fluxbox.
+# Because it is the last app you have to run it with ''exec'' before it.
+
+exec fluxbox -rc ~/.plasma-fluxbox/init
+
+# or if you want to keep a log:
+#  fluxbox -log "/home/kevin/.fluxbox/log"

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=tint2
+Hidden=false
+Name[es_US]=Bandeja del sistema
+Name=Bandeja del sistema
+Comment[es_US]=
+Comment=
+X-MATE-Autostart-Delay=0

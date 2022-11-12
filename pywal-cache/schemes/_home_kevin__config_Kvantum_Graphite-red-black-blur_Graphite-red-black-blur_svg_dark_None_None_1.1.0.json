@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/kevin/.config/Kvantum/Graphite-red-black-blur/Graphite-red-black-blur.svg",
+    "alpha": "100",
+    "special": {
+        "background": "#0FA40F",
+        "foreground": "#f6eff6",
+        "cursor": "#f6eff6"
+    },
+    "colors": {
+        "color0": "#0FA40F",
+        "color1": "#922291",
+        "color2": "#B211B2",
+        "color3": "#F18DA5",
+        "color4": "#D323BC",
+        "color5": "#D04AD0",
+        "color6": "#F79DD3",
+        "color7": "#f6eff6",
+        "color8": "#aca7ac",
+        "color9": "#922291",
+        "color10": "#B211B2",
+        "color11": "#F18DA5",
+        "color12": "#D323BC",
+        "color13": "#D04AD0",
+        "color14": "#F79DD3",
+        "color15": "#f6eff6"
+    }
+}

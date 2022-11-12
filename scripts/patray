@@ -1,0 +1,2 @@
+#!/bin/mksh
+pasystray --notify={sink,source}

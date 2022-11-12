@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/kevin/Im\u00e1genes/Wallpapers/92653181_p0.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#11090c",
+        "foreground": "#ecc5e7",
+        "cursor": "#ecc5e7"
+    },
+    "colors": {
+        "color0": "#11090c",
+        "color1": "#745792",
+        "color2": "#B571A0",
+        "color3": "#E177A0",
+        "color4": "#B58EAF",
+        "color5": "#E488B0",
+        "color6": "#F08FD6",
+        "color7": "#ecc5e7",
+        "color8": "#a589a1",
+        "color9": "#745792",
+        "color10": "#B571A0",
+        "color11": "#E177A0",
+        "color12": "#B58EAF",
+        "color13": "#E488B0",
+        "color14": "#F08FD6",
+        "color15": "#ecc5e7"
+    }
+}

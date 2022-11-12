@@ -1,0 +1,12 @@
+#!/bin/sh
+alttab -fg "#ffffff" \
+-bg "#0f0f0f" \
+-frame "#E0E0E0" \
+-inact "#E0E0E0" \
+-t 400x30 \
+-i 64x64 \
+-w 1 \
+-font xft:roboto-11 \
+-vertical \
+-bc "#E0E0E0" \
+-bw 3

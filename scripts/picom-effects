@@ -1,0 +1,3 @@
+#!/bin/sh
+while pgrep -u $UID -x plasmashell >/dev/null; do sleep 3; done
+picom --experimental-backends -b &

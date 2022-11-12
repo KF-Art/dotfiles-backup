@@ -1,0 +1,2 @@
+#!/bin/sh
+betterlockscreen -u "$(cat .fehbg | grep feh | cut -d"'" -f2)"

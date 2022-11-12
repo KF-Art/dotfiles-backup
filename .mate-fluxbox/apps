@@ -1,0 +1,74 @@
+[app] (name=fbrun)
+  [Position]	(CENTER)	{0 0}
+  [Layer]	{2}
+[end]
+[app] (name=Navigator) (class=Firefox) (role=browser)
+  [Deco]	{NONE}
+[end]
+[app] (name=ungoogled-chromium) (class=Ungoogled-chromium) (role=browser)
+  [Deco]	{0x5e0}
+[end]
+[app] (name=Navigator) (class=LibreWolf) (role=browser)
+  [Deco]	{NONE}
+[end]
+[app] (name=budgie-panel) (class=Budgie-panel) (role=panel)
+  [Sticky]	{yes}
+[end]
+[app] (name=panel) (class=tint2)
+  [Layer]	{4}
+[end]
+[app] (name=nemo-desktop) (class=Nemo-desktop)
+  [Head]	{1}
+  [Dimensions]	{100% 104%}
+  [Position]	(UPPERLEFT)	{-2% 3%}
+  [Maximized]	{yes}
+  [Layer]	{12}
+  [Close]	{yes}
+[end]
+[app] (class=pcmanfm-qt) (name=pcmanfm-qt)
+  [Head]	{1}
+  [Maximized]	{no}
+  [Layer]	{8}
+[end]
+[app] (name=budgie-panel) (class=Budgie-panel)
+  [Sticky]	{yes}
+  [Layer]	{4}
+[end]
+[app] (name=vlc) (class=Vlc) (role=vlc-video)
+  [Sticky]	{yes}
+  [Layer]	{12}
+[end]
+[app] (name=gnome-power-statistics) (class=Gnome-power-statistics)
+  [Dimensions]	{45% 55%}
+  [Position]	(UPPERLEFT)	{28% 26%}
+[end]
+[app] (name="Whisker Menu") (class=Wrapper-2.0)
+  [Deco]	{NONE}
+[end]
+[app] (name=Navigator) (class=Waterfox) (role=browser)
+  [Deco]	{NONE}
+[end]
+[app] (name=lxtask) (class=Lxtask)
+  [Dimensions]	{60% 70%}
+  [Position]	(UPPERLEFT)	{28% 12%}
+  [Close]	{yes}
+[end]
+[app] (name=lutris) (class=Lutris)
+  [Position]	(UPPERLEFT)	{42% 48%}
+[end]
+[app] (name=tint2) (class=Tint2)
+  [Layer]	{2}
+[end]
+[app] (name=urxvt) (class=URxvt)
+  [Layer]	{8}
+[end]
+[app] (role=notification)
+  [Layer]	{2}
+[end]
+[app] (name=DesktopEditors) (class=DesktopEditors)
+  [Deco]	{NONE}
+[end]
+[app] (name=gl) (class=mpv)
+  [Dimensions]	{60% 70%}
+  [Position]	(UPPERLEFT)	{20% 15%}
+[end]
