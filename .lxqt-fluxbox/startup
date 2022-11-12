@@ -34,7 +34,7 @@
 #Notification daemon
 #/usr/lib/xfce4/notifyd/xfce4-notifyd &
 
-#NetworkManager applet 
+#NetworkManager applet
 # nm-applet &
 
 # wpa-cute
@@ -94,7 +94,7 @@ ksuperkey &
 #Reload URxvt configs
 #xrdb -merge ~/.Xresources &
 
-# rxvt-unicode daemon 
+# rxvt-unicode daemon
 #urxvtd -q -f -o &
 
 # Battery status icon
@@ -112,6 +112,9 @@ ksuperkey &
 
 # Enable alt+tab
 ~/scripts/switcher &
+
+# Backup dotfiles
+~/scripts/backup-dotfiles &
 
 ###
 ### END OF PERSONAL AUTOSTART ###
