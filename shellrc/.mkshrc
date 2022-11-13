@@ -48,3 +48,5 @@ function getwall {
 
 	echo ${wall}
 }
+
+export GPG_TTY=$(tty)
