@@ -15,6 +15,7 @@ alias su='su -c "/bin/bash"'
 alias xi="doas xbps-install"
 
 alias lszfs="dfc -dt zfs"
+alias fecha="date +%Y.%m.%d"
 
 PATH=$PATH:~/scripts:~/cereus/scripts/
 
