@@ -9,4 +9,4 @@ alttab -fg "#ffffff" \
 -font xft:roboto-11 \
 -vertical \
 -bc "#F44336" \
--bw 3
+-bw 0
