@@ -359,21 +359,21 @@ bindsym Mod1+r mode "resize"
 #        status_command gpu-video-wallpaper --start "$(cat ~/.config/video-wallpaper/settings.conf | grep lastfile | cut -d"=" -f2 | cut -d'"' -f2)"
 #}
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#	i3bar_command i3bar --transparency
-#       status_command $HOME/.local/bin/i3status-title-on-bar --color '#FFFFFF' | i3status
-#        font pango:SF Pro Display 10
-#	colors {
-#	background #0D282c34
-#   focused_workspace  #00875F #00875F #ffffff
-#    active_workspace   #333333 #5f676a #ffffff
-#    inactive_workspace #0D282c34 #0D282c34 #888888
-#    urgent_workspace   #2f343a #900000 #ffffff
-#    binding_mode       #2f343a #900000 #ffffff
-#	}
-#}
+ Start i3bar to display a workspace bar (plus the system information i3status
+ finds out, if available)
+bar {
+	i3bar_command i3bar --transparency
+       status_command $HOME/.local/bin/i3status-title-on-bar --color '#FFFFFF' | i3status
+        font pango:Roboto 11
+	colors {
+	background #0D282c34
+   focused_workspace  #00875F #00875F #ffffff
+    active_workspace   #333333 #5f676a #ffffff
+    inactive_workspace #0D282c34 #0D282c34 #888888
+    urgent_workspace   #2f343a #900000 #ffffff
+    binding_mode       #2f343a #900000 #ffffff
+	}
+}
 
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
