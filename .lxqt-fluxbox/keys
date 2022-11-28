@@ -330,4 +330,4 @@ Mod4 G :Exec skippy-xd
 #### END OF PERSONAL KEYBINDINGS ####
 ####
 
-# OnWindow Mod1 Shift Mouse1 :MacroCmd {Raise} {Focus} {StartResizing BottomRight}
+# OnWindow Mod1 Shift Mouse1 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}

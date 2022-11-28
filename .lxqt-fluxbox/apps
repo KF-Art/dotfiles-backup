@@ -65,7 +65,7 @@
 [app] (name="LXQt Runner") (class="LXQt Runner")
   [Position]	(CENTER)	{0 0}
 [end]
-[app] (name="LXQt Panel") (class="lxqt-panel")
+[app] (class=lxqt-panel)
   [Sticky]	{yes}
   [Layer] {12}
 [end]
