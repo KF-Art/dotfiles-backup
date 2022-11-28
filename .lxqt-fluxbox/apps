@@ -56,10 +56,9 @@
 [app] (name=lutris) (class=Lutris)
   [Position]	(UPPERLEFT)	{42% 48%}
 [end]
-[app] (name=panel) (class=Tint2)
-  [Dimensions]	{90% 8%}
-  [Position]	(UPPERLEFT)	{0% 96%}
-  [Layer]	{4}
+[app] (name=panel)
+  [Layer]	{12}
+  [Sticky] {yes}
 [end]
 [app] (name=lxqt-runner) (class=lxqt-runner)
 [end]

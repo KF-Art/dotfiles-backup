@@ -14,13 +14,14 @@
 [app] (name=budgie-panel) (class=Budgie-panel) (role=panel)
   [Sticky]	{yes}
 [end]
-[app] (name=panel) (class=tint2)
-  [Layer]	{4}
+[app] (name=tint2)
+  [Sticky]	{yes}
+  [Layer]	{12}
 [end]
 [app] (name=nemo-desktop) (class=Nemo-desktop)
   [Head]	{1}
   [Dimensions]	{100% 100%}
-  [Position]	(UPPERLEFT)	{-2% 3%}
+  [Position]	(UPPERLEFT)	{0% 0%}
   [Maximized]	{yes}
   [Layer]	{12}
   [Close]	{yes}
@@ -60,4 +61,8 @@
   [Dimensions]	{90% 8%}
   [Position]	(UPPERLEFT)	{0% 96%}
   [Layer]	{4}
+[end]
+[app] (class=lxqt-panel)
+  [Sticky]	{yes}
+  [Layer]	{12}
 [end]

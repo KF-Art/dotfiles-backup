@@ -8,7 +8,6 @@ pipewire
 pipewire-pulse
 pcmanfm --desktop
 pcmanfm-qr
-setxkbmap latam
 kate /home/kevin/.profile
 xfce4-power-manager
 gpu-video-wallpaper-gui
@@ -16,7 +15,6 @@ killall xidlehook
 sleep 3; flameshot gui
 urxvtd -o -f -q
 killall mate-panel
-nemo-desktop
 killall latte-dock
 latte-dock
 zenity --calendar
@@ -56,7 +54,6 @@ picom --experimental-backends -b
 pkill pcmanfm-qt
 picom --experimental-backends
 killall tint2
-lxqt-panel
 killall lxqt-panel
 ksuperkey
 pkill plasmashell
@@ -72,12 +69,10 @@ nemo
 q5ct
 qt5ct
 lxtask
-xed
 pkill pasystray
 dconf-editor
 pkill udiskie
 pkill devmon
-pkill tint2
 kinfocenter
 lxappearance
 kitty
@@ -91,3 +86,9 @@ setxkbmap  latam
 pkill vala-panel
 vala-panel
 tint2
+setxkbmap latam
+xed
+pkill nemo-desktop
+nemo-desktop
+pkill tint2
+lxqt-panel
