@@ -57,8 +57,8 @@
   [Position]	(UPPERLEFT)	{42% 48%}
 [end]
 [app] (name=panel)
+  [Sticky]	{yes}
   [Layer]	{12}
-  [Sticky] {yes}
 [end]
 [app] (name=lxqt-runner) (class=lxqt-runner)
 [end]
@@ -66,6 +66,5 @@
   [Position]	(CENTER)	{0 0}
 [end]
 [app] (class=lxqt-panel)
-  [Sticky]	{yes}
-  [Layer] {12}
+  [Layer]	{12}
 [end]
