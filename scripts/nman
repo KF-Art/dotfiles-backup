@@ -1,0 +1,148 @@
+#!/bin/bash
+#~ItzSelenux
+a=https://man.archlinux.org/man/
+d=https://manpages.debian.org/bullseye/
+v=https://man.voidlinux.org/
+f1=https://www.freebsd.org/cgi/man.cgi?query=
+f2=\&manpath=FreeBSD+13.1-RELEASE+and+Ports
+c='\033[0;31m'
+NC='\033[0m'
+
+echo m=$2 > ~/.cache/.nman
+source ~/.cache/.nman
+
+help()
+{
+   printf "NeoMan is a program that get Man Pages from web
+Options: 
+    arch
+    -a  Search on Arch Linux ManPages
+    deb
+    -d  Search on Debian ManPages
+    fbsd
+    -f  Search on FreeBSD ManPages
+    void
+    -v  Search on Void Linux ManPages
+    query
+    -q query with Arch Linux ManPage searcher
+
+"
+}
+arch()
+{
+
+if [[ $(curl -s $a$m.1 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69) ]]; then
+    curl -s $a$m.1 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69 | less
+elif [[ $(curl -s $a$m.2 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69) ]]; then
+    curl -s $a$m.2 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69 | less
+elif [[ $(curl -s $a$m.3 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69) ]]; then
+    curl -s $a$m.3 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69 | less
+elif [[ $(curl -s $a$m.4 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69) ]]; then
+    curl -s $a$m.4 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69 | less
+elif [[ $(curl -s $a$m.5 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69) ]]; then
+    curl -s $a$m.5 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69 | less
+elif [[ $(curl -s $a$m.6 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69) ]]; then
+    curl -s $a$m.6 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69 | less
+elif [[ $(curl -s $a$m.7 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69) ]]; then
+    curl -s $a$m.7 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69 | less
+elif [[ $(curl -s $a$m.8 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69) ]]; then
+    curl -s $a$m.8 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69 | less
+elif [[ $(curl -s $a$m.9 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69) ]]; then
+    curl -s $a$m.9 | sed 's/<\/*[^>]*>//g' | sed '1,57d' | head -n -69 | less
+
+else
+    printf "${c}$m${NC} Not Found on Arch ManPages\n"
+fi
+
+}
+deb()
+{
+if [[ $(curl -s $d$m/$m.1.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52 ) ]]; then
+    curl -s $d$m/$m.1.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52  | less
+elif [[ $(curl -s $d$m/$m.2.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52 ) ]]; then
+    curl -s $d$m/$m.2.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52  | less
+elif [[ $(curl -s $d$m/$m.3.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52 ) ]]; then
+    curl -s $d$m/$m.3.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52  | less
+elif [[ $(curl -s $d$m/$m.4.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52 ) ]]; then
+    curl -s $d$m/$m.4.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52  | less
+elif [[ $(curl -s $d$m/$m.5.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52 ) ]]; then
+    curl -s $d$m/$m.5.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52  | less
+elif [[ $(curl -s $d$m/$m.6.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52 ) ]]; then
+    curl -s $d$m/$m.6.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52  | less
+elif [[ $(curl -s $d$m/$m.7.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52 ) ]]; then
+    curl -s $d$m/$m.7.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52  | less
+elif [[ $(curl -s $d$m/$m.8.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52 ) ]]; then
+    curl -s $d$m/$m.8.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52  | less
+elif [[ $(curl -s $d$m/$m.8.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52 ) ]]; then
+    curl -s $d$m/$m.8.en.html | sed 's/<\/*[^>]*>//g' | sed '1,877d' | head -n -52  | less
+
+else
+   printf "${c}$m${NC} Not Found on Debian ManPages\n"
+fi
+
+}
+void()
+{ 
+if [[ $(curl -s $v$m | sed 's/<\/*[^>]*>//g' | sed '1,99d' | head -n -10) ]]; then
+		curl -s $v$m | sed 's/<\/*[^>]*>//g' | sed '1,99d' | head -n -10 | less
+else
+		printf "${c}$m${NC} Not Found on Void ManPages\n"
+fi
+}
+
+fbsd()
+{ 
+if [[ $(curl -s $f1$m$f2 | sed 's/<\/*[^>]*>//g' | sed '1,631d' | head -n -29) ]]; then
+		curl -s $f1$m$f2 | sed 's/<\/*[^>]*>//g' | sed '1,631d' | head -n -29 | less
+else
+		printf "${c}$m${NC} Not Found on FreeBSD ManPages\n"
+fi
+
+}
+
+query()
+{ 
+if [[ $(curl -s https://man.archlinux.org/search?q=$m\&lang=en | sed 's/<\/*[^>]*>//g' | sed '1,360d' | head -n -69) ]]; then
+		curl -s https://man.archlinux.org/search?q=$m\&lang=en | sed 's/<\/*[^>]*>//g' | sed '1,360d' | head -n -69
+else
+		printf "${c}$m${NC} does not match any search results\n"
+fi
+
+}
+
+case "${1}" in
+   arch)
+      arch;;
+		deb)
+      deb;;
+   fbsd)
+      fbsd;;
+   void)
+      void;;
+   query)
+      query;;
+   help)
+      help;;
+esac
+
+while getopts ":adfvqh" option; do
+   case $option in
+      a) 
+         arch
+         exit;;
+      d) 
+         deb
+         exit;;
+      f)
+         fbsd
+         exit;;
+      v)
+         void
+         exit;;
+      q)
+         query
+         exit;;
+      h)
+         help
+         exit;;
+esac done
