@@ -14,7 +14,7 @@ export SUSPEND_TIME="300"
 #export KDEWM=/usr/bin/kwin_x11
 
 export GDK_SCALE=1.16
-export EDITOR=nvim
+export EDITOR=micro
 
 export XBPS_ARCH=$(xbps-uhelper arch)
 export REPO_CEREUS="https://mirrors.dotsrc.org/osdn/storage/g/c/ce/cereuslinux/repos/"
