@@ -67,4 +67,8 @@
 [end]
 [app] (class=lxqt-panel)
   [Layer]	{12}
+  [Close]	{yes}
+[end]
+[app] (name=Configuración del panel)
+  [Layer]	{8}
 [end]
