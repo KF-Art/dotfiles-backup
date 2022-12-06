@@ -43,7 +43,7 @@
   [Dimensions]	{45% 55%}
   [Position]	(UPPERLEFT)	{28% 26%}
 [end]
-[app] (name="Whisker Menu") (class=Wrapper-2.0)
+[app] (name=Whisker Menu)
   [Deco]	{NONE}
 [end]
 [app] (name=Navigator) (class=Waterfox) (role=browser)

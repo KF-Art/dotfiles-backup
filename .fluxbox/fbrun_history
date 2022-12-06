@@ -86,9 +86,11 @@ setxkbmap  latam
 pkill vala-panel
 vala-panel
 tint2
-setxkbmap latam
-xed
 pkill nemo-desktop
 nemo-desktop
 pkill tint2
 lxqt-panel
+switcher
+/home/kevin/scripts/switcher
+xed
+setxkbmap latam
