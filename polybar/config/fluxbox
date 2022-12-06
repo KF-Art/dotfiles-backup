@@ -74,8 +74,8 @@ font-1 = "Iosevka Nerd Font:style=Medium:size=12;3"
 font-2 = "Roboto:pixelsize=12;3"
 font-3 = "JetBrains Mono NL:size=22.5;3"
 
-modules-left = launcher left1 ewmh left2 polywins left3
-modules-center =
+modules-left = launcher left1 ewmh left2
+modules-center = left4 polywins left3
 modules-right = right5 temperature right4 pulseaudio right3 date right2 powermenu right1
 
 tray-position = right
@@ -108,7 +108,7 @@ label-font = 3
 label-maxlen = 50
 format-foreground = #FFFFFF
 
-label-empty = Void Linux Fluxbox
+label-empty = Cereus Fluxbox
 label-empty-font = 3
 label-empty-padding = 2
 ;label-empty-foreground = #707880
@@ -810,7 +810,7 @@ content-font = 4
 
 [module/left2]
 type = custom/text
-content-background = ${colors.shade6}
+content-background = ${colors.background}
 content-foreground = ${colors.shade2}
 content = ${glyph.gleft}
 content-font = 4
@@ -820,6 +820,13 @@ type = custom/text
 content-background = ${colors.background}
 content-foreground = ${colors.shade6}
 content = ${glyph.gleft}
+content-font = 4
+
+[module/left4]
+type = custom/text
+content-background = ${colors.background}
+content-foreground = ${colors.shade6}
+content = ${glyph.gright}
 content-font = 4
 
 

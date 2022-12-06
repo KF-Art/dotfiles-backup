@@ -85,12 +85,13 @@ firefox
 setxkbmap  latam
 pkill vala-panel
 vala-panel
-tint2
 pkill nemo-desktop
 nemo-desktop
 pkill tint2
 lxqt-panel
 switcher
 /home/kevin/scripts/switcher
-xed
 setxkbmap latam
+tint2conf
+tint2
+xed

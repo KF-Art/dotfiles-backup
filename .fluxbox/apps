@@ -66,3 +66,6 @@
   [Sticky]	{yes}
   [Layer]	{12}
 [end]
+[app] (class=Polybar)
+  [Layer]	{12}
+[end]
