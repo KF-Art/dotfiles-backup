@@ -32,4 +32,4 @@ fi
 
 echo "wall $wall"
 feh --bg-fill "$wall"
-# betterlockscreen -u $wall
+betterlockscreen -u $wall
