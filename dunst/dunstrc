@@ -309,7 +309,7 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#0f0f0f80"
+    background = "#0f0f0f"
     foreground = "#ffffff"
     timeout = 10
     #red1 #AB2F26
@@ -321,7 +321,7 @@
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#0f0f0f80"
+    background = "#0f0f0f"
     foreground = "#ffffff"
     highlight = "#77201B"
     timeout = 10
