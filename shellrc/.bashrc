@@ -38,7 +38,7 @@ if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
 fi
 
 # . ~/DATOS/install/polyglot/polyglot.sh
-. /usr/share/polyglot-prompt/polyglot.sh
+#. /usr/share/polyglot-prompt/polyglot.sh
 
 if [ $TERM == rxvt-unicode-256color ]
 	then imgparam="w3m"
@@ -67,3 +67,9 @@ function getwall {
 complete -cf doas
 
 export GPG_TTY=$(tty)
+
+#eval $(oh-my-posh init bash)
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /usr/lib/python3.11/site-packages/powerline/bindings/shell/powerline.sh
