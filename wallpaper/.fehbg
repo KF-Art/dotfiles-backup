@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/media/DATOS/Imágenes/Wallpapers/100827107_p0_upscayl_4x_realesrgan-x4plus-1.jpg' 
+feh --no-fehbg --bg-fill '/home/kevin/Imágenes/Wallpapers/100827107_p0_upscayl_4x_realesrgan-x4plus-1.jpg' 
