@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Escritorio/surtr/100410987_p0-1.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0c0808",
+        "foreground": "#f3e2db",
+        "cursor": "#f3e2db"
+    },
+    "colors": {
+        "color0": "#0c0808",
+        "color1": "#DF504E",
+        "color2": "#C48678",
+        "color3": "#BB61A0",
+        "color4": "#B78F88",
+        "color5": "#E0A698",
+        "color6": "#F5C9B8",
+        "color7": "#f3e2db",
+        "color8": "#aa9e99",
+        "color9": "#DF504E",
+        "color10": "#C48678",
+        "color11": "#BB61A0",
+        "color12": "#B78F88",
+        "color13": "#E0A698",
+        "color14": "#F5C9B8",
+        "color15": "#f3e2db"
+    }
+}

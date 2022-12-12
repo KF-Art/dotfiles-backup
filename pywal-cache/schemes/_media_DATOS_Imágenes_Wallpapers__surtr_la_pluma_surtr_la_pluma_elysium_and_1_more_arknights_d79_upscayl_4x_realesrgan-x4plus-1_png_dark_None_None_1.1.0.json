@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Wallpapers/_surtr_la_pluma_surtr_la_pluma_elysium_and_1_more_arknights_d79_upscayl_4x_realesrgan-x4plus-1.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0E1419",
+        "foreground": "#cae5e6",
+        "cursor": "#cae5e6"
+    },
+    "colors": {
+        "color0": "#0E1419",
+        "color1": "#2597A8",
+        "color2": "#5FA09C",
+        "color3": "#45C3C5",
+        "color4": "#63D4D8",
+        "color5": "#9EA99E",
+        "color6": "#CCC5AC",
+        "color7": "#cae5e6",
+        "color8": "#8da0a1",
+        "color9": "#2597A8",
+        "color10": "#5FA09C",
+        "color11": "#45C3C5",
+        "color12": "#63D4D8",
+        "color13": "#9EA99E",
+        "color14": "#CCC5AC",
+        "color15": "#cae5e6"
+    }
+}

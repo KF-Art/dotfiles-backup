@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Wallpapers/100834985_p0_upscayl_4x_realesrgan-x4plus.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#31211c",
+        "foreground": "#c9d3d9",
+        "cursor": "#c9d3d9"
+    },
+    "colors": {
+        "color0": "#31211c",
+        "color1": "#5D7898",
+        "color2": "#657C97",
+        "color3": "#6E849C",
+        "color4": "#71BBE3",
+        "color5": "#DFB099",
+        "color6": "#EFCFB3",
+        "color7": "#c9d3d9",
+        "color8": "#8c9397",
+        "color9": "#5D7898",
+        "color10": "#657C97",
+        "color11": "#6E849C",
+        "color12": "#71BBE3",
+        "color13": "#DFB099",
+        "color14": "#EFCFB3",
+        "color15": "#c9d3d9"
+    }
+}
