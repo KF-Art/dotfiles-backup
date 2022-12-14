@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Wallpapers/tumblr_412ddf5f1808b8745df0aa7a7e3abc3d_18f89f9e_2048.png",
+    "alpha": "100",
+    "special": {
+        "background": "#071411",
+        "foreground": "#f0d9c7",
+        "cursor": "#f0d9c7"
+    },
+    "colors": {
+        "color0": "#071411",
+        "color1": "#9E2436",
+        "color2": "#D12C43",
+        "color3": "#B84043",
+        "color4": "#AF9D61",
+        "color5": "#EC9E6E",
+        "color6": "#7E9195",
+        "color7": "#f0d9c7",
+        "color8": "#a8978b",
+        "color9": "#9E2436",
+        "color10": "#D12C43",
+        "color11": "#B84043",
+        "color12": "#AF9D61",
+        "color13": "#EC9E6E",
+        "color14": "#7E9195",
+        "color15": "#f0d9c7"
+    }
+}

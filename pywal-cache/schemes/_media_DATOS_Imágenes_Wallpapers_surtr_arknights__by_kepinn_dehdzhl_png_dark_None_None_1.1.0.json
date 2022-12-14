@@ -1,14 +1,13 @@
 {
-    "wallpaper": "/media/DATOS/Imágenes/Wallpapers/surtr_arknights__by_kepinn_dehdzhl.png",
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Wallpapers/surtr_arknights__by_kepinn_dehdzhl.png",
     "alpha": "100",
-
     "special": {
-        "background": "#000000",
+        "background": "#070303",
         "foreground": "#e6e0e1",
         "cursor": "#e6e0e1"
     },
     "colors": {
-        "color0": "#000000",
+        "color0": "#070303",
         "color1": "#9A1420",
         "color2": "#E61326",
         "color3": "#EF3648",

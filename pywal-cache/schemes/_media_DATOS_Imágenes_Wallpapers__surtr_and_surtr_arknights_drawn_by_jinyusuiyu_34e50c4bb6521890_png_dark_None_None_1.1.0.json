@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Wallpapers/_surtr_and_surtr_arknights_drawn_by_jinyusuiyu_34e50c4bb6521890.png",
+    "alpha": "100",
+    "special": {
+        "background": "#34201c",
+        "foreground": "#e5e5e7",
+        "cursor": "#e5e5e7"
+    },
+    "colors": {
+        "color0": "#34201c",
+        "color1": "#ADAE9A",
+        "color2": "#E8AC9A",
+        "color3": "#EFCCB3",
+        "color4": "#92D8FF",
+        "color5": "#ABDEFC",
+        "color6": "#F9ECD2",
+        "color7": "#e5e5e7",
+        "color8": "#a0a0a1",
+        "color9": "#ADAE9A",
+        "color10": "#E8AC9A",
+        "color11": "#EFCCB3",
+        "color12": "#92D8FF",
+        "color13": "#ABDEFC",
+        "color14": "#F9ECD2",
+        "color15": "#e5e5e7"
+    }
+}

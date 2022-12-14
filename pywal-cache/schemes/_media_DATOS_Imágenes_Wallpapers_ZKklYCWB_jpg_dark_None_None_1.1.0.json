@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Wallpapers/ZKklYCWB.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#201a19",
+        "foreground": "#f4e6de",
+        "cursor": "#f4e6de"
+    },
+    "colors": {
+        "color0": "#201a19",
+        "color1": "#D76432",
+        "color2": "#E59863",
+        "color3": "#DAAD6E",
+        "color4": "#976E94",
+        "color5": "#C9A69B",
+        "color6": "#D6D6D6",
+        "color7": "#f4e6de",
+        "color8": "#aaa19b",
+        "color9": "#D76432",
+        "color10": "#E59863",
+        "color11": "#DAAD6E",
+        "color12": "#976E94",
+        "color13": "#C9A69B",
+        "color14": "#D6D6D6",
+        "color15": "#f4e6de"
+    }
+}

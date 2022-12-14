@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Wallpapers/102069230_p0-1.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#050202",
+        "foreground": "#f3c6a3",
+        "cursor": "#f3c6a3"
+    },
+    "colors": {
+        "color0": "#050202",
+        "color1": "#EA1515",
+        "color2": "#F65D24",
+        "color3": "#C23752",
+        "color4": "#907D7F",
+        "color5": "#EF625A",
+        "color6": "#E89F42",
+        "color7": "#f3c6a3",
+        "color8": "#aa8a72",
+        "color9": "#EA1515",
+        "color10": "#F65D24",
+        "color11": "#C23752",
+        "color12": "#907D7F",
+        "color13": "#EF625A",
+        "color14": "#E89F42",
+        "color15": "#f3c6a3"
+    }
+}
