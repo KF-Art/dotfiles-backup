@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Wallpapers/103623508_p0_upscayl_4x_realesrgan-x4plus-anime-2.png",
+    "alpha": "100",
+    "special": {
+        "background": "#130d0f",
+        "foreground": "#c9e5df",
+        "cursor": "#c9e5df"
+    },
+    "colors": {
+        "color0": "#130d0f",
+        "color1": "#854F99",
+        "color2": "#50D0E2",
+        "color3": "#B5A392",
+        "color4": "#E4AD95",
+        "color5": "#FAAE93",
+        "color6": "#E5CCAC",
+        "color7": "#c9e5df",
+        "color8": "#8ca09c",
+        "color9": "#854F99",
+        "color10": "#50D0E2",
+        "color11": "#B5A392",
+        "color12": "#E4AD95",
+        "color13": "#FAAE93",
+        "color14": "#E5CCAC",
+        "color15": "#c9e5df"
+    }
+}
