@@ -2,8 +2,8 @@
 backup_dir=/dotfiles-backup
 
 cp ~/.Xresources ${backup_dir}/urxvt/
-cp ~/.{bash,mksh}rc ${backup_dir}/shellrc/
-cp ~/.gtkrc-2.0 ${backup_dir}/gtk/
+cp ~/.{bash,mksh,zsh}rc ${backup_dir}/shellrc/
+cp ~/.gtkrc{,-2.0} ${backup_dir}/gtk/
 cp ~/.fehbg ${backup_dir}/wallpaper/
 cp ~/.emptty ${backup_dir}/emptty/
 cp /etc/emptty/conf ${backup_dir}/emptty/
@@ -35,6 +35,7 @@ cp -r ~/.*fluxbox ${backup_dir}/
 cp -r ~/scripts ${backup_dir}/
 cp ~/.profile ${backup_dir}/profile/
 cp -r ~/.config/powerline ${backup_dir}/
+cp -r ~/.config/gtk-{2,3,4}.0 ${backup_dir}/
 
 cd ${backup_dir}
 git add .
