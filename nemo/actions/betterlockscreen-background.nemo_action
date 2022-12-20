@@ -1,0 +1,11 @@
+[Nemo Action]
+Name=Definir como fondo del salvapantallas
+Comment=Colocar la selección actual como fondo del salvapantallas
+
+Exec=betterlockscreen -u "%F"
+
+Icon-Name=xapp-prefs-preview-symbolic
+
+Selection=S
+
+Extensions=png;jpg;webp;jpeg
