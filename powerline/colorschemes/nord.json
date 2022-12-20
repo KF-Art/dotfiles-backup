@@ -1,0 +1,106 @@
+{
+        "name": "Default color scheme for shell prompts",
+        "groups": {
+                "hostname": {
+                        "fg": "brightyellow",
+                        "bg": "nord:orange",
+                        "attrs": []
+                },
+                "environment": {
+                        "fg": "white",
+                        "bg": "darkestgreen",
+                        "attrs": []
+                },
+                "mode": {
+                        "fg": "darkestgreen",
+                        "bg": "brightgreen",
+                        "attrs": ["bold"]
+                },
+                "attached_clients": {
+                        "fg": "white",
+                        "bg": "darkestgreen",
+                        "attrs": []
+                },
+                "gitstatus": {
+                        "fg": "gray8",
+                        "bg": "nord:black1",
+                        "attrs": []
+                },
+                "gitstatus_branch": {
+                        "fg": "gray8",
+                        "bg": "nord:black1",
+                        "attrs": []
+                },
+                "gitstatus_branch_clean": {
+                        "fg": "nord:green",
+                        "bg": "nord:black1",
+                        "attrs": []
+                },
+                "gitstatus_branch_dirty": {
+                        "fg": "gray8",
+                        "bg": "nord:black1",
+                        "attrs": []
+                },
+                "gitstatus_branch_detached": {
+                        "fg": "mediumpurple",
+                        "bg": "nord:black1",
+                        "attrs": []
+                },
+                "gitstatus_tag": {
+                        "fg": "darkcyan",
+                        "bg": "nord:black1",
+                        "attrs": []
+                },
+                "gitstatus_behind": {
+                        "fg": "gray10",
+                        "bg": "nord:black1",
+                        "attrs": []
+                },
+                "gitstatus_ahead": {
+                        "fg": "gray10",
+                        "bg": "nord:black1",
+                        "attrs": []
+                },
+                "gitstatus_staged": {
+                        "fg": "nord:green",
+                        "bg": "nord:black1",
+                        "attrs": []
+                },
+                "gitstatus_unmerged": {
+                        "fg": "nord:red",
+                        "bg": "nord:black1",
+                        "attrs": []
+                },
+                "gitstatus_changed": {
+                        "fg": "nord:yellow",
+                        "bg": "nord:black1",
+                        "attrs": []
+                },
+                "gitstatus_untracked": {
+                        "fg": "nord:orange",
+                        "bg": "nord:black1",
+                        "attrs": []
+                },
+                "gitstatus_stashed": {
+                        "fg": "nord:base03",
+                        "bg": "nord:black1",
+                        "attrs": []
+                },
+                "gitstatus:divider": {
+                        "fg": "gray8",
+                        "bg": "nord:black1",
+                        "attrs": []
+                }
+        },
+        "mode_translations": {
+                "vicmd": {
+                        "groups": {
+                                "mode": {
+                                        "fg": "darkestcyan",
+                                        "bg": "white",
+                                        "attrs": ["bold"]
+                                }
+                        }
+                }
+        }
+}

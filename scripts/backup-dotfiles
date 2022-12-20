@@ -34,6 +34,7 @@ cp -r ~/.cache/wal/* ${backup_dir}/pywal-cache/
 cp -r ~/.*fluxbox ${backup_dir}/
 cp -r ~/scripts ${backup_dir}/
 cp ~/.profile ${backup_dir}/profile/
+cp -r ~/.config/powerline ${backup_dir}/
 
 cd ${backup_dir}
 git add .
