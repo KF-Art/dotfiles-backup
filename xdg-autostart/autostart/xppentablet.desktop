@@ -1,0 +1,12 @@
+[Desktop Entry]
+Categories=Application;Utility;
+Comment=XPPen driver
+Exec=/usr/lib/pentablet/pentablet.sh /mini
+Hidden=true
+Icon=/usr/share/icons/pentablet.png
+Name=pentablet
+Name[en_US]=xppentablet
+StartupNotify=true
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
