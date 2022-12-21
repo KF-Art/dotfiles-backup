@@ -80,8 +80,6 @@ kitty
 mate-panel
 pkill mate-panel
 pkill -u kevin
-picom
-firefox
 setxkbmap  latam
 pkill vala-panel
 vala-panel
@@ -91,7 +89,11 @@ pkill tint2
 lxqt-panel
 switcher
 /home/kevin/scripts/switcher
-setxkbmap latam
 tint2conf
 tint2
+flameshot gui
+setxkbmap latam
+gpick
 xed
+firefox
+picom
