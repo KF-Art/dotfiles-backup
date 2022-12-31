@@ -1,6 +1,5 @@
 wpa-cute
 cbatticon
-kvantummanager
 megasync
 picom -b
 killall flameshot
@@ -43,7 +42,6 @@ urxvt
 kilalll tint2
 killall -u kevin
 plasmashell
-pcmanfm-qt
 killall fluxbox
 killall ksuperkey
 tint
@@ -67,7 +65,6 @@ pavucontrol
 azote
 nemo
 q5ct
-qt5ct
 lxtask
 pkill pasystray
 dconf-editor
@@ -92,8 +89,11 @@ switcher
 tint2conf
 tint2
 flameshot gui
-setxkbmap latam
-gpick
-xed
 firefox
 picom
+qt5ct
+pcmanfm-qt
+gpick
+setxkbmap latam
+xed
+kvantummanager
