@@ -1,8 +1,9 @@
 [Desktop Entry]
 Exec=pipewire
+Hidden=true
 Icon=dialog-scripts
 Name=pipewire
 Path=
 Type=Application
-X-KDE-AutostartScript=true
 X-GNOME-Autostart-Delay=1
+X-KDE-AutostartScript=true
