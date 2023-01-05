@@ -74,3 +74,4 @@ Keys: Invalid key/modifier on line 115): OnTitlebar Mouse1 :MacroCmd {Raise} {Fo
 Keys: Invalid key/modifier on line 116): OnTitlebar Move1  :StartMoving
 Keys: Invalid key/modifier on line 119): OnTitlebar Mouse2 :Lower
 Keys: Invalid key/modifier on line 122): OnTitlebar Mouse3 :WindowMenu
+Fluxbox: XIOError: lost connection to display.

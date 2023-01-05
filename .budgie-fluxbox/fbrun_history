@@ -76,6 +76,7 @@ kitty
 /home/kevin/.fehbg
 mate-panel
 pkill mate-panel
+pkill -u kevin
 setxkbmap  latam
 pkill vala-panel
 vala-panel
@@ -88,12 +89,11 @@ switcher
 tint2conf
 tint2
 flameshot gui
+firefox
 picom
 pcmanfm-qt
+gpick
+setxkbmap latam
 xed
 kvantummanager
 qt5ct
-gpick
-firefox
-setxkbmap latam
-pkill -u kevin
