@@ -82,7 +82,6 @@ vala-panel
 pkill nemo-desktop
 nemo-desktop
 pkill tint2
-lxqt-panel
 switcher
 /home/kevin/scripts/switcher
 tint2conf
@@ -90,10 +89,12 @@ tint2
 flameshot gui
 picom
 pcmanfm-qt
-xed
 kvantummanager
 qt5ct
-gpick
 firefox
-setxkbmap latam
 pkill -u kevin
+gpick
+lxqt-panel
+pkill lxqt-panel
+xed
+setxkbmap latam
