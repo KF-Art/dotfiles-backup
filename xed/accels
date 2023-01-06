@@ -60,6 +60,7 @@
 ; (gtk_accel_path "<Actions>/XedWindowActions/SearchFindPrevious" "<Primary><Shift>g")
 ; (gtk_accel_path "<Actions>/FileBrowserWidgetActionGroup/FilterBinary" "")
 ; (gtk_accel_path "<Actions>/XedWindowActions/FileCloseAll" "<Primary><Shift>w")
+; (gtk_accel_path "<Actions>/DocumentsListActions/Tab_3" "<Alt>4")
 ; (gtk_accel_path "<Actions>/XedWindowAlwaysSensitiveActions/Search" "")
 ; (gtk_accel_path "<Actions>/FileBrowserWidgetActionGroupToplevel/FilterMenuAction" "")
 ; (gtk_accel_path "<Actions>/XedSpellPluginActions/InlineSpellChecker" "")
