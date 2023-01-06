@@ -1,0 +1,3 @@
+#!/bin/sh
+#fluxbox -rc $HOME/.plasma-fluxbox/init
+ICEWM_PRIVCFG=$HOME/.lxqt-icewm 
