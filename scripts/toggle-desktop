@@ -1,0 +1,25 @@
+#!/bin/bash
+
+function detect_wm {
+	 pgrep -u $UID -x fluxbox
+	 exitstatus=$?
+}
+
+function detect_desktop {
+	wmctrl -m | grep OFF
+	desktop=$?
+	
+	if [ $desktop = 0 ]; then
+		wmctrl -k on
+	else
+		wmctrl -k off
+	fi
+}
+
+detect_wm
+
+if [ $exitstatus = 0 ]; then
+	fluxbox-remote showdesktop
+else
+	detect_desktop	
+fi
