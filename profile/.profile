@@ -22,3 +22,4 @@ export REPO_CORE="${REPO_CEREUS}/cereus-core"
 export REPO_EXTRA="${REPO_CEREUS}/cereus-extra"
 export REPO_VOID="https://mirror.clarkson.edu/voidlinux/current"
 export PATH=$PATH:~/scripts:~/cereus/scripts/
+export MOZ_GTK_TITLEBAR_DECORATION=client
