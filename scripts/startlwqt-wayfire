@@ -78,6 +78,7 @@ mkdir -p "$XDG_CONFIG_HOME"/lxqt/lxqt-wayfire/
 
 lwqt-session &
 lwqt-panel &
+kitty &
 
 # Start the LXQt Wayland session
 exec wayfire
