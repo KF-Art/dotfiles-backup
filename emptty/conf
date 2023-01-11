@@ -23,7 +23,7 @@ AUTOLOGIN_SESSION=MATE
 # AUTOLOGIN_MAX_RETRY=2
 
 # Default LANG, if user does not have set own in init script.
-LANG=es_GT.UTF-8
+LANG=en_US.UTF-8
 
 # Starts desktop with calling "dbus-launch".
 DBUS_LAUNCH=true

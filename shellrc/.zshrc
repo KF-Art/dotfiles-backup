@@ -45,7 +45,7 @@ alias surtrfetch3="neofetch --$imgparam /home/kevin/Desktop/surtr/Surtr\ elegant
 # source ~/.cache/wal/colors-tty.sh
 
 function getwall {
-	if [ $XDG_CURRENT_DESKTOP = KDE ]; then
+	if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
         	wall="$(cat  ~/.config/plasma-org.kde.plasma.desktop-appletsrc | grep Image= | cut -d"=" -f2 | cut -d ":" -f2)"
 	else
         	wall="$(cat ~/.fehbg | grep feh | cut -d"'" -f2)"
