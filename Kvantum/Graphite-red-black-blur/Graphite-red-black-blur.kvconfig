@@ -31,7 +31,7 @@ toolbutton_style=1
 double_click=false
 translucent_windows=true
 blurring=false
-popup_blurring=true
+popup_blurring=false
 vertical_spin_indicators=false
 spin_button_width=24
 fill_rubberband=false
@@ -120,7 +120,7 @@ opaque_colors=false
 kinetic_scrolling=false
 scroll_jump_workaround=true
 centered_forms=false
-noninteger_translucency=false
+noninteger_translucency=true
 blur_only_active_window=false
 style_vertical_toolbars=false
 
