@@ -1,0 +1,4 @@
+prog "Krita" krita krita
+prog "Web browser" web-browser xdg-open about:blank
+prog "64Gram" telegram /media/DATOS/Descargas/64Gram_1.0.58_linux/Telegram
+prog "XP-Pen Tablet settings" pentablet /usr/lib/pentablet/pentablet.sh

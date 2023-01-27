@@ -36,6 +36,9 @@ cp -r ~/scripts ${backup_dir}/
 cp ~/.profile ${backup_dir}/profile/
 cp -r ~/.config/powerline ${backup_dir}/
 cp -r ~/.config/gtk-{2,3,4}.0 ${backup_dir}/
+cp -r ~/.*icewm ${backup_dir}/
+cp -r ~/.config/xfce4 ${backup_dir}
+cp -r ~/.config/lockscreen-bg.conf ${backup_dir}/wallpaper-config
 
 cd ${backup_dir}
 git add .

@@ -1,0 +1,13 @@
+[user]
+onlyDisplayVisible=true
+noWindowsListIfSingle=true
+showPreviews=true
+showWindowCount=true
+indicatorStyle=0
+forceIconSize=true
+iconSize=30
+indicatorColor=rgb(246,97,81)
+inactiveColor=rgb(119,32,27)
+pinned=/usr/share/applications/kitty.desktop;/usr/share/applications/firefox.desktop;/usr/share/applications/xed.desktop;/usr/share/applications/krita_gif.desktop;/usr/share/applications/xppentablet.desktop;/usr/share/applications/nemo.desktop;/home/kevin/.local/share/applications/org.telegram.desktop._3f83b0001c446a94143485ba3d1bf6b1.desktop;
+onlyDisplayScreen=true
+indicatorOrientation=0

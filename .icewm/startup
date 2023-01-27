@@ -1,0 +1,102 @@
+#!/bin/sh
+
+###
+### PERSONAL AUTOSTART ###
+###
+
+#Apps which need the WM to be loaded first
+# ~/scripts/wait-wm-apps &
+
+# Load wallpaper
+~/.fehbg &
+
+# Video Wallpaper
+# sleep 3 && gpu-video-wallpaper --start $(cat ~/.config/video-wallpaper/settings.conf | grep lastfile | cut -d"=" -f2 | cut -d'"' -f2) &
+
+#Start pulseaudio
+# pulseaudio --start &
+
+#Notification daemon
+#/usr/lib/xfce4/notifyd/xfce4-notifyd &
+dunst &
+
+#NetworkManager applet 
+# nm-applet &
+
+# wpa-cute
+wpa-cute -qt &
+
+#Bluetooth manager
+blueman-applet &
+
+#Enable numlock
+ numlockx &
+
+#Change keymap
+# setxkbmap latam
+
+#List non mounted drives
+ udiskie &
+
+#Desktop icons
+# nemo-desktop &
+
+#Autolock inhibitor
+# xidlehook --not-when-audio --not-when-fullscreen --timer ${LOCK_TIME} "betterlockscreen -l" "" --timer ${SUSPEND_TIME} "loginctl suspend" "" &
+
+#Clipboard manager
+ clipit &
+
+#Update notifier
+octoxbps-notifier &
+
+#LXQt Polkit Agent
+lxqt-policykit-agent &
+
+#Blur Compositor
+picom -b
+
+#Update lockscreen wallpaper, based on current desktop wallpaper
+
+# betterlockscreen -u "$(cat ~/.fehbg | grep feh | cut -d"'" -f2)" &
+
+#echo '" "' >> /tmp/currentbg
+#bg=$(sort $(cat ~/.config/nitrogen/bg-saved.cfg | grep file= | cut -d"=" -f2) | uniq -u)
+#betterlockscreen -u $(cat ~/.config/nitrogen/bg-saved.cfg | grep file= | cut -d"=" -f2) &
+
+#PipeWire
+#pipewire &
+#pipewire-pulse &
+
+#Pulseaudio applet
+# pasystray --notify=all &
+#sleep 3 && ~/scripts/patray &
+
+# Enable Super key for menu
+ksuperkey &
+
+#Reload URxvt configs
+xrdb -merge ~/.Xresources &
+
+# rxvt-unicode daemon 
+urxvtd -q -f -o &
+
+# Battery status icon
+# xfce4-power-manager &
+lxqt-powermanagement &
+
+# Touchpad and touchscreen gestures
+touchegg &
+
+# Enable tap to click
+lxqt-config-input --load-touchpad &
+
+# Desktop icons and wallpaper
+# plasmashell &
+
+# XP-Pen Driver
+/usr/lib/pentablet/pentablet.sh /mini &
+
+###
+### END OF PERSONAL AUTOSTART ###
+###

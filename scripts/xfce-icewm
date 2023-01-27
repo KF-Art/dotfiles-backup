@@ -1,3 +1,2 @@
 #!/bin/sh
-#fluxbox -rc $HOME/.plasma-fluxbox/init
 ICEWM_PRIVCFG=$HOME/.xfce-icewm icewm-session

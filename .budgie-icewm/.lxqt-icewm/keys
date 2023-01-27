@@ -1,0 +1,65 @@
+key "XF86Eject"             eject
+#switchkey "Super+p"         icewm-menu-xrandr
+
+#Flameshot
+key "Print" flameshot gui
+key "Shift+Print"   flameshot launcher
+
+#Media buttons
+key "XF86AudioPrev"  playerctl previous
+key "XF86AudioPlay"  playerctl play-pause
+key "XF86AudioPause"  playerctl play-pause
+key "XF86AudioNext"  playerctl next
+
+#Alternative media controls
+key "Super+F9"  playerctl previous
+key "Super+F10"  playerctl play-pause
+key "Super+F11"  playerctl next
+
+#App launcher
+key Super+Space rofi.sh
+key "Alt+F1"    rofi-panel.sh
+key "Alt+F2"	lxqt-runner
+#Kitty
+key Alt+T  kitty
+
+#File Manager
+key Super+E  xdg-open .
+#key Super+E  dolphin --new-window
+
+#Web Browser
+key Super+W  xdg-open http://
+
+#Music player
+key Super+Q  clementine
+
+#Lockscreen
+key Super+L  betterlockscreen -l
+
+# Show Pulseaudio settings
+key Super+P  pavucontrol
+
+# Show battery statistics
+key Super+B  gnome-power-statistics
+
+# Restart IceWM
+key "Alt+Shift+R" icesh restart
+
+# Toggle compositor
+key "Alt+P" toggle-picom
+
+# Exit menu
+key "Alt+Shift+E" lxqt-leave
+
+#Volume Control
+key "XF86AudioRaiseVolume"  pactl -- set-sink-volume @DEFAULT_SINK@ +5%
+key "XF86AudioLowerVolume"  pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+key XF86AudioMute  pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+#Alternative Volume Control
+key Super+F8  pactl set-sink-volume @DEFAULT_SINK@ +5%
+key Super+F7  pactl set-sink-volume @DEFAULT_SINK@ -5%
+keu Super+F6  pactl set-sink-mute @DEFAULT_SINK@ toggle
+####
+#### END OF PERSONAL KEYBINDINGS ####
+####
