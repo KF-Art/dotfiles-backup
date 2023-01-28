@@ -1,14 +1,26 @@
-#!/usr/bin/env -S bash
+#!/usr/bin/bash
 ## credits to https://paste.sh/1QS8Tgf6#aHTfRy1dOG4rcA5x_6kauwq3
 
-#pkg=current/xbps-0.59.1_6.x86_64.xbps
-pkg=current/firefox-102.0.1_1.x86_64.xbps
-file="${XDG_CACHE_HOME:-$HOME/.cache}/${0##*/}-results"
+arch=$(xbps-uhelper arch)
+pkg=current/$(xbps-query -R -S 2048-qt | grep pkgver | cut -d' ' -f2).x86_64.xbps
+cachedir="/var/cache/xrankmirrors"
+void_file="$cachedir/void-results"
+cereus_file="$cachedir/cereus-results"
+cereus_pkg="cereus-extra/$arch/$(xbps-query -R -S xidlehook | grep pkgver | cut -d' ' -f2).$arch.xbps"
 
-mirrormsg() { printf '%s\n' "getting mirrors from void-docs..." ; }
+if [ "$EUID" -ne 0 ]; then
+    echo "Must run as superuser, exiting..."; exit 1
+fi
 
-get() {
-	rm "$file"
+if [ ! -e "$cachedir" ]; then
+    mkdir -p "$cachedir"
+fi
+
+get_void() {
+    printf '%s\n' "getting mirrors from void-docs..."
+	if [ -e "$void_file" ]; then
+        rm "$void_file"
+    fi
 	while read -r syntax mirror _ loc; do
 		case $syntax in
 			\|)
@@ -19,38 +31,153 @@ get() {
 						mirror="${mirror%>}"
 						loc="${loc% |}"
 						loc="${loc%%,*}" 
-						[ -n "${REGION}" ] && {
-							[ "${REGION}" = get ] && printf '%s\n' "$loc" && continue 
-							[ ! "${loc%%:*}" = "${REGION}" ] && continue
-						} 
 						printf '%s\n' "$mirror"
 						dlspeed="$(curl -Y 1048576 -# -w "%{speed_download}" "$mirror/$pkg" -o/dev/null)"
 						connect=$(printf "%.2fs" "$(curl --connect-timeout 2 -sw "%{time_appconnect}" "$mirror" -o/dev/null)")
-						echo "${mirror},${loc},${dlspeed},${connect}" >> "$file"
+						echo "${mirror},${loc},${dlspeed},${connect}" >> "$void_file"
 					;;
 				esac
 			;;
 		esac
 	done <<< "$(curl -# https://raw.githubusercontent.com/void-linux/void-docs/master/src/xbps/repositories/mirrors/index.md)"
-	#echo "finished writing results of mirrors to $file"
+}
+
+get_cereus() {
+    printf '%s\n' "getting mirrors from cereus-docs..."
+	if [ -e "$cereus_file" ]; then
+        rm "$cereus_file"
+    fi
+
+	while read -r syntax mirror_cereus _ loc; do
+		case $syntax in
+			\|)
+				case $mirror_cereus in
+					Repository) ;;
+					*)
+						mirror_cereus="${mirror_cereus#<}"
+						mirror_cereus="${mirror_cereus%>}"
+						loc="${loc% |}"
+						loc="${loc%%,*}" 
+						printf '%s\n' "$mirror_cereus"
+						dlspeed="$(curl -Y 1048576 -# -w "%{speed_download}" "$mirror_cereus/$cereus_pkg" -o/dev/null)"
+						connect=$(printf "%.2fs" "$(curl --connect-timeout 2 -sw "%{time_appconnect}" "$mirror_cereus" -o/dev/null)")
+						echo "${mirror_cereus},${loc},${dlspeed},${connect}" >> "$cereus_file"
+					;;
+				esac
+			;;
+		esac
+	done <<< "$(curl -# https://raw.githubusercontent.com/CereusLinuxProject/xrankmirrors/main/mirrorlist.md)"
+}
+
+run_ranks() {
+    get_void
+    get_cereus
+    format
+}
+
+get_fastests() {
+        echo ""
+        echo "Fastest mirrors:"
+        cereus_mirror=$(cat "$cereus_file" | sed -n '2p' | cut -d',' -f2 | cut -d' ' -f1)
+        void_mirror=$(cat "$void_file" | sed -n '2p' | cut -d',' -f2 | cut -d' ' -f1)
+        echo "Cereus: $cereus_mirror
+Void: $void_mirror"
 }
 
 format() {
-	sort -t, -nrk3 < "$file" | numfmt -d , --field 3 --to=iec-i --suffix=B/s | sed '1s/^/mirror,location,dlspeed,connect\n/' | column -s, -t
+    for results in "$void_file" "$cereus_file"; do
+        sorted_results=$(sort -t, -nrk3 < "$results" | numfmt -d , --field 3 --to=iec-i --suffix=B/s | sed '1s/^/mirror,location,dlspeed,connect\n/' | column -s, -t)
+        echo "$sorted_results" > $results
+    done
 }
 
-case "$1" in
-	-g) mirrormsg && get ;;
-	-f) format ;;
-	-r) REGION="$2"; mirrormsg && get ;;
-	-p) REGION="get"; mirrormsg && get | sed '1s/^/region: location\n/' | column -s: -t ;;
-	*) cat <<EOF 
-usage: ${0##*/} [-g] [-f]
-  -g   get results and write to file
-  -f   format results file 
-  -r   get results from specific region if available
-  -p   print available regions and locations
+set_fastests() {
 
-file: $file
+    if [ ! -e $cereus_file ] || [ ! -e $void_file ]; then
+        run_ranks
+    fi
+
+    get_fastests
+    change_mirror
+}
+
+print_results() {
+
+    echo "Void Linux mirrors
+==================================================="
+    cat $void_file
+    echo ""
+    
+    echo "Cereus Linux mirrors
+==================================================="
+    cat $cereus_file
+    echo ""
+    get_fastests
+}
+
+
+xrankfzf() {
+
+    if [ ! -e $cereus_file ] || [ ! -e $void_file ]; then
+        run_ranks
+    fi
+
+    cereus_mirror=$(cat $cereus_file | fzf --layout=reverse --header-lines=1 --border --border-label="Please select a mirror for Cereus repositories" | awk -F' ' '{ print $1 }')
+    void_mirror=$(cat $void_file | fzf --layout=reverse --header-lines=1 --border --border-label="Please select a mirror for Void repositories" | awk -F' ' '{ print $1 }')
+    change_mirror
+}
+
+change_mirror() {
+    if [ ! -e /etc/xbps.d/ ]; then
+        mkdir -p /etc/xbps.d/
+    fi
+
+    if [ -n "$cereus_mirror" ]; then
+        cp /usr/share/xbps.d/*cereus*.conf /etc/xbps.d/
+        sed -i 's|https://sourceforge.net/projects/cereus-linux/files/repos|'"$cereus_mirror"'|g' /etc/xbps.d/*cereus*.conf
+    fi
+
+    if [ -n "$void_mirror" ]; then
+        cp /usr/share/xbps.d/*repository*.conf /etc/xbps.d/
+        sed -i 's|https://repo-default.voidlinux.org|'"$void_mirror"'|g' /etc/xbps.d/*repository*.conf     
+    fi
+
+    xbps-install -S
+}
+
+help() {
+cat <<EOF 
+    usage: ${0##*/} [-c URL] [-f] [-g] [-h] [-i] [-c URL -v URL -m] [-p] [-r REGION] [-s] [-v URL]
+      -c   Set Cereus mirror (only for -m)
+      -f   Print last rank results
+      -g   Rank Void & Cereus mirrors and print results
+      -h   Show this help
+      -i   Manually change mirrors in interactive mode
+      -m   Manually change mirrors on non-interactive mode (requires -v and/or -c)
+      -s   Set fastest mirrors from previous results
+      -v   Set Void mirror (only for -m)
+
+    files: $void_file $cereus_file
 EOF
+}
+
+if [ -z "$1" ]; then
+    help; exit 1
+fi
+
+while getopts "c:fghimsv:" opt; do
+case $opt in
+    c) cereus_mirror="$OPTARG" ;;
+    f) print_results ;;
+    g) run_ranks; print_results ;;
+    h) help; exit 1;;
+    i) xrankfzf ;;
+    m) change_mirror ;;
+    s) set_fastests;;
+    v) void_mirror="$OPTARG";;
+    *) help; exit 1;;
 esac
+done
+shift $((OPTIND - 1))
+
+
