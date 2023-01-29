@@ -1,5 +1,5 @@
 favorites=xfce4-web-browser.desktop,xfce4-mail-reader.desktop,xfce4-file-manager.desktop,xfce4-terminal-emulator.desktop
-recent=xfce4-mime-settings.desktop,xfce4-web-browser.desktop,org.kde.falkon.desktop,xfce-ui-settings.desktop,org.keepassxc.KeePassXC.desktop,xed.desktop,micro.desktop,xfce4-terminal-emulator.desktop,kvantummanager.desktop,org.telegram.desktop._3f83b0001c446a94143485ba3d1bf6b1.desktop
+recent=xfce4-mime-settings.desktop,org.kde.falkon.desktop,xfce4-web-browser.desktop,xfce-ui-settings.desktop,org.keepassxc.KeePassXC.desktop,xed.desktop,micro.desktop,xfce4-terminal-emulator.desktop,kvantummanager.desktop,org.telegram.desktop._3f83b0001c446a94143485ba3d1bf6b1.desktop
 button-title=\ \ Cereus Linux\ \ \ 
 button-icon=/home/kevin/Cereus Logo v2.svg
 button-single-row=false
