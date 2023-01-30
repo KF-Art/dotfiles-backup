@@ -1,8 +1,8 @@
 # Allows to change Qt theme
-export QT_QPA_PLATFORMTHEME=kde
-#if ! [ "$XDG_CURRENT_DESKTOP" = "LXQt" ] || [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
-#	export QT_QPA_PLATFORMTHEME="qt5ct"
-#fi
+#export QT_QPA_PLATFORMTHEME=kde
+if ! [ "$XDG_CURRENT_DESKTOP" = "LXQt" ] || [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
+	export QT_QPA_PLATFORMTHEME="qt5ct"
+fi
 
 # The bar that you will use
 export BAR_APPLICATION="tint2"
@@ -26,3 +26,5 @@ export REPO_EXTRA="${REPO_CEREUS}/cereus-extra"
 export REPO_VOID="https://mirror.clarkson.edu/voidlinux/current"
 export PATH=$PATH:~/scripts:~/cereus/scripts/
 export MOZ_GTK_TITLEBAR_DECORATION=client
+
+KDEWM="/home/kevin/scripts/plasma-icewm"
