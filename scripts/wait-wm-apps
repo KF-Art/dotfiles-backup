@@ -1,6 +1,7 @@
 #!/bin/bash
 function checkwm {
-    wmctrl -m
+    #wmctrl -m
+    pgrep -u $UID -x xfce4-panel >/dev/null
     exitstatus=$?
 }
 
@@ -11,18 +12,18 @@ checkwm
     while [ "$exitstatus" = 1 ]; do checkwm; sleep 2; done
     #gpu-video-wallpaper --start "$(cat ~/.config/video-wallpaper/settings.conf | grep lastfile | cut -d"=" -f2 | cut -d'"' -f2)" &
     #wallengine /media/DATOS/Videos/2393427663 --assets install/linux-wallpaperengine/build/assets/ --screen-root eDP-1 --fps 60
-    $BAR_APPLICATION &
-    sleep 2
-    ~/scripts/patray &
+    #$BAR_APPLICATION &
+    #sleep 2
+    #~/scripts/patray &
     # nitrogen --restore &
     wpa-cute -qt &
  else
     echo "Window manager not running"
     while [ "$exitstatus" = 1 ]; do checkwm; sleep 2; done
     #gpu-video-wallpaper --start "$(cat ~/.config/video-wallpaper/settings.conf | grep lastfile | cut -d"=" -f2 | cut -d'"' -f2)" &
-    $BAR_APPLICATION &
-    sleep 2
-    ~/scripts/patray &
+    #$BAR_APPLICATION &
+    #sleep 2
+    #~/scripts/patray &
     # nitrogen --restore &
     wpa-cute -qt &
  fi

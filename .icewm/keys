@@ -18,8 +18,8 @@ key "Super+F11"  playerctl next
 
 #App launcher
 key Super+Space rofi.sh
-key "Alt+F1"    rofi-panel.sh
-
+key "Alt+F1"    xfce4-popup-whiskermenu
+key "Alt+F2"	lxqt-runner
 #Kitty
 key Alt+T  kitty
 

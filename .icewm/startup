@@ -5,10 +5,13 @@
 ###
 
 #Apps which need the WM to be loaded first
-# ~/scripts/wait-wm-apps &
+#~/scripts/wait-wm-apps &
 
 # Load wallpaper
 ~/.fehbg &
+
+# XFCE4 Panel
+xfce4-panel &
 
 # Video Wallpaper
 # sleep 3 && gpu-video-wallpaper --start $(cat ~/.config/video-wallpaper/settings.conf | grep lastfile | cut -d"=" -f2 | cut -d'"' -f2) &
@@ -22,9 +25,6 @@ dunst &
 
 #NetworkManager applet 
 # nm-applet &
-
-# wpa-cute
-wpa-cute -qt &
 
 #Bluetooth manager
 blueman-applet &
@@ -91,11 +91,21 @@ touchegg &
 # Enable tap to click
 lxqt-config-input --load-touchpad &
 
+# Resolution hooks
+resolution-hooks &
+resolution-monitor &
+
+# Pasystray
+pasystray --notify=sink --notify=source &
+
 # Desktop icons and wallpaper
 # plasmashell &
 
 # XP-Pen Driver
 /usr/lib/pentablet/pentablet.sh /mini &
+
+# wpa-cute
+sleep 2; wpa-cute -qt &
 
 ###
 ### END OF PERSONAL AUTOSTART ###

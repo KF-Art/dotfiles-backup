@@ -59,7 +59,10 @@ key XF86AudioMute  pactl set-sink-mute @DEFAULT_SINK@ toggle
 #Alternative Volume Control
 key Super+F8  pactl set-sink-volume @DEFAULT_SINK@ +5%
 key Super+F7  pactl set-sink-volume @DEFAULT_SINK@ -5%
-keu Super+F6  pactl set-sink-mute @DEFAULT_SINK@ toggle
+key Super+F6  pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Toggle formal wallpaper
+key Alt+W toggle-formal-wall
 ####
 #### END OF PERSONAL KEYBINDINGS ####
 ####

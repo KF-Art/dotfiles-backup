@@ -54,3 +54,13 @@ Navigator.dMinimize: 0
 Navigator.dSysMenu: 0
 Navigator.dRollup:  0
 Navigator.dResize: 0
+
+wrapper-2.0.dTitlebar: 0
+wrapper-2.0.dClose: 0
+wrapper-2.0.dDepth: 0
+wrapper-2.0.dHide: 0
+wrapper-2.0.dMaximize: 0
+wrapper-2.0.dMinimize: 0
+wrapper-2.0.dSysMenu: 0
+wrapper-2.0.dRollup:  0
+wrapper-2.0.dResize: 0

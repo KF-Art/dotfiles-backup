@@ -236,7 +236,7 @@ FocusOnMap=1 # 0/1
 # KeySysKeyboardNext=""
 
 #  Activates the IceWM root menu in the lower left corner.
-# KeySysMenu="Ctrl+Esc"
+KeySysMenu="Super+F"
 
 #  Minimizes all windows.
 # KeySysMinimizeAll="Alt+Shift+F9"
@@ -446,7 +446,7 @@ KeyWinOccupyAll="Alt+F3"
 # KeyWinPrev="Alt+Shift+F6"
 
 #  Raises the window which currently has input focus.
-# KeyWinRaise="Alt+F1"
+KeyWinRaise="Super+F"
 
 #  Restores the active window to its visible state.
 # KeyWinRestore="Alt+F5"
@@ -758,7 +758,7 @@ ShowLogoutMenu=1 # 0/1
 # ShowSettingsMenu=1 # 0/1
 
 #  Show task bar.
-ShowTaskBar=1 # 0/1
+ShowTaskBar=0 # 0/1
 
 #  Show themes submenu in the program menu.
 # ShowThemesMenu=1 # 0/1
@@ -767,7 +767,7 @@ ShowTaskBar=1 # 0/1
 # ShowWindowList=1 # 0/1
 
 #  Show name of current workspace while switching.
-# ShowWorkspaceStatus=1 # 0/1
+ShowWorkspaceStatus=0 # 0/1
 
 #  Command to shutdown the system.
 ShutdownCommand="loginctl poweroff"
@@ -959,7 +959,7 @@ TimeFormat="%X"
 # VerticalEdgeSwitch=0 # 0/1
 
 #  Support the Windows/Super key modifier to activate special functions.  The left Super key toggles the Start menu, while the right Super key toggles the Window list window.
-# Win95Keys=1 # 0/1
+Win95Keys=0 # 0/1
 
 #  The list of items to be supported in the menu window (rmsnxfhualytieckw)
 # WinMenuItems="rmsnxfhualytiecw"
