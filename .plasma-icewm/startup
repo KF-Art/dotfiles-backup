@@ -4,7 +4,11 @@
 ### PERSONAL AUTOSTART ###
 ###
 
-pkill dunst &
+pkill dunst
+
+#Kill unneeded apps
+pkill pasystray 
+pkill blueman-tray 
 #Apps which need the WM to be loaded first
 #~/scripts/wait-wm-apps &
 
@@ -99,10 +103,6 @@ fi
 
 # Backup dotfiles
 ~/scripts/backup-dotfiles &
-
-#Kill unneeded apps
-pkill pasystray &
-pkill blueman-tray &
 
 ###
 ### END OF PERSONAL AUTOSTART ###
