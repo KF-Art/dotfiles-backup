@@ -1,5 +1,5 @@
 favorites=xfce4-web-browser.desktop,xfce4-mail-reader.desktop,xfce4-file-manager.desktop,xfce4-terminal-emulator.desktop
-recent=xfce-wmtweaks-settings.desktop,xfce-session-settings.desktop,xfce-display-settings.desktop,xfce4-mime-settings.desktop,xfce4-web-browser.desktop,org.kde.falkon.desktop,xfce-ui-settings.desktop,org.keepassxc.KeePassXC.desktop,xed.desktop,micro.desktop
+recent=xfce-session-settings.desktop,xfce-wmtweaks-settings.desktop,xfce-display-settings.desktop,xfce4-mime-settings.desktop,xfce4-web-browser.desktop,org.kde.falkon.desktop,xfce-ui-settings.desktop,org.keepassxc.KeePassXC.desktop,xed.desktop,micro.desktop
 button-title=\ \ Cereus Linux\ \ \ 
 button-icon=cereus-logo
 button-single-row=false
