@@ -18,7 +18,7 @@ key "Super+F11"  playerctl next
 
 #App launcher
 key Super+Space rofi.sh
-key "Alt+F1"    rofi-panel.sh
+#key "Alt+F1"    rofi-panel.sh
 key "Alt+F2"	lxqt-runner
 #Kitty
 key Alt+T  kitty
@@ -49,12 +49,14 @@ key "Alt+Shift+R" icesh restart
 key "Alt+P" toggle-picom
 
 # Exit menu
-key "Alt+Shift+E" lxqt-leave
+key "Alt+Shift+E" qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
+
 
 #Volume Control
-key "XF86AudioRaiseVolume"  pactl -- set-sink-volume @DEFAULT_SINK@ +5%
-key "XF86AudioLowerVolume"  pactl -- set-sink-volume @DEFAULT_SINK@ -5%
-key XF86AudioMute  pactl set-sink-mute @DEFAULT_SINK@ toggle
+key "XF86AudioRaiseVolume"  qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "increase_volume"
+key "XF86AudioLowerVolume"  qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "decrease_volume"
+key XF86AudioMute  qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mute"
+key Super+Shift+M qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mic_mute"
 
 #Alternative Volume Control
 key Super+F8  pactl set-sink-volume @DEFAULT_SINK@ +5%

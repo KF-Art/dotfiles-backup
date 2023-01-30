@@ -4,11 +4,12 @@
 ### PERSONAL AUTOSTART ###
 ###
 
+pkill dunst &
 #Apps which need the WM to be loaded first
 #~/scripts/wait-wm-apps &
 
 # Load wallpaper
-~/.fehbg &
+#~/.fehbg &
 
 # Video Wallpaper
 # sleep 3 && gpu-video-wallpaper --start $(cat ~/.config/video-wallpaper/settings.conf | grep lastfile | cut -d"=" -f2 | cut -d'"' -f2) &
@@ -45,7 +46,7 @@ numlockx &
 # xidlehook --not-when-audio --not-when-fullscreen --timer ${LOCK_TIME} "betterlockscreen -l" "" --timer ${SUSPEND_TIME} "loginctl suspend" "" &
 
 #Clipboard manager
-clipit &
+#clipit &
 
 #Update notifier
 #octoxbps-notifier &
@@ -98,6 +99,10 @@ fi
 
 # Backup dotfiles
 ~/scripts/backup-dotfiles &
+
+#Kill unneeded apps
+pkill pasystray &
+pkill blueman-tray &
 
 ###
 ### END OF PERSONAL AUTOSTART ###
