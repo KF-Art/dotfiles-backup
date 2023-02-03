@@ -66,6 +66,9 @@ key Super+F6  pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Toggle formal wallpaper
 key Alt+W toggle-formal-wall
+
+# Kill window
+key Alt+F5 icesh kill
 ####
 #### END OF PERSONAL KEYBINDINGS ####
 ####
