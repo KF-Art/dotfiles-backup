@@ -65,7 +65,7 @@ picom -b
 #betterlockscreen -u $(cat ~/.config/nitrogen/bg-saved.cfg | grep file= | cut -d"=" -f2) &
 
 #PipeWire
-#pipewire &
+pipewire &
 #pipewire-pulse &
 
 #Pulseaudio applet

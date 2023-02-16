@@ -28,7 +28,7 @@
         <value type="double" value="0"/>
         <value type="double" value="0"/>
         <value type="double" value="0"/>
-        <value type="double" value="0.85570469798657722"/>
+        <value type="double" value="0.43959731543624159"/>
       </property>
     </property>
   </property>
@@ -44,6 +44,7 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="gajim"/>
         <value type="string" value="lxqt-powermanagement"/>
         <value type="string" value="blueman"/>
         <value type="string" value="gpick"/>
@@ -56,6 +57,8 @@
         <value type="string" value="megasync"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="chrome_status_icon_1"/>
+        <value type="string" value="SimpleScreenRecorder"/>
         <value type="string" value="KotatogramDesktop"/>
         <value type="string" value="vlc"/>
         <value type="string" value="qps"/>

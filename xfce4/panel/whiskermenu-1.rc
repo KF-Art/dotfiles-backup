@@ -1,5 +1,5 @@
 favorites=
-recent=qps.desktop,virtualbox.desktop,org.kde.krita.desktop,org.telegram.desktop._3f83b0001c446a94143485ba3d1bf6b1.desktop,org.kde.falkon.desktop,org.keepassxc.KeePassXC.desktop,xed.desktop,micro.desktop
+recent=btop.desktop,xed.desktop,org.telegram.desktop._3f83b0001c446a94143485ba3d1bf6b1.desktop,xrankmirrors.desktop,featherpad.desktop,org.kde.filelight.desktop,qps.desktop,virtualbox.desktop,org.kde.krita.desktop,org.kde.falkon.desktop
 button-title=\ \ Cereus Linux\ \ \ 
 button-icon=cereus-logo
 button-single-row=false
@@ -37,7 +37,7 @@ command-logoutuser=icesh logout
 show-command-logoutuser=true
 command-restart=icesh reboot
 show-command-restart=true
-command-shutdown=icesh poweroff
+command-shutdown=icesh shutdown
 show-command-shutdown=true
 command-suspend=icesh suspend
 show-command-suspend=true
