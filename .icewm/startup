@@ -1,3 +1,4 @@
+
 #!/bin/sh
 
 ###
@@ -14,7 +15,7 @@
 xfce4-panel &
 
 # Video Wallpaper
-# sleep 3 && gpu-video-wallpaper --start $(cat ~/.config/video-wallpaper/settings.conf | grep lastfile | cut -d"=" -f2 | cut -d'"' -f2) &
+# sleep 3 && gpu-video-wallpaper --start "$(cat ~/.config/video-wallpaper/settings.conf | grep lastfile | cut -d"=" -f2 | cut -d'"' -f2)" &
 
 #Start pulseaudio
 # pulseaudio --start &
@@ -68,10 +69,6 @@ picom -b
 pipewire &
 #pipewire-pulse &
 
-#Pulseaudio applet
-# pasystray --notify=all &
-#sleep 3 && ~/scripts/patray &
-
 # Enable Super key for menu
 ksuperkey &
 
@@ -106,6 +103,9 @@ pasystray --notify=sink --notify=source &
 
 # wpa-cute
 sleep 2; wpa-cute -qt &
+
+# Backup dotfiles
+backup-dotfiles &
 
 ###
 ### END OF PERSONAL AUTOSTART ###
