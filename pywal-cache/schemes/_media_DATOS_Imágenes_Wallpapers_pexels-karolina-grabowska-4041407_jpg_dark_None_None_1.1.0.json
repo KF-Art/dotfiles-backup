@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Wallpapers/pexels-karolina-grabowska-4041407.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0a0102",
+        "foreground": "#d59f9b",
+        "cursor": "#d59f9b"
+    },
+    "colors": {
+        "color0": "#0a0102",
+        "color1": "#A3011B",
+        "color2": "#980222",
+        "color3": "#AA0226",
+        "color4": "#A12C34",
+        "color5": "#C2012F",
+        "color6": "#B22943",
+        "color7": "#d59f9b",
+        "color8": "#956f6c",
+        "color9": "#A3011B",
+        "color10": "#980222",
+        "color11": "#AA0226",
+        "color12": "#A12C34",
+        "color13": "#C2012F",
+        "color14": "#B22943",
+        "color15": "#d59f9b"
+    }
+}
