@@ -5,12 +5,213 @@
 	<subtitle>Follow Void Linux news</subtitle>
 	<link href="https://voidlinux.org/"/>
 	<link type="application/atom+xml" rel="self" href="https://voidlinux.org/atom.xml"/>
-	<updated>2023-01-24T19:05:42+00:00</updated>
+	<updated>2023-02-17T01:17:13+00:00</updated>
 	<author>
 		<name>Void Linux Team</name>
 	</author>
 	<id>https://voidlinux.org/</id>
 
+
+	<entry>
+		<title>New Repo: Fastly CDN</title>
+		<link href="https://voidlinux.org/news/2023/02/1-new-repo-fastly.html"/>
+		<id>https://voidlinux.org/news/2023/02/1-new-repo-fastly</id>
+		<published>2023-02-11T00:00:00+00:00</published>
+		<updated>2023-02-11T00:00:00+00:00</updated>
+		<content type="xhtml">
+			<div xmlns="http://www.w3.org/1999/xhtml">
+				<p><p>In our last post we showed you how to quickly change your mirror using
+<a href="https://man.voidlinux.org/xmirror.1">xmirror</a>.  In this post we’ll
+give you a reason to use it, and talk a little more about how mirrors
+work and how packages get from our servers, to your computer.</p>
+
+<p>Before we can mirror packages, we first need to build some.  Void uses
+a worker-based build architecture where a central controller
+dispatches build tasks to individual servers that own the builds for
+specific architectures.  At the time of writing, Void makes use of
+discrete builders for aarch64 targets, assorted musl targets, and
+assorted glibc targets.  The breakdown is as follows:</p>
+
+<ul>
+  <li>a-fsn-de
+    <ul>
+      <li>x86_64</li>
+      <li>i686</li>
+      <li>armv6l</li>
+      <li>armv7l</li>
+    </ul>
+  </li>
+  <li>b-fsn-de
+    <ul>
+      <li>aarch64</li>
+      <li>aarch64-musl</li>
+    </ul>
+  </li>
+  <li>a-hel-fi
+    <ul>
+      <li>x86_64-musl</li>
+      <li>armv6l-musl</li>
+      <li>armv7l-musl</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Each build server drives, via automation, a standard git checkout of
+the <a href="https://github.com/void-linux/void-packages">void-packages repo</a>.
+This in turn results in built binary packages ready for installation
+in the path <code class="language-plaintext highlighter-rouge">/hostdir/binpkgs</code> on each of the build machines.  To
+actually be useful, however, the packages need to be aggregated and
+then signed, then copied out to servers near to end users such that
+packages are quick to download and install whenever required.</p>
+
+<p>Packages are aggregated via nomad managed rsync tasks to a-fsn-de.
+Since a-fsn-de already hosts several architectures, its packages don’t
+need to be moved.  You might recognize the target directories from the
+repo URL structure.  The packages originating on a-hel-fi are copied
+to <code class="language-plaintext highlighter-rouge">/hostdir/binpkgs/musl</code> and the packages from b-fsn-de are copied
+to <code class="language-plaintext highlighter-rouge">/hostdir/binpkgs/aarch64</code>.  Once the packages are all in one
+place, they can be signed.  This is also handled by a nomad managed
+batch task.</p>
+
+<p>Once signed, a complete, ready to distribute package collection exists
+on a-fsn-de, however this isn’t where any mirror synchronizes from,
+nor is it where end users obtain packages from.  The first real
+“mirror” in the chain with the full contents, including live images,
+docs, and other mirror contents is on a-hel-fi and is sometimes
+referred to by the Void team as the “Shadow Repo”.  When we make large
+builds that we know in advance will cause issues for end users, we
+disconnect all downstream repos from the shadow repo and this allows
+us to run large builds without impacting user’s ability to install or
+update already extant packages.</p>
+
+<p>Tier 1 (Void Operated) mirrors synchronize directly from the Shadow
+Repo, again via nomad managed batch tasks.  All downstream mirrors
+synchronize from one or more tier 1 mirrors, with one notable
+exception which we’ll come back to.  These mirrors are operated by
+universities, companies, and individuals who desire to have a copy of
+the Void repository closer to them.  This allows for faster installs,
+faster updates, and in many cases more efficient bandwidth usage where
+a mirror is able to be co-located with multiple Void users.</p>
+
+<p>By and large, these mirrors synchronize using rsync on cron timers.
+Some synchronize very frequently, as frequently as every 15 minutes.
+Some synchronize more slowly, only once a day.  And some mirrors often
+appear broken and don’t appear to have synced at all.  How can we
+possibly know this?  Well we drop a file into the root of the mirror
+at the Shadow level with a timestamp.  By watching the value in this
+file, we can tell how old the contents of any downstream repo are.
+All this information is exposed in our <a href="https://grafana.s.voidlinux.org/d/cLraC-XMk/mirrors-status">mirror
+dashboard</a>.
+The “Origin” referenced in that dashboard is a slight misnomer, its
+actually showing the time behind <code class="language-plaintext highlighter-rouge">now</code>.</p>
+
+<p>Having multiple mirrors is great, but ensuring that a mirror nearby to
+a user who wants to update, and make sure they’ve configured and are
+using it is a bit harder.  What we really want is a proxy that will
+always find the nearest mirror and fetch packages from that location
+for a user.  Long-time users of Void may remember <code class="language-plaintext highlighter-rouge">auto.voidlinux.org</code>
+which was an early attempt at this.  Due to limitations in XBPS
+itself, and limitations in the way that we are able to introspect
+mirrors, this service was eventually retracted.  What we actually want
+is a network of servers everywhere well connected to networks that
+users are on, and then with a good connection back to at least one of
+the Void operated mirrors.  This, as you might have guessed, is a CDN.</p>
+
+<p>As mentioned in the <a href="/news/2023/01/fastly-fast-forward.html">Fast
+Forward</a> post, Void has
+generously been sponsored by Fastly, which has allowed us to provision
+a new repository URL that leverage’s Fastly’s global network to
+provide what should be the generally optimal mirror regardless of
+where in the world any particular end user exists.  The Fastly mirror
+does not sync, nor does it have a concept of file storage that we
+manage as the project.  It is for all intents and purposes an
+extremely large high-speed cache, and when you request a package from
+Fastly, the package will either be returned from one of Fastly’s
+servers, or it will be streamed to you via the Fastly network while
+being simultaneously fetched from one of Void’s backend servers.  The
+very first download of a package may be slower than if you downloaded
+it from Void directly, but all subsequent fetches will be extremely
+fast.  Since the package distribution follows a sort of curve of
+popularity ranging from the common packages that make up desktop
+environments, the base system, and popular software suites down to
+less commonly installed packages and rarely updated libraries, the
+cache will usually be hot for the most commonly installed packages!</p>
+
+<p>So to recap, packages are built on servers, copied to a central
+server, signed, copied to a shadow mirror, copied to a tier 1 mirror,
+possibly copied to downstream mirrors, and then installed on end
+systems.  Here’s a graphic:</p>
+
+<p><img src="/assets/img/mirrors.svg" alt="diagram of the package flow" style="max-height: 80vh" /></p>
+
+<p>We hope you’ve enjoyed this look into what it takes to get packages
+from us to you, but more importantly, we’re pleased to announce now
+the general availability of <a href="https://repo-fastly.voidlinux.org/">https://repo-fastly.voidlinux.org/</a> which
+should be the generally fastest mirror for most users.  This mirror is
+available now in <code class="language-plaintext highlighter-rouge">xmirror</code> under the <em>World</em> region.</p>
+</p>
+			</div>
+		</content>
+	</entry>
+
+	<entry>
+		<title>New utility for selecting XBPS mirrors</title>
+		<link href="https://voidlinux.org/news/2023/02/0-xmirror.html"/>
+		<id>https://voidlinux.org/news/2023/02/0-xmirror</id>
+		<published>2023-02-11T00:00:00+00:00</published>
+		<updated>2023-02-11T00:00:00+00:00</updated>
+		<content type="xhtml">
+			<div xmlns="http://www.w3.org/1999/xhtml">
+				<p><p>If you’ve ever had trouble <a href="https://docs.voidlinux.org/xbps/repositories/mirrors/changing.html#manual-method">manually updating</a>
+the mirror XBPS uses, fear no more!
+You can now use the <a href="https://man.voidlinux.org/xmirror.1"><code class="language-plaintext highlighter-rouge">xmirror(1)</code></a> utility from the <code class="language-plaintext highlighter-rouge">xmirror</code>
+package to select a mirror, either interactively (by running <code class="language-plaintext highlighter-rouge">xmirror</code> with root privileges) or
+directly using <code class="language-plaintext highlighter-rouge">xmirror --set</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">xmirror</code> will make switching to the new <a href="https://voidlinux.org/news/2023/01/fastly-fast-forward.html">Fastly-sponsored mirror</a>
+extremely easy to do.</p>
+
+<p><img src="/assets/img/xmirror.png" alt="screenshot of the main screen of xmirror in a terminal" /></p>
+</p>
+			</div>
+		</content>
+	</entry>
+
+	<entry>
+		<title>Minor breaking change in service logging for several packages</title>
+		<link href="https://voidlinux.org/news/2023/02/log-service-change.html"/>
+		<id>https://voidlinux.org/news/2023/02/log-service-change</id>
+		<published>2023-02-09T00:00:00+00:00</published>
+		<updated>2023-02-09T00:00:00+00:00</updated>
+		<content type="xhtml">
+			<div xmlns="http://www.w3.org/1999/xhtml">
+				<p><p>As of <a href="https://github.com/void-linux/void-packages/pull/42026">this change</a> in void-packages,
+all services provided by packages should start to include <code class="language-plaintext highlighter-rouge">log</code> sub-services that use
+<a href="https://man.voidlinux.org/vlogger.8"><code class="language-plaintext highlighter-rouge">vlogger(8)</code></a> as they are updated, if they did not already.
+This means that service logs for all services should go to syslog now, where they can be captured
+by a <a href="https://docs.voidlinux.org/config/services/logging.html">syslog daemon</a>.</p>
+
+<p>However, there are a few services that manually log to <code class="language-plaintext highlighter-rouge">/var/log/$SERVICE_NAME</code>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">dnscrypt-proxy</code></li>
+  <li><code class="language-plaintext highlighter-rouge">dqcache</code> (from <code class="language-plaintext highlighter-rouge">dq</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">preload</code></li>
+  <li><code class="language-plaintext highlighter-rouge">radicale</code></li>
+  <li><code class="language-plaintext highlighter-rouge">discosrv</code> and <code class="language-plaintext highlighter-rouge">relaysrv</code> (from <code class="language-plaintext highlighter-rouge">syncthing</code>)</li>
+</ul>
+
+<p>These services have been updated to use this new system, so they will no longer log to that directory.
+If you wish to retain the previous behavior, you can set up <code class="language-plaintext highlighter-rouge">/etc/vlogger</code> like
+<a href="https://man.voidlinux.org/vlogger.8#EXAMPLES">shown here</a>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<span class="nb">exec </span>svlogd /var/log/<span class="nv">$1</span>
+</code></pre></div></div>
+</p>
+			</div>
+		</content>
+	</entry>
 
 	<entry>
 		<title>Void Accepted to Fastly Fast Forward!</title>
@@ -681,169 +882,6 @@ package should be sufficient to adjust your configuration.</p>
 upgrade <code class="language-plaintext highlighter-rouge">pam-base</code> and confirm that no configuration files in <code class="language-plaintext highlighter-rouge">/etc/pam.d</code>
 contain references to the <code class="language-plaintext highlighter-rouge">pam_tally</code> module (and <code class="language-plaintext highlighter-rouge">pam_lastlog</code> on musl)
 <strong>before</strong> upgrading to PAM 1.5.1 when it becomes available.</p>
-</p>
-			</div>
-		</content>
-	</entry>
-
-	<entry>
-		<title>Passwords generated with previous versions of rclone might be unsafe</title>
-		<link href="https://voidlinux.org/news/2020/11/rclone-1.53.3.html"/>
-		<id>https://voidlinux.org/news/2020/11/rclone-1.53.3</id>
-		<published>2020-11-21T00:00:00+00:00</published>
-		<updated>2020-11-21T00:00:00+00:00</updated>
-		<content type="xhtml">
-			<div xmlns="http://www.w3.org/1999/xhtml">
-				<p><p>The <a href="https://github.com/void-linux/void-packages/commit/c2f27e9a75169e6bdc67f420d5e8a12648a8d8f0">latest rclone update</a>
-to version 1.53.3 fixes
-<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28924">CVE-2020-28924</a>.
-From the <a href="https://forum.rclone.org/t/rclone-1-53-3-release/20569">release announcement</a>:</p>
-
-<blockquote>
-  <p>Some passwords generated with rclone config may be insecure. In
-particular if you used the ‘g’ generate option with rclone
-v1.49 - v1.53.2 then your password will based on the second it was
-generated in. This means that there are fixed number of passwords
-in that period ~33 million.</p>
-</blockquote>
-
-<p>We updated the rclone package to version 1.49.0, the first one affected,
-on August 27, 2019. The upstream project recommends using their
-<a href="https://github.com/rclone/passwordcheck">passwordcheck</a> utility to verify
-that your passwords aren’t among the ~33 million vulnerable ones. On a
-Void Linux system, you can obtain this utility by installing the <code class="language-plaintext highlighter-rouge">go</code>
-package and then building <code class="language-plaintext highlighter-rouge">passwordcheck</code> locally:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># xbps-install -S go
-$ go get github.com/rclone/passwordcheck
-</code></pre></div></div>
-</p>
-			</div>
-		</content>
-	</entry>
-
-	<entry>
-		<title>Hacktoberfest and Void Linux</title>
-		<link href="https://voidlinux.org/news/2020/10/hacktoberfest.html"/>
-		<id>https://voidlinux.org/news/2020/10/hacktoberfest</id>
-		<published>2020-10-01T00:00:00+00:00</published>
-		<updated>2020-10-01T00:00:00+00:00</updated>
-		<content type="xhtml">
-			<div xmlns="http://www.w3.org/1999/xhtml">
-				<p><p><em>Update:</em> Unfortunately due to recent changes that significantly
-increase the effort required from Void, we can no longer promise that
-your changes will count towards the 4 PRs required for Hacktoberfest.</p>
-
-<p>Many maintainers use <code class="language-plaintext highlighter-rouge">git am</code> in a script to apply patches and batch
-them into build units that the buildbot can work on at a time.  This
-precludes the application of labels unless the maintainer separately
-opens a browser, logs into GitHub, and interacts with the PR there.
-While the <code class="language-plaintext highlighter-rouge">git am</code> method should technically work, we’ve noticed in
-the past that GitHub occasionally applies the wrong status to PRs
-using this method (ignores magic closing words).  We aren’t currently
-aware why this works intermittently and we can’t guarantee that a
-specific PR will satisfy the new requirements for Hacktoberfest.</p>
-
-<p>It’s unfortunate that the rules were changed mid-run, as under the
-previous rules we could process contributions without disruptive
-alterations to our review process, and we could accept many first time
-contributors’ work to low-risk packages.  You are of course still
-welcome to send your patches and they will be reviewed at the
-avaiability of the Void team.</p>
-
-<hr />
-
-<p>It’s the first day of October, the air is crisp in parts of the
-northern hemisphere, and it’s time for
-<a href="https://hacktoberfest.digitalocean.com/">Hacktoberfest</a> again.  This
-year is shaping up to be bigger than previous years, and as Void has
-participated since the start we’d like to provide some helpful tips
-and tricks for sending your first Pull Requests (PRs) to Void.</p>
-
-<p>This year Void is accepting patches for two main areas, patches from
-unknown contributors beyond these areas have a high likelihood of
-being dismissed, so please color within the lines.</p>
-
-<p>The first area is for non-code contributions.  We maintain all of our
-documentation using a tool called
-<a href="https://github.com/rust-lang/mdBook">mdBook</a>.  This has the net
-effect that all of our documentation is written as version controlled
-markdown files.  If you regularly use Void and have been looking for a
-place to get involved, this is a good point to jump in.  We aren’t
-trying to recreate the <a href="https://wiki.archlinux.org/">ArchWiki</a> though,
-so make sure you understand the scope and purpose of the docs repo
-before sending your documentation.</p>
-
-<p>For technical contributions, we are accepting updates of existing
-packages.  While new packages may count as well, we have had many
-problems in the past with people adding packages and then abandoning
-them, so expect to meet significant resistance if you are a new
-contributor trying to add a package to the repo.  Updating packages is
-very easy.  You can select a package from the list of <a href="http://repo-default.voidlinux.org/void-updates/void-updates.txt">out of date
-packages</a>
-and update it using the tools in the <a href="https://github.com/void-linux/void-packages">void-packages
-repo</a>.  The
-<a href="https://github.com/void-linux/void-packages/blob/master/Manual.md">manual</a>
-might be of assistance when you are updating packages.</p>
-
-<p>As a general rule, we would prefer Hacktoberfest contributors that do
-not have a previous track record with the Void Linux project steer
-clear of “structural” packages unless you have specific domain
-knowledge that qualifies you to work on high-risk packages.  When
-selecting a package to update, select a package registered to
-<code class="language-plaintext highlighter-rouge">orphan@voidlinux.org</code> when possible.  These packages are otherwise
-unmaintained, and your contribution will have a bigger impact.  You
-can update packages that are owned by existing developers, but
-understand that conflicts between a maintainer and contributor will be
-resolved at the discretion of Void staff.</p>
-
-<p>Here are some useful tips when updating packages:</p>
-
-<ul>
-  <li>Don’t PR broken code, our maintainers are much less likely to give
-a second look to a PR that didn’t build when it was submitted.</li>
-  <li>While it’s possible to run xbps-src from an alien distro, this
-isn’t really supported.  If you’re a seasonsed Linux user and want
-to try Void, now is the time!</li>
-  <li>The docs use <a href="https://github.com/bobertlo/vmd">versioned
-markdown</a>, available in the
-vmdfmt package.  You can run this locally to format your files.</li>
-  <li>The update list is sometimes wrong, we’d love to get patches that
-improve its reliability by ignoring beta versions or adding checks
-to packages that are not detected as out of date correctly.</li>
-  <li>If you have expertise in C, GNU Autotools, or other build systems,
-taking a look at projects that we’ve marked as not
-cross-compilation compatible and fixing the upstream issue can be
-an amazing contribution that impacts more than just Void.</li>
-</ul>
-
-<p>We look forward to working with the amazing world of open source
-developers this month to improve Void and continue our high standards
-for quality and reliability.  To ensure your PR has the best chance at
-being accepted, feel free to reach out for help as explained in the
-manual.  Together this will be a high impact Hacktoberfest.</p>
-</p>
-			</div>
-		</content>
-	</entry>
-
-	<entry>
-		<title>Welcome New Contributors!</title>
-		<link href="https://voidlinux.org/news/2020/05/new-contributors.html"/>
-		<id>https://voidlinux.org/news/2020/05/new-contributors</id>
-		<published>2020-05-01T00:00:00+00:00</published>
-		<updated>2020-05-01T00:00:00+00:00</updated>
-		<content type="xhtml">
-			<div xmlns="http://www.w3.org/1999/xhtml">
-				<p><p>The Void project is pleased to welcome onboard 3 new members today.</p>
-
-<p>Joining us to work on packages is <code class="language-plaintext highlighter-rouge">@abenson</code>.</p>
-
-<p>Joining us to advance the docs site are <code class="language-plaintext highlighter-rouge">@flexibeast</code> and <code class="language-plaintext highlighter-rouge">@ericonr</code>.</p>
-
-<p>Interested in seeing your name in a future update here?  Read our
-<a href="https://docs.voidlinux.org/contributing/index.html">Contributing Page</a>
-and join us today!</p>
 </p>
 			</div>
 		</content>

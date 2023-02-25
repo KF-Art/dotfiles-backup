@@ -1,0 +1,8 @@
+#!/bin/bash
+
+prompt=$(ls /usr/share/xsessions | cut -d. -f1 | fzf --layout=reverse --border --border-label="Select session" | awk -F' ' '{ print $1 }')
+
+cmd=$(cat /usr/share/xsessions/${prompt}.desktop | sed 's|TryExec=.*||g' | grep Exec= | cut -d= -f2)
+
+echo "exec ${cmd}" > ~/.xinitrc
+echo "==> Default XSession changed to ${prompt}!"

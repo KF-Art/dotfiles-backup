@@ -3,6 +3,8 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt SHARE_HISTORY
 
+export PATH=$PATH:~/scripts:~/cereus/scripts/
+
 ### ALIASES ###
 # XBPS
 alias xqs="xbps-query -s"               # Busca localmente.
@@ -20,8 +22,12 @@ alias xi="doas xbps-install"
 alias lszfs="dfc -dt zfs"
 alias fecha="date +%Y.%m.%d"
 
-if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
-     exec startx
+#if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
+#     exec startx
+#fi
+
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+	startx
 fi
 
 # . ~/DATOS/install/polyglot/polyglot.sh
