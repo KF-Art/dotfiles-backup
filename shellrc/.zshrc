@@ -27,6 +27,7 @@ alias fecha="date +%Y.%m.%d"
 #fi
 
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+	clear
 	startx
 fi
 
