@@ -59,6 +59,7 @@
         <value type="string" value="megasync"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="strawberry"/>
         <value type="string" value="steam"/>
         <value type="string" value="lxqt-powermanagement"/>
         <value type="string" value="chrome_status_icon_1"/>
