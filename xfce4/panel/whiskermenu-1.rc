@@ -1,5 +1,5 @@
 favorites=
-recent=uget-gtk.desktop,dolphin-emu.desktop,wine-Programs-Core Design-Uninstall.desktop,yuzu-maintenance-tool_yuzu.desktop,transmission-qt.desktop,vivaldi-stable.desktop,ungoogled-chromium.desktop,wine-Programs-Battle.net-Battle.net.desktop,wine-Programs-EA GAMES-Need for Speed™ Most Wanted-Need for Speed™ Most Wanted.desktop,net.lutris.Lutris.desktop
+recent=wine-Programs-EA GAMES-Need for Speed™ Most Wanted-Need for Speed™ Most Wanted.desktop,uget-gtk.desktop,dolphin-emu.desktop,wine-Programs-Core Design-Uninstall.desktop,yuzu-maintenance-tool_yuzu.desktop,transmission-qt.desktop,vivaldi-stable.desktop,ungoogled-chromium.desktop,wine-Programs-Battle.net-Battle.net.desktop,net.lutris.Lutris.desktop
 button-title=\ \ Cereus Linux\ \ \ 
 button-icon=cereus-logo
 button-single-row=false
