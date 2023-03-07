@@ -30,3 +30,4 @@ export MANGOHUD=1
 KDEWM="/home/kevin/scripts/plasma-icewm"
 export WINEFSYNC=1
 export DXVK_ASYNC=1
+export mesa_glthread=true

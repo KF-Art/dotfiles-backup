@@ -4,6 +4,7 @@ key "XF86Eject"             eject
 #Flameshot
 key "Print" flameshot gui
 key "Shift+Print"   flameshot launcher
+key Super+Print sh -c "flameshot full --path ~/datos/Imágenes/screenshots"
 
 #Media buttons
 key "XF86AudioPrev"  playerctl previous
