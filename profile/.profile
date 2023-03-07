@@ -28,3 +28,4 @@ export PATH=$PATH:~/scripts:~/cereus/scripts/
 export MOZ_GTK_TITLEBAR_DECORATION=client
 export MANGOHUD=1
 KDEWM="/home/kevin/scripts/plasma-icewm"
+export WINEFSYNC=1
