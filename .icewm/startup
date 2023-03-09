@@ -83,8 +83,8 @@ xrdb -merge ~/.Xresources &
 urxvtd -q -f -o &
 
 # Battery status icon
-xfce4-power-manager &
-#lxqt-powermanagement &
+#xfce4-power-manager &
+lxqt-powermanagement &
 
 # Touchpad and touchscreen gestures
 touchegg &
