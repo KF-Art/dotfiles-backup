@@ -69,3 +69,5 @@ tray.layer: 6
 Polybar.layer: 8
 tint2.Tint2.layer: Below
 lxqt-panel.lxqt-panel: Below
+#icewm.TaskBar.layer: 0
+dockx.Dockx.layer: 4

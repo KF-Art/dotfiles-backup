@@ -19,7 +19,8 @@ key "Super+F11"  playerctl next
 
 #App launcher
 key Super+Space rofi.sh
-key "Alt+F1"    xfce4-popup-whiskermenu
+#key "Alt+F1"    xfce4-popup-whiskermenu
+key Alt+F1 jgmenu_run
 key "Alt+F2"	lxqt-runner
 #Kitty
 key Alt+T  kitty
@@ -54,6 +55,7 @@ key "Alt+Shift+E" icesh logout
 
 # LXQt Runner
 key "Alt+F2" lxqt-runner
+
 
 #Volume Control
 key "XF86AudioRaiseVolume"  pactl -- set-sink-volume @DEFAULT_SINK@ +5%

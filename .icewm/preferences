@@ -725,7 +725,7 @@ RebootCommand="loginctl reboot"
 # ShowAbout=1 # 0/1
 
 #  Show address bar in task bar.
-# ShowAddressBar=1 # 0/1
+ShowAddressBar=0 # 0/1
 
 #  Show Ellipsis in taskbar items as indicator of further collapsed content.
 # ShowEllipsis=1 # 0/1
@@ -758,7 +758,7 @@ ShowLogoutMenu=1 # 0/1
 # ShowSettingsMenu=1 # 0/1
 
 #  Show task bar.
-ShowTaskBar=0 # 0/1
+ShowTaskBar=1 # 0/1
 
 #  Show themes submenu in the program menu.
 # ShowThemesMenu=1 # 0/1
@@ -821,7 +821,7 @@ TaskBarDoubleHeight=0 # 0/1
 TaskBarJustify="center"
 
 #  Keep the task bar below regular windows.
-# TaskBarKeepBelow=0 # 0/1
+TaskBarKeepBelow=1 # 0/1
 
 #  Execute taskbar applet commands (like MailCommand, ClockCommand, ...) on single click.
 # TaskBarLaunchOnSingleClick=1 # 0/1
@@ -890,13 +890,13 @@ TaskBarShowShowDesktopButton=2 # [0-2]
 # TaskBarShowTray=1 # 0/1
 
 #  Show icons of windows on the task bar.
-# TaskBarShowWindowIcons=1 # 0/1
+TaskBarShowWindowIcons=0 # 0/1
 
 #  Show 'window list' menu on task bar.
 # TaskBarShowWindowListMenu=1 # 0/1
 
 #  Show windows on the taskbar.
-# TaskBarShowWindows=1 # 0/1
+TaskBarShowWindows=0 # 0/1
 
 #  Show workspace switching buttons on task bar.
 # TaskBarShowWorkspaces=1 # 0/1
