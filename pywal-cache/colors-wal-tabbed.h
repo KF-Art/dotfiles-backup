@@ -1,4 +1,4 @@
-static const char* selbgcolor   = "#000000";
+static const char* selbgcolor   = "#0f0f0f";
 static const char* selfgcolor   = "#e6e0e1";
 static const char* normbgcolor  = "#E61326";
 static const char* normfgcolor  = "#e6e0e1";

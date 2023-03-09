@@ -1,11 +1,11 @@
 " Special
 let wallpaper  = "/media/DATOS/Imágenes/Wallpapers/surtr_arknights__by_kepinn_dehdzhl.png"
-let background = "#000000"
+let background = "#0f0f0f"
 let foreground = "#e6e0e1"
 let cursor     = "#e6e0e1"
 
 " Colors
-let color0  = "#000000"
+let color0  = "#0f0f0f"
 let color1  = "#9A1420"
 let color2  = "#E61326"
 let color3  = "#EF3648"

@@ -1,6 +1,6 @@
 #!/bin/sh
 [ "${TERM:-none}" = "linux" ] && \
-    printf '%b' '\e]P0000000
+    printf '%b' '\e]P00f0f0f
                  \e]P19A1420
                  \e]P2E61326
                  \e]P3EF3648

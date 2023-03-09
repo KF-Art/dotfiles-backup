@@ -3,12 +3,12 @@
 wallpaper='/media/DATOS/Imágenes/Wallpapers/surtr_arknights__by_kepinn_dehdzhl.png'
 
 # Special
-background='#000000'
+background='#0f0f0f'
 foreground='#e6e0e1'
 cursor='#e6e0e1'
 
 # Colors
-color0='#000000'
+color0='#0f0f0f'
 color1='#9A1420'
 color2='#E61326'
 color3='#EF3648'
