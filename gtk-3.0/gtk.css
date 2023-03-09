@@ -1,1 +1,9 @@
 @import 'colors.css';
+#fast-user-switch-applet * {
+ padding: 0 1px 0 1px;
+}
+
+#na-tray-applet *
+{
+	margin: 6px; 
+}

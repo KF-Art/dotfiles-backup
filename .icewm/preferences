@@ -758,7 +758,7 @@ ShowLogoutMenu=1 # 0/1
 # ShowSettingsMenu=1 # 0/1
 
 #  Show task bar.
-ShowTaskBar=1 # 0/1
+ShowTaskBar=0 # 0/1
 
 #  Show themes submenu in the program menu.
 # ShowThemesMenu=1 # 0/1
