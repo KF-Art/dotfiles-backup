@@ -64,3 +64,6 @@ wrapper-2.0.dMinimize: 0
 wrapper-2.0.dSysMenu: 0
 wrapper-2.0.dRollup:  0
 wrapper-2.0.dResize: 0
+
+tray.layer: 6
+Polybar.layer: 8

@@ -1,5 +1,6 @@
 #!/bin/sh
-mutter --wayland &
+#mutter --wayland &
+kwin_wayland &
 #weston --xwayland &
 sleep 5
 waydroid show-full-ui

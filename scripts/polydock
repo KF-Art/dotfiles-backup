@@ -1,0 +1,914 @@
+#!/usr/bin/gjs
+
+imports.gi.versions.GdkX11 = "3.0"
+imports.gi.versions.Wnck = "3.0"
+imports.gi.versions.Gtk = "3.0"
+imports.gi.versions.Gio = "2.0"
+imports.gi.versions.GObject = "2.0"
+imports.gi.versions.GLib = "2.0"
+imports.gi.versions.Gdk = "3.0"
+imports.gi.versions.GdkPixbuf = "2.0"
+(function (GdkX11, GLib, Gdk, GdkPixbuf, Gtk, Wnck, Gio, GObject) {
+  'use strict';
+
+  GdkX11 = GdkX11 && Object.prototype.hasOwnProperty.call(GdkX11, 'default') ? GdkX11['default'] : GdkX11;
+  GLib = GLib && Object.prototype.hasOwnProperty.call(GLib, 'default') ? GLib['default'] : GLib;
+  Gdk = Gdk && Object.prototype.hasOwnProperty.call(Gdk, 'default') ? Gdk['default'] : Gdk;
+  GdkPixbuf = GdkPixbuf && Object.prototype.hasOwnProperty.call(GdkPixbuf, 'default') ? GdkPixbuf['default'] : GdkPixbuf;
+  Gtk = Gtk && Object.prototype.hasOwnProperty.call(Gtk, 'default') ? Gtk['default'] : Gtk;
+  Wnck = Wnck && Object.prototype.hasOwnProperty.call(Wnck, 'default') ? Wnck['default'] : Wnck;
+  Gio = Gio && Object.prototype.hasOwnProperty.call(Gio, 'default') ? Gio['default'] : Gio;
+  GObject = GObject && Object.prototype.hasOwnProperty.call(GObject, 'default') ? GObject['default'] : GObject;
+
+  // /**
+  //  * https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setInterval
+  //  * https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval
+  //  */
+  // export const setInterval = (func: () => unknown, delay: number) => {
+  //   return GLib.timeout_add(GLib.PRIORITY_DEFAULT, delay, () => {
+  //     func()
+  //     return GLib.SOURCE_CONTINUE
+  //   })
+  // }
+
+  // export const clearInterval = GLib.source_remove
+
+  // /**
+  //  * https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout
+  //  * https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/clearTimeout
+  //  */
+  // export const setTimeout = (func: () => unknown, delay: number) => {
+  //   return GLib.timeout_add(GLib.PRIORITY_DEFAULT, delay, () => {
+  //     func()
+  //     return GLib.SOURCE_REMOVE
+  //   })
+  // }
+
+  // export const clearTimeout = GLib.source_remove
+
+  function fileExists(file) {
+    return (
+      GLib.file_test(file, GLib.FileTest.EXISTS) &&
+      !GLib.file_test(file, GLib.FileTest.IS_DIR)
+    )
+  }
+
+  function resolve(path) {
+    let parts = [];
+    for (const p of path.split("/")) {
+      if (p === ".") {
+        if (parts.length) continue
+        parts = GLib.get_current_dir().split("/");
+      } else if (p == "..") parts.pop();
+      else if (p == "~") {
+        parts = GLib.get_home_dir().split("/");
+      } else parts.push(p);
+    }
+    return parts.join("/")
+  }
+
+  function realpath(path) {
+    while (GLib.file_test(path, GLib.FileTest.IS_SYMLINK)) {
+      path = GLib.file_read_link(path);
+    }
+    return path
+  }
+
+  function run(cmd, vars = {}) {
+    for (const [k, v] of Object.entries(vars)) {
+      cmd = cmd.replace(new RegExp(`\\{${k}\\}`, "giu"), `${v}`);
+    }
+    log(`[run] ${cmd}`);
+    const [success, stdout, stderr, exitCode] = GLib.spawn_command_line_sync(cmd);
+    if (!success)
+      throw new Error(
+        `Failed (${exitCode}) to execute ${cmd}: ${stdout}\n${stderr}`
+      )
+    return stdout ? imports.byteArray.toString(stdout) : ""
+  }
+
+  function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }/* eslint-disable @typescript-eslint/ban-ts-comment */
+
+
+
+
+  const defaults = {
+    appearance: {
+      position: "top" ,
+      alignment: "center" ,
+      offsetX: 0,
+      offsetY: 0,
+      iconSize: 40,
+      theme: "default",
+      iconTheme: "default",
+    },
+    behavior: {
+      groupBy: ["instance", "visibility"] ,
+      activeWorkspaceOnly: false,
+      showHidden: true,
+      showVisible: true,
+      click: "toggle-cycle" ,
+      "menu-click": "show" ,
+      exclude: ["scratchpad"],
+    },
+    commands: {
+      hide: "bspc node {window} -g hidden=on -f",
+      unhide: "bspc node {window} -g hidden=off -f",
+    },
+    icons: {
+      "google-agenda": "calendar.google.com",
+      gmail: "mail.google.com",
+      keep: "keep.google.com",
+      messengerfordesktop: "www.messenger.com",
+      whatsapp: "whatsapp",
+    } ,
+  };
+
+
+
+  class Config {
+    
+    
+    
+    
+    __init() {this.verbose = true;}
+    __init2() {this.themePath = [];}
+
+    constructor() {Config.prototype.__init.call(this);Config.prototype.__init2.call(this);
+      this.settings = { ...defaults };
+      this.path = GLib.path_get_dirname(
+        realpath(imports.system.programInvocationName)
+      );
+      this.path = resolve(GLib.path_get_dirname(this.path));
+      this.themePath.push(`${this.path}/config/themes`);
+      this.theme = resolve(`${this.path}/config/themes/default.css`);
+    }
+
+    update() {
+      this.load(`${GLib.get_user_config_dir()}/polydock/settings.ini`) ||
+        this.load(`${this.path}/config/settings.ini`);
+      if (this.file)
+        this.themePath.unshift(
+          resolve(`${GLib.path_get_dirname(this.file)}/themes`)
+        );
+
+      for (const p of this.themePath) {
+        this.theme = resolve(
+          `${p}/${this.settings.appearance.theme || "default"}.css`
+        );
+        if (fileExists(this.theme)) break
+      }
+
+      if (!fileExists(this.theme)) {
+        log(`Theme file not found! ${this.theme}`);
+        imports.system.exit(1);
+      }
+      this.verbose && log(`[theme] ${this.theme}`);
+    }
+
+    load(file) {
+      file = resolve(file);
+      if (!fileExists(file)) return false
+      this.verbose && log(`[settings] ${file}`);
+      this.file = file;
+      const ini = GLib.KeyFile.new();
+      ini.load_from_file(file, GLib.KeyFileFlags.KEEP_COMMENTS);
+      for (const [group, items] of Object.entries(this.settings)) {
+        if (!ini.has_group(group)) continue
+        let entries = Object.entries(items);
+        if (group == "icons")
+          entries = (_optionalChain([ini, 'access', _ => _.get_keys, 'call', _2 => _2("icons"), 'optionalAccess', _3 => _3[0]]) || []).map((x) => [x, ""]);
+        const [haveKeys] = ini.get_keys(group);
+        for (const [key, value] of entries) {
+          if (!haveKeys || !haveKeys.includes(key)) continue
+
+          const data = ini.get_value(group, key);
+          if (data) {
+            if (Array.isArray(value)) {
+              // @ts-ignore
+              this.settings[group][key] = ini.get_string_list(group, key);
+            } else if (typeof value == "boolean")
+              // @ts-ignore
+              this.settings[group][key] = ini.get_boolean(group, key);
+            else if (typeof value == "number")
+              // @ts-ignore
+              this.settings[group][key] = ini.get_integer(group, key);
+            // @ts-ignore
+            else this.settings[group][key] = ini.get_string(group, key);
+          }
+        }
+      }
+      return true
+    }
+
+    dump() {
+      const ini = GLib.KeyFile.new();
+      for (const [group, items] of Object.entries(this.settings)) {
+        for (const [key, value] of Object.entries(items)) {
+          if (Array.isArray(value)) ini.set_string_list(group, key, value);
+          else ini.set_string(group, key, `${value}`);
+        }
+      }
+
+      ini.set_comment(
+        "appearance",
+        "offsetX",
+        "Additional offsets to further fine-tune the position of the dock"
+      );
+      ini.set_comment("appearance", "position", "One of top, bottom, left, right");
+      ini.set_comment("appearance", "alignment", "One of start, center, end");
+      // ini.set_string("appearance", "theme", this.theme)
+      ini.set_comment(
+        "appearance",
+        "theme",
+        `Name of the theme file, or 'default'.\nSee config/themes/default.css`
+      );
+      ini.set_comment(
+        "appearance",
+        "iconTheme",
+        `An gtk icon theme name, or 'default'`
+      );
+      ini.set_comment(
+        "behavior",
+        "click",
+        "Action on click. One of: show, hide, toggle, cycle, toggle-cycle"
+      );
+      ini.set_comment(
+        "behavior",
+        "groupBy",
+        "Specify a list of keys to group windows on: class;instance;title;visibility"
+      );
+      ini.set_comment(
+        "behavior",
+        "exclude",
+        "Exclude windows whose class or instance contains one of these values"
+      );
+      ini.set_comment(
+        "icons",
+        // eslint-disable-next-line unicorn/no-null
+        null,
+        `Rules for custom icons matching the class::instance of windows
+icon-name=string to be part of class::instance`
+      );
+      return ini.to_data()[0]
+    }
+  }
+
+  var config = new Config();
+
+  function _optionalChain$1(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }/* eslint-disable unicorn/no-null */
+
+  class DockGroup {
+    static getGroupKeyValue(window, groupBy) {
+      switch (groupBy) {
+        case "class":
+          return window.get_class_group_name()
+        case "instance":
+          return window.get_class_instance_name()
+        case "title":
+          return window.get_name()
+        case "visibility":
+          return `hidden:${window.is_minimized()}`
+      }
+    }
+
+    static getGroupKey(window) {
+      const groupBy = config.settings.behavior.groupBy;
+
+      if (!groupBy.length) return false
+
+      return groupBy.map((g) => this.getGroupKeyValue(window, g)).join(".")
+    }
+
+    static getGroupWindows(window) {
+      const group = this.getGroupKey(window);
+      return window
+        .get_screen()
+        .get_windows()
+        .filter((x) => this.getGroupKey(x) == group)
+    }
+
+    static doAction(window, action) {
+      log(`[action] ${action}`);
+      const timestamp = new Date().getTime() / 1000;
+
+      const activeId = _optionalChain$1([window, 'access', _ => _.get_screen, 'call', _2 => _2(), 'access', _3 => _3.get_active_window, 'call', _4 => _4(), 'optionalAccess', _5 => _5.get_xid, 'call', _6 => _6()]);
+
+      if (action == "show") {
+        if (window.is_minimized() && config.settings.commands.unhide)
+          run(config.settings.commands.unhide, { window: window.get_xid() });
+        window.activate(timestamp);
+      } else if (action == "hide") {
+        if (!window.is_minimized() && config.settings.commands.hide)
+          run(config.settings.commands.hide, { window: window.get_xid() });
+        window.minimize();
+      } else if (action == "toggle") {
+        if (window.get_xid() == activeId) this.doAction(window, "hide");
+        else this.doAction(window, "show");
+      } else if (action == "cycle") {
+        const group = this.getGroupWindows(window);
+        // Cycle though existing windows, if active window is part of group
+        for (let g = 0; g < group.length; g++) {
+          if (group[g].get_xid() == activeId) {
+            if (g === group.length - 1) this.doAction(group[0], "show");
+            else this.doAction(group[g + 1], "show");
+            return
+          }
+        }
+        this.doAction(window, "show");
+      } else if (action == "toggle-cycle") {
+        if (this.getGroupWindows(window).length > 1)
+          this.doAction(window, "cycle");
+        else this.doAction(window, "toggle");
+      }
+    }
+  }
+
+  var XPropType; (function (XPropType) {
+    const STRING = 0; XPropType[XPropType["STRING"] = STRING] = "STRING";
+    const UTF8_STRING = STRING + 1; XPropType[XPropType["UTF8_STRING"] = UTF8_STRING] = "UTF8_STRING";
+    const CARDINAL = UTF8_STRING + 1; XPropType[XPropType["CARDINAL"] = CARDINAL] = "CARDINAL";
+    const ATOM = CARDINAL + 1; XPropType[XPropType["ATOM"] = ATOM] = "ATOM";
+  })(XPropType || (XPropType = {}));
+
+  function getXProp(xid, prop, type) {
+    const window = GdkX11.X11Window.foreign_new_for_display(
+      Gdk.Display.get_default() ,
+      xid
+    );
+    if (window) {
+      const [found, _actualType, _actualFormat, data] = Gdk.property_get(
+        window,
+        Gdk.atom_intern(prop, false),
+        Gdk.Atom.intern(XPropType[type], false),
+        0,
+        2048,
+        0
+      );
+
+      if (found) return imports.byteArray.toString(data) 
+    }
+  }
+
+  function _nullishCoalesce(lhs, rhsFn) { if (lhs != null) { return lhs; } else { return rhsFn(); } } function _optionalChain$2(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }/* eslint-disable unicorn/no-null */
+
+  class DockItem {
+    
+    __init() {this.button = new Gtk.ToolItem();}
+    __init2() {this.iconWidget = new Gtk.Image();}
+    __init3() {this.menu = new Gtk.Menu();}
+
+    constructor( window,  horizontal) {this.window = window;this.horizontal = horizontal;DockItem.prototype.__init.call(this);DockItem.prototype.__init2.call(this);DockItem.prototype.__init3.call(this);
+      this.name = this.window.get_class_instance_name();
+
+      this.setClass("dock-item");
+
+      const eventBox = new Gtk.EventBox();
+      eventBox.add(this.iconWidget);
+      eventBox.set_events(
+        Gdk.EventMask.BUTTON_PRESS_MASK & Gdk.EventMask.ENTER_NOTIFY_MASK
+      );
+      this.button.add(eventBox);
+      this.update();
+
+      this.window.connect("icon-changed", () => {
+        this.updateIcon();
+        this.iconWidget.show_all();
+      });
+
+      this.window.connect("state-changed", (_window, _changes, _newState) => {
+        this.setClass("hidden", this.window.is_minimized());
+      });
+
+      // Add hover states
+      eventBox.connect("enter-notify-event", () => {
+        this.iconWidget.set_state_flags(Gtk.StateFlags.PRELIGHT, false);
+      });
+      eventBox.connect("leave-notify-event", () => {
+        this.iconWidget.unset_state_flags(Gtk.StateFlags.PRELIGHT);
+      });
+
+      this.menu.attach_to_widget(this.button, null);
+      eventBox.connect("button-press-event", (_button, event) => {
+        if (event.get_event_type() == Gdk.EventType.BUTTON_PRESS) {
+          if (_optionalChain$2([event, 'access', _ => _.get_button, 'call', _2 => _2(), 'optionalAccess', _3 => _3[1]]) == 3) {
+            this.popup();
+          } else if (_optionalChain$2([event, 'access', _4 => _4.get_button, 'call', _5 => _5(), 'optionalAccess', _6 => _6[1]]) == 1) {
+            DockGroup.doAction(this.window, config.settings.behavior.click);
+          }
+        }
+      });
+    }
+
+    popup() {
+      this.menu.show_all();
+      this.menu.popup_at_widget(
+        this.button,
+        Gdk.Gravity.SOUTH,
+        Gdk.Gravity.NORTH,
+        null
+      );
+    }
+
+    updateIcon() {
+      let iconTheme = Gtk.IconTheme.get_default();
+      if (
+        config.settings.appearance.iconTheme &&
+        config.settings.appearance.iconTheme !== "default"
+      ) {
+        iconTheme = new Gtk.IconTheme();
+        iconTheme.set_custom_theme(config.settings.appearance.iconTheme);
+      }
+
+      const cleanup = (iconName) => {
+        if (iconName) {
+          return iconName.replace(/\s+/gu, "").toLowerCase()
+        }
+      };
+
+      const lookup = [];
+
+      const groupIcon = cleanup(this.window.get_class_group_name());
+      const instanceIcon = cleanup(this.window.get_class_instance_name());
+
+      lookup.push(
+        getXProp(
+          this.window.get_xid(),
+          "_GTK_APPLICATION_ID",
+          XPropType.UTF8_STRING
+        ),
+        instanceIcon
+      );
+
+      const noGroupIcons = ["brave-browser", "chromium-browser", "chrome-browser"];
+      if (groupIcon && !noGroupIcons.includes(groupIcon)) {
+        lookup.push(groupIcon);
+      }
+
+      // // Load custom icons from config
+      for (const [iconK, iconV] of Object.entries(config.settings.icons)) {
+        if (
+          iconTheme.has_icon(iconK) &&
+          lookup.some((x) => `${x}`.includes(iconV.toLowerCase()))
+        ) {
+          lookup.unshift(iconK);
+        }
+      }
+
+      let icon = this.window.get_icon();
+
+      const iconNames = lookup.filter((x) => x); 
+
+      const iconInfo = iconTheme.choose_icon(
+        iconNames,
+        config.settings.appearance.iconSize,
+        Gtk.IconLookupFlags.FORCE_SIZE
+      );
+
+      if (iconInfo) {
+        log(`[icon] ${iconInfo.get_filename()}`);
+        icon = iconInfo.load_icon();
+      } else {
+        icon = icon.copy();
+        if (icon)
+          icon = icon.scale_simple(
+            config.settings.appearance.iconSize,
+            config.settings.appearance.iconSize,
+            GdkPixbuf.InterpType.BILINEAR
+          );
+      }
+      this.iconWidget.set_from_pixbuf(icon);
+      this.iconWidget.show();
+    }
+
+    update() {
+      this.updateIcon();
+      this.setClass("hidden", this.window.is_minimized());
+      this.addMenuItem(this, true);
+    }
+
+    addMenuItem(item, clear = false) {
+      let label = `${
+      _nullishCoalesce(_optionalChain$2([item, 'access', _7 => _7.window, 'access', _8 => _8.get_workspace, 'call', _9 => _9(), 'optionalAccess', _10 => _10.get_name, 'call', _11 => _11()]), () => ( "?"))
+    }: ${item.window.get_name()}`;
+      if (label.length > 60) label = `${label.slice(0, 60)}...`;
+
+      if (clear) {
+        this.menu.get_children().forEach((c) => this.menu.remove(c));
+      }
+      const menuItem = Gtk.ImageMenuItem.new_with_label(label);
+      menuItem.set_always_show_image(true);
+      menuItem.set_image(
+        Gtk.Image.new_from_pixbuf(
+          _optionalChain$2([item, 'access', _12 => _12.iconWidget
+  , 'access', _13 => _13.get_pixbuf, 'call', _14 => _14()
+  , 'optionalAccess', _15 => _15.copy, 'call', _16 => _16()
+  , 'optionalAccess', _17 => _17.scale_simple, 'call', _18 => _18(24, 24, GdkPixbuf.InterpType.BILINEAR)])
+        )
+      );
+      menuItem.connect("activate", () => {
+        DockGroup.doAction(item.window, config.settings.behavior["menu-click"]);
+      });
+      this.menu.append(menuItem);
+
+      this.iconWidget.set_tooltip_text(label);
+    }
+
+    setActive(value = true) {
+      if (value) this.addClass("active");
+      else this.removeClass("active");
+    }
+
+    addClass(klass) {
+      this.iconWidget.get_style_context().add_class(klass);
+    }
+
+    toggleClass(klass) {
+      this.iconWidget.get_style_context().has_class(klass)
+        ? this.removeClass(klass)
+        : this.addClass(klass);
+    }
+
+    setClass(klass, yeasNo = true) {
+      yeasNo ? this.addClass(klass) : this.removeClass(klass);
+    }
+
+    removeClass(klass) {
+      this.iconWidget.get_style_context().remove_class(klass);
+    }
+  }
+
+  function _nullishCoalesce$1(lhs, rhsFn) { if (lhs != null) { return lhs; } else { return rhsFn(); } } function _optionalChain$3(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }
+  class Dock {
+    __init() {this.items = new Map();}
+    __init2() {this.toolbar = new Gtk.Toolbar();}
+    
+    __init3() {this.show = false;}
+
+    constructor( horizontal = true) {this.horizontal = horizontal;Dock.prototype.__init.call(this);Dock.prototype.__init2.call(this);Dock.prototype.__init3.call(this);
+      const screen = Wnck.Screen.get_default();
+      if (!screen) throw new Error("No screens detected!")
+      this.screen = screen;
+      this.toolbar.set_name("dock");
+      this.toolbar.get_style_context().add_class("dock");
+      this.toolbar.set_show_arrow(false);
+      this.toolbar.set_orientation(
+        horizontal ? Gtk.Orientation.HORIZONTAL : Gtk.Orientation.VERTICAL
+      );
+      this.toolbar.show_all();
+      this.screen.force_update();
+      this.update("constructor");
+      screen.connect("active-workspace-changed", () =>
+        this.update("active-workspace-changed")
+      );
+      screen.connect("active-window-changed", (_screen, prev) => {
+        // HACK: refcount seems wrong for closed windows that were active before
+        if (prev && !prev.get_class_group()) prev.ref();
+        this.update("active-window-changed");
+      });
+      screen.connect("window-opened", () => this.update("window-opened"));
+      screen.connect("window-closed", () => this.update("window-closed"));
+    }
+
+    update(event) {
+      log(`[update] + ${event}`);
+      // this.screen.force_update()
+      const windows = this.screen.get_windows();
+      if (!windows) return log("No Windows!")
+
+      // Remove closed windows
+      const xids = new Set(windows.map((x) => x.get_xid()));
+      for (const [xid, item] of this.items.entries()) {
+        if (!xids.has(xid)) {
+          log(`- ${imports.system.refcount(item.window)} ${item.name}`);
+          this.items.delete(xid);
+          this.toolbar.remove(item.button);
+        }
+      }
+
+      // Add opened windows
+      windows.forEach((window) => {
+        const xid = window.get_xid();
+        if (!this.items.has(xid)) {
+          window.connect("geometry-changed", () => this.toolbar.check_resize());
+          window.connect("workspace-changed", () =>
+            this.update("workspace-changed")
+          );
+          const item = new DockItem(window, this.horizontal);
+          log(`+ ${imports.system.refcount(item.window)} ${item.name}`);
+          this.toolbar.add(item.button);
+          this.items.set(xid, item);
+        }
+      });
+
+      // Update window state
+      const workspace = this.screen.get_active_workspace();
+      const groups = new Map();
+      const active = _nullishCoalesce$1(_optionalChain$3([this, 'access', _ => _.screen, 'access', _2 => _2.get_active_window, 'call', _3 => _3(), 'optionalAccess', _4 => _4.get_xid, 'call', _5 => _5()]), () => ( undefined));
+      let buttonCount = 0;
+      for (const item of this.items.values()) {
+        item.setClass("active", active == item.window.get_xid());
+        const groupKey = DockGroup.getGroupKey(item.window);
+        let visible = true;
+        if (
+          config.settings.behavior.activeWorkspaceOnly &&
+          !item.window.is_on_workspace(workspace)
+        )
+          visible = false;
+        if (!config.settings.behavior.showHidden && item.window.is_minimized())
+          visible = false;
+        if (!config.settings.behavior.showVisible && !item.window.is_minimized())
+          visible = false;
+
+        if (
+          config.settings.behavior.exclude.some(
+            (ex) =>
+              _optionalChain$3([item, 'access', _6 => _6.window
+  , 'access', _7 => _7.get_class_instance_name, 'call', _8 => _8()
+  , 'optionalAccess', _9 => _9.toLowerCase, 'call', _10 => _10()
+  , 'access', _11 => _11.includes, 'call', _12 => _12(ex.toLowerCase())]) ||
+              _optionalChain$3([item, 'access', _13 => _13.window
+  , 'access', _14 => _14.get_class_group_name, 'call', _15 => _15()
+  , 'optionalAccess', _16 => _16.toLowerCase, 'call', _17 => _17()
+  , 'access', _18 => _18.includes, 'call', _19 => _19(ex.toLowerCase())])
+          )
+        )
+          visible = false;
+
+        if (groupKey && groups.has(groupKey)) {
+          visible = false;
+          _optionalChain$3([groups, 'access', _20 => _20.get, 'call', _21 => _21(groupKey), 'optionalAccess', _22 => _22.addMenuItem, 'call', _23 => _23(item)]);
+          if (active == item.window.get_xid())
+            _optionalChain$3([groups, 'access', _24 => _24.get, 'call', _25 => _25(groupKey), 'optionalAccess', _26 => _26.setActive, 'call', _27 => _27(true)]);
+        }
+
+        if (visible && groupKey && !groups.has(groupKey)) {
+          groups.set(groupKey, item);
+          item.addMenuItem(item, true);
+        }
+
+        if (visible) {
+          item.button.show_all();
+          buttonCount++;
+        } else item.button.hide();
+      }
+
+      log(`[update] - ${event} [${buttonCount}]`);
+      if (buttonCount) {
+        log("[toobar] show");
+        this.show = true;
+      } else {
+        log("[toobar] hide");
+        this.show = false;
+      }
+      this.toolbar.check_resize();
+    }
+  }
+
+  function _nullishCoalesce$2(lhs, rhsFn) { if (lhs != null) { return lhs; } else { return rhsFn(); } }
+  class AppWindow {
+    
+    
+    __init() {this.hidden = true;}
+
+    constructor(application) {AppWindow.prototype.__init.call(this);
+      const win = new Gtk.ApplicationWindow({
+        title: "Polydock",
+        type: Gtk.WindowType.TOPLEVEL,
+        application,
+      });
+      this.window = win;
+
+      win.set_wmclass("polydock", "Polydock");
+      win.get_style_context().add_class("top");
+      win.set_decorated(false);
+      win.set_type_hint(Gdk.WindowTypeHint.DOCK);
+      win.stick();
+      win.set_keep_above(true);
+      win.set_skip_taskbar_hint(true);
+      win.connect("destroy", () => Gtk.main_quit());
+      win.connect("delete-event", () => false);
+
+      win.set_resizable(true);
+
+      this.loadStyles();
+
+      win.connect("size-allocate", () => this.updatePosition());
+      win.connect("screen-changed", () => this.updateSize());
+
+      this.dock = new Dock(
+        ["top", "bottom"].includes(config.settings.appearance.position)
+      );
+
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      win.add(this.dock.toolbar);
+      this.dock.toolbar.connect("check-resize", () => this.updateSize());
+      this.updateSize();
+    }
+
+    loadStyles() {
+      // Make window transparent if possible
+      const haveAlpha = this.window.get_screen().get_rgba_visual() ? true : false;
+
+      log(`Alpha Visuals: ${haveAlpha}`);
+      log(`Composited: ${this.window.is_composited()}`);
+
+      if (haveAlpha) {
+        this.window.set_visual(this.window.get_screen().get_rgba_visual());
+        this.window.set_app_paintable(true);
+      }
+
+      // Load CSS
+      const css = new Gtk.CssProvider();
+      css.load_from_path(config.theme);
+      Gtk.StyleContext.add_provider_for_screen(
+        this.window.get_screen(),
+        css,
+        Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+      );
+    }
+
+    updateSize() {
+      if (this.hidden) this.autoHide();
+
+      // Hide window when dock is hidden
+      if (!this.hidden && this.dock.show) this.window.show();
+      else {
+        this.window.hide();
+        return
+      }
+      // Resize the window to fit the toolbar
+      const [, naturalSize] = this.dock.toolbar.get_preferred_size();
+      const size = this.window.get_size();
+      if (
+        naturalSize &&
+        naturalSize.height > 0 &&
+        naturalSize.width > 0 &&
+        (naturalSize.width !== size[0] || naturalSize.height !== size[1])
+      ) {
+        // log(`Size updated to ${naturalSize.width}, ${naturalSize.height}`)
+        this.window.resize(naturalSize.width, naturalSize.height);
+      }
+      this.autoHide();
+    }
+
+    updatePosition() {
+      let x = 0;
+      let y = 0;
+
+      const screenSize = {
+        width: this.window.get_screen().get_width(),
+        height: this.window.get_screen().get_height(),
+      };
+      const size = {
+        width: this.window.get_allocated_width(),
+        height: this.window.get_allocated_height(),
+      };
+
+      if (["top", "bottom"].includes(config.settings.appearance.position)) {
+        if (config.settings.appearance.position == "top") y = 0;
+        if (config.settings.appearance.position == "bottom")
+          y = screenSize.height - size.height;
+
+        if (config.settings.appearance.alignment == "start") x = 0;
+        if (config.settings.appearance.alignment == "center")
+          x = Math.round(screenSize.width / 2 - size.width / 2);
+        if (config.settings.appearance.alignment == "end")
+          x = Math.round(screenSize.width - size.width);
+      }
+
+      if (["left", "right"].includes(config.settings.appearance.position)) {
+        if (config.settings.appearance.position == "left") x = 0;
+        if (config.settings.appearance.position == "right")
+          x = screenSize.width - size.width;
+
+        if (config.settings.appearance.alignment == "start") y = 0;
+        if (config.settings.appearance.alignment == "center")
+          y = Math.round(screenSize.height / 2 - size.height / 2);
+        if (config.settings.appearance.alignment == "end")
+          y = Math.round(screenSize.height - size.height);
+      }
+
+      x += _nullishCoalesce$2(config.settings.appearance.offsetX, () => ( 0));
+      y += _nullishCoalesce$2(config.settings.appearance.offsetY, () => ( 0));
+
+      const pos = this.window.get_position();
+      if (pos[0] != x || pos[1] != y) {
+        this.window.move(x, y);
+        this.autoHide();
+      }
+    }
+
+    autoHide() {
+      const active = this.dock.screen.get_active_window();
+      if (active && this.window) {
+        const [ax1, ay1, aw, ah] = active.get_geometry();
+        const [bx1, by1] = this.window.get_position();
+        const [bw, bh] = this.window.get_size();
+
+        let show = false;
+        // No geometry
+        if (bw === null || bh === null || bx1 === null || by1 === null)
+          show = true;
+        else if (aw === null || ah === null || ax1 === null || ay1 === null)
+          show = true;
+        // no horizontal overlap
+        else if (ax1 >= bx1 + bw || bx1 >= ax1 + aw) show = true;
+        // no vertical overlap
+        else if (ay1 >= by1 + bh || by1 >= ay1 + ah) show = true;
+
+        if (show && this.hidden) {
+          log("[no-overlap] showing dock");
+          this.window.show();
+          this.hidden = false;
+        }
+
+        if (!show && !this.hidden) {
+          log(`[overlap] overlapping with ${active.get_name()}. Hiding dock`);
+          this.window.hide();
+          this.hidden = true;
+        }
+      }
+      return true
+    }
+  }
+
+  function _optionalChain$4(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }/* eslint-disable unicorn/no-null */
+
+  let PolydockApp = class extends Gtk.Application {
+    
+
+    _init() {
+      const props = {
+        application_id: "org.polydock",
+        flags: Gio.ApplicationFlags.FLAGS_NONE,
+      };
+      super._init(props);
+      super.add_main_option(
+        "version",
+        0,
+        GLib.OptionFlags.NONE,
+        GLib.OptionArg.NONE,
+        "Show polydock version",
+        null
+      );
+      super.add_main_option(
+        "dump-config",
+        0,
+        GLib.OptionFlags.NONE,
+        GLib.OptionArg.NONE,
+        "Show the loaded configuration. Useful to create your own config.",
+        null
+      );
+      GLib.set_application_name("Polydock");
+      GLib.set_prgname("polydock");
+    }
+
+    vfunc_handle_local_options(options) {
+      if (options.contains("version")) {
+        print("2.0.1");
+      } else if (options.contains("dump-config")) {
+        config.verbose = false;
+        config.update();
+        print(config.dump());
+      } else return -1
+      return 0
+    }
+
+    vfunc_startup() {
+      log("[app] startup");
+      _optionalChain$4([super.vfunc_startup.bind(this), 'optionalCall', _ => _()]);
+    }
+
+    vfunc_activate() {
+      log("[app] activate");
+      if (!this.window) {
+        config.update();
+        this.window = new AppWindow(this);
+      }
+      this.window.window.present();
+      _optionalChain$4([super.vfunc_activate.bind(this), 'optionalCall', _2 => _2()]);
+    }
+  };
+
+  PolydockApp = GObject.registerClass(
+    {
+      GTypeName: "PolydockApp",
+      CssName: "polydock",
+    },
+    PolydockApp
+  );
+
+  // Force GdkX11 to load before Gdk
+
+  Wnck.set_client_type(Wnck.ClientType.PAGER);
+  Wnck.set_default_icon_size(128);
+
+  const argv = [imports.system.programInvocationName].concat(ARGV);
+
+  const app = new PolydockApp();
+  const status = app.run(argv);
+  imports.system.exit(status);
+
+}(imports.gi.GdkX11, imports.gi.GLib, imports.gi.Gdk, imports.gi.GdkPixbuf, imports.gi.Gtk, imports.gi.Wnck, imports.gi.Gio, imports.gi.GObject));

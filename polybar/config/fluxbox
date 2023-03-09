@@ -86,9 +86,10 @@ tray-background = ${colors.shade1}
 tray-detached = false
 ;wm-restack = bspwm
 ;wm-restack = i3
-wm-restack = fluxbox
+wm-restack = icewm
 
-override-redirect = false
+override-redirect = true
+enable-ipc = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
