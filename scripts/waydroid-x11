@@ -1,0 +1,14 @@
+#! /usr/bin/bash
+{
+killall -9 weston
+if [ -z "$(pgrep weston)" ]; then
+    weston --xwayland &> /dev/null &
+fi
+sleep 2 &&
+export XDG_SESSION_TYPE='wayland'
+export DISPLAY=':1'
+kitty -e waydroid show-full-ui &
+while [ -n "$(pgrep weston)" ];do
+    sleep 1
+done
+} 2> /dev/null
