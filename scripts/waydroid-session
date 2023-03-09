@@ -1,4 +1,5 @@
 #!/bin/sh
-weston &
-sleep 3
-kitty -e waydroid show-full-ui
+mutter --wayland &
+#weston --xwayland &
+sleep 5
+waydroid show-full-ui
