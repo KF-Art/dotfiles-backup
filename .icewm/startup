@@ -15,7 +15,7 @@
 #xfce4-panel &
 
 # Panel
-tint2 &
+#tint2 &
 dockx &
 
 # Video Wallpaper
