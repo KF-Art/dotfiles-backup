@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Main menu
+Comment=Start here
+Exec=jgmenu_run
+Icon=cereus-logo
+Path=
+Terminal=false
+StartupNotify=false
