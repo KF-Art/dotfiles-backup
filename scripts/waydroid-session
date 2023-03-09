@@ -1,0 +1,4 @@
+#!/bin/sh
+weston &
+sleep 3
+kitty -e waydroid show-full-ui
