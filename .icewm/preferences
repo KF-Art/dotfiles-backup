@@ -752,13 +752,13 @@ ShowLogoutMenu=1 # 0/1
 # ShowProgramsMenu=0 # 0/1
 
 #  Show the run menu item in the program menu.
-# ShowRun=1 # 0/1
+# ShowRun=1 # 0/1m
 
 #  Show settings submenu in the program menu.
 # ShowSettingsMenu=1 # 0/1
 
 #  Show task bar.
-ShowTaskBar=0 # 0/1
+ShowTaskBar=1 # 0/1
 
 #  Show themes submenu in the program menu.
 # ShowThemesMenu=1 # 0/1
