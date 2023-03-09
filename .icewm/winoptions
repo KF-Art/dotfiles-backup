@@ -67,3 +67,4 @@ wrapper-2.0.dResize: 0
 
 tray.layer: 6
 Polybar.layer: 8
+tint2.Tint2.layer: Below

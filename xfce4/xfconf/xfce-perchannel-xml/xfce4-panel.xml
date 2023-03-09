@@ -101,7 +101,10 @@
       <property name="workspace-scrolling" type="bool" value="true"/>
     </property>
     <property name="plugin-4" type="string" value="showdesktop"/>
-    <property name="plugin-2" type="string" value="docklike"/>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
+    <property name="plugin-2" type="string" value="dockbarx">
+      <property name="offset" type="int" value="0"/>
+      <property name="block-autohide" type="bool" value="false"/>
+    </property>
   </property>
 </channel>
