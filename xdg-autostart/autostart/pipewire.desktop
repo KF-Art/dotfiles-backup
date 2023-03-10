@@ -1,6 +1,5 @@
 [Desktop Entry]
 Exec=pipewire
-Hidden=true
 Icon=dialog-scripts
 Name=pipewire
 Path=

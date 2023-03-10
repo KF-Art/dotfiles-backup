@@ -1,9 +1,9 @@
 set $wallpaper /media/DATOS/Imágenes/Wallpapers/surtr_arknights__by_kepinn_dehdzhl.png
 
-set $background #0f0f0f
+set $background #000000
 set $foreground #e6e0e1
 
-set $color0 #0f0f0f
+set $color0 #000000
 set $color1 #9A1420
 set $color2 #E61326
 set $color3 #EF3648

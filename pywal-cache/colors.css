@@ -4,12 +4,12 @@
     --wallpaper: url("/media/DATOS/Imágenes/Wallpapers/surtr_arknights__by_kepinn_dehdzhl.png");
 
     /* Special */
-    --background: #0f0f0f;
+    --background: #000000;
     --foreground: #e6e0e1;
     --cursor: #e6e0e1;
 
     /* Colors */
-    --color0: #0f0f0f;
+    --color0: #000000;
     --color1: #9A1420;
     --color2: #E61326;
     --color3: #EF3648;

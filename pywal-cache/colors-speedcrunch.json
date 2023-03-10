@@ -10,6 +10,6 @@
     "variable": "#E61326",
     "scrollbar": "#EF3648",
     "separator": "#EF3648",
-    "background": "#0f0f0f",
-    "editorbackground": "#0f0f0f"
+    "background": "#000000",
+    "editorbackground": "#000000"
 }
