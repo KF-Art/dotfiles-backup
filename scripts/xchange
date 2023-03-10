@@ -4,5 +4,5 @@ prompt=$(ls /usr/share/xsessions | cut -d. -f1 | fzf --layout=reverse --border -
 
 cmd=$(cat /usr/share/xsessions/${prompt}.desktop | sed 's|TryExec=.*||g' | grep Exec= | cut -d= -f2)
 
-sed -i "s|exec dbus-run-session.*|exec dbus-launch ${cmd}|g" ~/.xinitrc
+sed -i "s|exec dbus-run-session.*|exec dbus-run-session ${cmd}|g" ~/.xinitrc
 echo "==> Default XSession changed to ${prompt}!"
