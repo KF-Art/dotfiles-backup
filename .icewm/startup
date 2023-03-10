@@ -15,7 +15,7 @@
 xfce4-panel &
 
 # Panel
-tint2 &
+#tint2 &
 #dockx &
 
 # Video Wallpaper
@@ -59,7 +59,7 @@ octoxbps-notifier &
 lxqt-policykit-agent &
 
 #Blur Compositor
-picom -b
+picom -b &
 
 #Update lockscreen wallpaper, based on current desktop wallpaper
 
@@ -77,10 +77,10 @@ pipewire &
 ksuperkey &
 
 #Reload URxvt configs
-xrdb -merge ~/.Xresources &
+# xrdb -merge ~/.Xresources &
 
 # rxvt-unicode daemon 
-urxvtd -q -f -o &
+# urxvtd -q -f -o &
 
 # Battery status icon
 xfce4-power-manager &
