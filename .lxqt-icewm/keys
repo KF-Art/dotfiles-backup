@@ -19,7 +19,7 @@ key "Super+F11"  playerctl next
 
 #App launcher
 key Super+Space rofi.sh
-key "Alt+F1"    jgmenu_run
+#key "Alt+F1"    
 key "Alt+F2"	lxqt-runner
 #Kitty
 key Alt+T  kitty
