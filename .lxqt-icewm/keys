@@ -4,6 +4,7 @@ key "XF86Eject"             eject
 #Flameshot
 key "Print" flameshot gui
 key "Shift+Print"   flameshot launcher
+key Super+Print sh -c "flameshot full --path ~/datos/Imágenes/screenshots"
 
 #Media buttons
 key "XF86AudioPrev"  playerctl previous
@@ -18,7 +19,7 @@ key "Super+F11"  playerctl next
 
 #App launcher
 key Super+Space rofi.sh
-key "Alt+F1"    rofi-panel.sh
+key "Alt+F1"    jgmenu_run
 key "Alt+F2"	lxqt-runner
 #Kitty
 key Alt+T  kitty
@@ -34,7 +35,7 @@ key Super+W  xdg-open http://
 key Super+Q  clementine
 
 #Lockscreen
-key Super+L  betterlockscreen -l
+key Super+L  betterlockscreen -l dimblur
 
 # Show Pulseaudio settings
 key Super+P  pavucontrol
@@ -59,7 +60,13 @@ key XF86AudioMute  pactl set-sink-mute @DEFAULT_SINK@ toggle
 #Alternative Volume Control
 key Super+F8  pactl set-sink-volume @DEFAULT_SINK@ +5%
 key Super+F7  pactl set-sink-volume @DEFAULT_SINK@ -5%
-keu Super+F6  pactl set-sink-mute @DEFAULT_SINK@ toggle
+key Super+F6  pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Toggle formal wallpaper
+key Alt+W toggle-formal-wall
+
+# Kill window
+key Alt+F5 icesh kill
 ####
 #### END OF PERSONAL KEYBINDINGS ####
 ####
