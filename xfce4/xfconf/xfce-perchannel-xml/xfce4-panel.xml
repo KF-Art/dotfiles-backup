@@ -64,6 +64,8 @@
         <value type="string" value="megasync"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="18191"/>
+        <value type="string" value="18195"/>
         <value type="string" value="lxqt-notificationd"/>
         <value type="string" value="hp-systray"/>
         <value type="string" value="strawberry"/>
