@@ -113,13 +113,13 @@ ClickToFocus=1 # 0/1
 ConfirmLogout=1 # 0/1
 
 #  Consider border frames when maximizing horizontally.
-# ConsiderHBorder=0 # 0/1
+ConsiderHBorder=0 # 0/1
 
 #  Consider XSizeHints if frame is maximized.
 # ConsiderSizeHintsMaximized=1 # 0/1
 
 #  Consider border frames when maximizing vertically.
-# ConsiderVBorder=0 # 0/1
+ConsiderVBorder=0 # 0/1
 
 #  Workspace switches continuously when moving mouse to screen edge.
 # ContinuousEdgeSwitch=1 # 0/1
@@ -197,7 +197,7 @@ FocusOnMap=1 # 0/1
 # GrabRootWindow=1 # 0/1
 
 #  Hide window borders if window is maximized.
-# HideBordersMaximized=0 # 0/1
+HideBordersMaximized=1 # 0/1
 
 #  Hide title bar when maximized.
 # HideTitleBarWhenMaximized=0 # 0/1
