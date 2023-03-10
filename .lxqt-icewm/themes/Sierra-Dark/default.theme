@@ -18,8 +18,8 @@ TitleButtonsLeft="s"
 TitleButtonsRight="xmir"		# Rollup button displayed
 TitleButtonsSupported="sxmir"		# Rollup button displayed
 
-BorderSizeX=3
-BorderSizeY=3
+BorderSizeX=2
+BorderSizeY=2m
 CornerSizeX=0
 CornerSizeY=0
 DlgBorderSizeX=0
@@ -33,7 +33,7 @@ HugeIconSize=48					# ?  Cannot identify what it applies to
 Gradients="taskbuttonactive.xpm taskbuttonminimized.xpm"
 
 ColorNormalBorder="#0d0d0d"
-ColorActiveBorder="#77201B"
+ColorActiveBorder="#0f0f0f"
 
 ColorNormalTitleBar="#0f0f0f"
 ColorActiveTitleBar="#0f0f0f"
