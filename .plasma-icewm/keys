@@ -53,10 +53,14 @@ key "Alt+Shift+E" qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.
 
 
 #Volume Control
-key "XF86AudioRaiseVolume"  qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "increase_volume"
-key "XF86AudioLowerVolume"  qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "decrease_volume"
-key XF86AudioMute  qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mute"
-key Super+Shift+M qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mic_mute"
+#key "XF86AudioRaiseVolume"  qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "increase_volume"
+#key "XF86AudioLowerVolume"  qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "decrease_volume"
+#key XF86AudioMute  qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mute"
+#key Super+Shift+M qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mic_mute"
+
+key "XF86AudioRaiseVolume"  pactl -- set-sink-volume @DEFAULT_SINK@ +5%
+key "XF86AudioLowerVolume"  pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+key XF86AudioMute  pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 #Alternative Volume Control
 key Super+F8  pactl set-sink-volume @DEFAULT_SINK@ +5%
