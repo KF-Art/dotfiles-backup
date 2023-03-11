@@ -782,7 +782,7 @@ ShutdownCommand="systemctl poweroff"
 # SnapDistance=8 # [0-64]
 
 #  Snap to nearest screen edge/window when moving windows.
-# SnapMove=1 # 0/1
+SnapMove=1 # 0/1
 
 #  Always maintain focus under mouse window (makes some keyboard support non-functional or unreliable)
 # StrongPointerFocus=0 # 0/1

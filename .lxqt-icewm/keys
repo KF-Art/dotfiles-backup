@@ -52,6 +52,10 @@ key "Alt+P" toggle-picom
 # Exit menu
 key "Alt+Shift+E" lxqt-leave
 
+# Tiling
+
+
+
 #Volume Control
 key "XF86AudioRaiseVolume"  pactl -- set-sink-volume @DEFAULT_SINK@ +5%
 key "XF86AudioLowerVolume"  pactl -- set-sink-volume @DEFAULT_SINK@ -5%
