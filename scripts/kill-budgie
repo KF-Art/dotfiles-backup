@@ -1,0 +1,15 @@
+#!/bin/bash
+function checkdesktop {
+    wmctrl -m
+    exitstatus=$?
+}
+
+checkdesktop
+
+ if [ "$exitstatus" = 0 ]; then
+    while [ "$exitstatus" = 0 ]; do checkdesktop; sleep 1; done
+ else
+    echo "Plasma desktop icons not running"
+    while [ "$exitstatus" = 0 ]; do checkdesktop; sleep 1; done
+    pkill -u $USER
+ fi

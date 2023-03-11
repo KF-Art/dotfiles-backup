@@ -10,6 +10,9 @@
 # Load wallpaper
 ~/.fehbg &
 
+# Kill budgie if icewm is not longer running
+kill-budgie &
+
 # Video Wallpaper
 # sleep 3 && gpu-video-wallpaper --start $(cat ~/.config/video-wallpaper/settings.conf | grep lastfile | cut -d"=" -f2 | cut -d'"' -f2) &
 
@@ -45,7 +48,7 @@ numlockx &
 # xidlehook --not-when-audio --not-when-fullscreen --timer ${LOCK_TIME} "betterlockscreen -l" "" --timer ${SUSPEND_TIME} "loginctl suspend" "" &
 
 #Clipboard manager
-clipit &
+#clipit &
 
 #Update notifier
 #octoxbps-notifier &
@@ -76,7 +79,7 @@ clipit &
 ksuperkey &
 
 #Reload URxvt configs
-xrdb -merge ~/.Xresources &
+#xrdb -merge ~/.Xresources &
 
 # rxvt-unicode daemon 
 #urxvtd -q -f -o &
