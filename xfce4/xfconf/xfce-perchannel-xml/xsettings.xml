@@ -23,7 +23,6 @@
   <property name="Gtk" type="empty">
     <property name="CanChangeAccels" type="empty"/>
     <property name="ColorPalette" type="empty"/>
-    <property name="DialogsUseHeader" type="bool" value="false"/>
     <property name="FontName" type="string" value="Roboto 11"/>
     <property name="MonospaceFontName" type="string" value="JetBrains Mono NL 13"/>
     <property name="IconSizes" type="empty"/>
@@ -36,6 +35,7 @@
     <property name="CursorThemeName" type="empty"/>
     <property name="CursorThemeSize" type="empty"/>
     <property name="DecorationLayout" type="empty"/>
+    <property name="DialogsUseHeader" type="bool" value="false"/>
     <property name="TitlebarMiddleClick" type="empty"/>
   </property>
   <property name="Gdk" type="empty">

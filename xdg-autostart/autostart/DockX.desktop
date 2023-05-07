@@ -3,3 +3,5 @@ Exec=dockx
 Name=DockX
 Type=Application
 Version=1.0
+Hidden=true
+

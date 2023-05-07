@@ -2,7 +2,7 @@
 Name=Definir como fondo de escritorio
 Comment=Colocar la selección actual como fondo de escritorio
 
-Exec=feh --bg-fill "%F"
+Exec=feh --bg-fill %F
 
 Icon-Name=xapp-prefs-preview-symbolic
 

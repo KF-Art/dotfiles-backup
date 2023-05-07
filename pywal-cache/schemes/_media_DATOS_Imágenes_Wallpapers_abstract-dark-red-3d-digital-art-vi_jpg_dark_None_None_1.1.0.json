@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Wallpapers/abstract-dark-red-3d-digital-art-vi.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0a0809",
+        "foreground": "#de7f91",
+        "cursor": "#de7f91"
+    },
+    "colors": {
+        "color0": "#0a0809",
+        "color1": "#701323",
+        "color2": "#442D31",
+        "color3": "#463F41",
+        "color4": "#4C4949",
+        "color5": "#9E0E21",
+        "color6": "#E40414",
+        "color7": "#de7f91",
+        "color8": "#9b5865",
+        "color9": "#701323",
+        "color10": "#442D31",
+        "color11": "#463F41",
+        "color12": "#4C4949",
+        "color13": "#9E0E21",
+        "color14": "#E40414",
+        "color15": "#de7f91"
+    }
+}

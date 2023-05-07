@@ -92,7 +92,7 @@ xrdb -merge ~/.Xresources &
 #lxqt-config-input --load-touchpad &
 
 # Desktop icons and wallpaper
-if [ SHOW_DESKTOP = 1 ]; then
+if [ $SHOW_DESKTOP = 1 ]; then
 	nemo-desktop &
 fi
 

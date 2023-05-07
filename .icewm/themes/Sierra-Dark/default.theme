@@ -147,4 +147,3 @@ DesktopBackgroundColor=""		# Prevent IceWM showing a background color
 DesktopBackgroundImage=""		# Prevent IceWM showing a background image
 DesktopBackgroundCenter=0		# 0/1
 DesktopBackgroundScaled=1		# 0/1
-DesktopBackgroundColor=""

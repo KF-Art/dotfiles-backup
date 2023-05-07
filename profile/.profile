@@ -20,10 +20,10 @@ export GDK_SCALE=1.16
 export EDITOR=micro
 
 export XBPS_ARCH=$(xbps-uhelper arch)
-export REPO_CEREUS="https://mirrors.dotsrc.org/osdn/storage/g/c/ce/cereuslinux/repos/"
+export REPO_CEREUS="https://osdn.mirror.constant.com/storage/g/c/ce/cereuslinux/repos/"
 export REPO_CORE="${REPO_CEREUS}/cereus-core"
 export REPO_EXTRA="${REPO_CEREUS}/cereus-extra"
-export REPO_VOID="https://mirror.clarkson.edu/voidlinux/current"
+export REPO_VOID="https://repo-fastly.voidlinux.org/current/"
 export PATH=$PATH:~/scripts:~/cereus/scripts/
 export MOZ_GTK_TITLEBAR_DECORATION=client
 export MANGOHUD=1
@@ -31,3 +31,4 @@ export KDEWM="/home/kevin/scripts/plasma-icewm"
 export WINEFSYNC=1
 export DXVK_ASYNC=1
 export mesa_glthread=true
+export SHOW_DESKTOP=1

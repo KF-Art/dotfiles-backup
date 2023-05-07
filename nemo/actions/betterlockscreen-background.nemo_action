@@ -2,7 +2,7 @@
 Name=Definir como fondo del salvapantallas
 Comment=Colocar la selección actual como fondo del salvapantallas
 
-Exec=betterlockscreen -u "%F"
+Exec=betterlockscreen -u %F
 
 Icon-Name=xapp-prefs-preview-symbolic
 

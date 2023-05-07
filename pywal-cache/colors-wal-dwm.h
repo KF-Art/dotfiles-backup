@@ -1,14 +1,14 @@
-static const char norm_fg[] = "#e6e0e1";
+static const char norm_fg[] = "#f3dbd4";
 static const char norm_bg[] = "#000000";
-static const char norm_border[] = "#a19c9d";
+static const char norm_border[] = "#aa9994";
 
-static const char sel_fg[] = "#e6e0e1";
-static const char sel_bg[] = "#E61326";
-static const char sel_border[] = "#e6e0e1";
+static const char sel_fg[] = "#f3dbd4";
+static const char sel_bg[] = "#D53C4B";
+static const char sel_border[] = "#f3dbd4";
 
-static const char urg_fg[] = "#e6e0e1";
-static const char urg_bg[] = "#9A1420";
-static const char urg_border[] = "#9A1420";
+static const char urg_fg[] = "#f3dbd4";
+static const char urg_bg[] = "#94152B";
+static const char urg_border[] = "#94152B";
 
 static const char *colors[][3]      = {
     /*               fg           bg         border                         */

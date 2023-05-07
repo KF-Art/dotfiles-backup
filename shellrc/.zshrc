@@ -26,10 +26,10 @@ alias fecha="date +%Y.%m.%d"
 #     exec startx
 #fi
 
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-	clear
-	startx
-fi
+#if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+#	clear
+#	startx
+#fi
 
 # . ~/DATOS/install/polyglot/polyglot.sh
 #. /usr/share/polyglot-prompt/polyglot.sh
