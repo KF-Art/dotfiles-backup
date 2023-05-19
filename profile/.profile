@@ -3,7 +3,7 @@
 #export QT_QPA_PLATFORMTHEME=kde
 
 unset QT_QPA_PLATFORMTHEME
-case $XDG_CURRENT_DESKTOP in
+sleep 3; case $XDG_CURRENT_DESKTOP in
 	KDE)
 		export QT_QPA_PLATFORMTHEME="kde" ;;
 	LXQt)
