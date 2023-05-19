@@ -3,9 +3,11 @@
 
 if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
 	export QT_QPA_PLATFORMTHEME="kde"
-elif [ "$XDG_CURRENT_DESKTOP" = "LXQt" ]; then
+fi
+if [ "$XDG_CURRENT_DESKTOP" = "LXQt" ]; then
 	export QT_QPA_PLATFORMTHEME="lxqt"
-elif ! [ "$XDG_CURRENT_DESKTOP" = "LXQt" ] || ! [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
+fi
+if ! [ "$XDG_CURRENT_DESKTOP" = "LXQt" ] || ! [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
 	export QT_QPA_PLATFORMTHEME="qt5ct"
 fi
 
