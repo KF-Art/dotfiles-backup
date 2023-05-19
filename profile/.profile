@@ -1,4 +1,3 @@
-#!/bin/zsh
 # Allows to change Qt theme
 #export QT_QPA_PLATFORMTHEME=kde
 

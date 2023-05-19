@@ -3,10 +3,9 @@ Selection=true
 
 # xrdb -merge ~/.Xresources
 
-# source /etc/profile does not have any effect
-. /etc/profile
-. ~/.profile
-
 # redshift -O 4000
+
+. /etc/profile &
+. $HOME/.profile &
 
 exec dbus-launch $@
