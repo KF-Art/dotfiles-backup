@@ -1,5 +1,6 @@
 [Desktop Entry]
 Exec=redshift-gtk
+Hidden=true
 Name=Redshift
 Type=Application
 Version=1.0

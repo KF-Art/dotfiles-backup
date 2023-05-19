@@ -1,0 +1,18 @@
+[Desktop Entry]
+AutostartCondition=GSettings org.ubuntubudgie.budgie-extras.HotCorners active
+Comment=Kick starts the budgie-hotcorners process
+Comment[ca]=Kick inicia el procés dels cantons actius del Budgie
+Comment[en_GB]=Kick starts the budgie-hotcorners process
+Comment[it]=Kick starts the budgie-hotcorners process
+Comment[pt_PT]=Inicia o processo de cantos ativos-budgie
+Exec=/usr/libexec/budgie-hotcorners/budgie-hotcorners
+Hidden=true
+Name=Budgie Hotcorners
+Name[ca]=Cantons actius del Budgie
+Name[en_GB]=Budgie Hotcorners
+Name[it]=Budgie Hotcorners
+Name[pt_PT]=Cantos ativos Budgie
+NoDisplay=true
+Type=Application
+X-GNOME-AutoRestart=true
+X-MATE-AutoRestart=true

@@ -1,5 +1,6 @@
 [Desktop Entry]
 Exec=xrdb -merge ~/.Xresources
+Hidden=true
 Name=Load urxvt config
 Type=Application
 Version=1.0

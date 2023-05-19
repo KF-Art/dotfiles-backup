@@ -1,0 +1,10 @@
+[Desktop Entry]
+AutostartCondition=GSettings org.ubuntubudgie.windowshuffler dragsnaptiling
+Comment=Kick starts the dragsnap process to run half/cornertiling
+Exec=/usr/lib64/budgie-window-shuffler/dragsnap
+Hidden=true
+Name=DragSnap
+NoDisplay=true
+Type=Application
+X-GNOME-AutoRestart=true
+X-MATE-AutoRestart=true

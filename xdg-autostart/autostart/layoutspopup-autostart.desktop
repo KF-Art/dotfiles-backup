@@ -1,0 +1,10 @@
+[Desktop Entry]
+AutostartCondition=GSettings org.ubuntubudgie.windowshuffler runlayouts
+Comment=Helper process to manage window layouts for the popup applet
+Exec=/usr/lib64/budgie-window-shuffler/layouts_popup
+Hidden=true
+Name=Layouts Popup
+NoDisplay=true
+Type=Application
+X-GNOME-AutoRestart=true
+X-MATE-AutoRestart=true
