@@ -2,18 +2,15 @@
 # Allows to change Qt theme
 #export QT_QPA_PLATFORMTHEME=kde
 
-if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
-	unset QT_QPA_PLATFORMTHEME
-	export QT_QPA_PLATFORMTHEME="kde"
-fi
-if [ "$XDG_CURRENT_DESKTOP" = "LXQt" ]; then
-	unset QT_QPA_PLATFORMTHEME
-	export QT_QPA_PLATFORMTHEME="lxqt"
-fi
-if ! [ "$XDG_CURRENT_DESKTOP" = "LXQt" ] || [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
-	unset QT_QPA_PLATFORMTHEME
-	export QT_QPA_PLATFORMTHEME="qt5ct"
-fi
+unset QT_QPA_PLATFORMTHEME
+case $XDG_CURRENT_DESKTOP in
+	KDE)
+		export QT_QPA_PLATFORMTHEME="kde" ;;
+	LXQt)
+		export QT_QPA_PLATFORMTHEME="lxqt" ;;
+	*)
+		export QT_QPA_PLATFORMTHEME="qt5ct" ;;
+esac
 
 # The bar that you will use
 export BAR_APPLICATION="tint2"
