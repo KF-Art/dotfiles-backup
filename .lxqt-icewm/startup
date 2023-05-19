@@ -8,7 +8,7 @@
 #~/scripts/wait-wm-apps &
 
 # Load wallpaper
-~/.fehbg &
+#~/.fehbg &
 
 # Video Wallpaper
 # sleep 3 && gpu-video-wallpaper --start $(cat ~/.config/video-wallpaper/settings.conf | grep lastfile | cut -d"=" -f2 | cut -d'"' -f2) &
@@ -27,7 +27,7 @@
 # wpa-cute -qt &
 
 #Bluetooth manager
-#blueman-applet &
+blueman-applet &
 
 #Enable numlock
 numlockx &
@@ -36,7 +36,7 @@ numlockx &
 # setxkbmap latam
 
 #List non mounted drives
-# udiskie &
+udiskie &
 
 #Desktop icons
 # nemo-desktop &
@@ -70,7 +70,7 @@ clipit &
 
 #Pulseaudio applet
 # pasystray --notify=all &
-#sleep 3 && ~/scripts/patray &
+sleep 3 && ~/scripts/patray &
 
 # Enable Super key for menu
 ksuperkey &
@@ -83,13 +83,13 @@ xrdb -merge ~/.Xresources &
 
 # Battery status icon
 # xfce4-power-manager &
-#lxqt-powermanagement &
+lxqt-powermanagement &
 
 # Touchpad and touchscreen gestures
 #touchegg &
 
 # Enable tap to click
-#lxqt-config-input --load-touchpad &
+lxqt-config-input --load-touchpad &
 
 # Desktop icons and wallpaper
 if [ $SHOW_DESKTOP = 1 ]; then
@@ -99,8 +99,15 @@ fi
 # Backup dotfiles
 ~/scripts/backup-dotfiles &
 
+# Load monitor settings
+lxqt-config-monitor -l &
+
+# Background panel
+tint2 &
+
 # DockbarX
 dockx &
+
 
 ###
 ### END OF PERSONAL AUTOSTART ###

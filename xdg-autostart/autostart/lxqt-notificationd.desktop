@@ -1,9 +1,9 @@
 [Desktop Entry]
-Type=Application
-Exec=dunst
-Hidden=false
-Name[es_US]=Demonio de notificaciones
-Name=Demonio de notificaciones
-Comment[es_US]=
 Comment=
+Comment[es_US]=
+Exec=dunst
+Hidden=true
+Name=Demonio de notificaciones
+Name[es_US]=Demonio de notificaciones
+Type=Application
 X-MATE-Autostart-Delay=0

@@ -1,5 +1,6 @@
 [Desktop Entry]
 Exec=tint2
+Hidden=true
 Name=tint2
 Type=Application
 Version=1.0

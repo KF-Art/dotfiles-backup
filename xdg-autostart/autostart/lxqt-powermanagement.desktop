@@ -1,9 +1,9 @@
 [Desktop Entry]
-Type=Application
-Exec=lxqt-powermanagement
-Hidden=false
-Name[es_US]=Gestor de energía
-Name=Gestor de energía
-Comment[es_US]=
 Comment=
+Comment[es_US]=
+Exec=lxqt-powermanagement
+Hidden=true
+Name=Gestor de energía
+Name[es_US]=Gestor de energía
+Type=Application
 X-MATE-Autostart-Delay=0

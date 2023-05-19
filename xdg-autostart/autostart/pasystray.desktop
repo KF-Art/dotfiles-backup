@@ -1,0 +1,12 @@
+[Desktop Entry]
+Categories=AudioVideo;Audio;
+Comment=An Applet for PulseAudio
+Exec=sh -c 'pasystray --notify=source --notify=sink'
+GenericName=
+Hidden=true
+Icon=pasystray
+Keywords=pulseaudio;tray;system tray;applet;volume;
+Name=PulseAudio System Tray
+StartupNotify=true
+Type=Application
+Version=1.0

@@ -1,5 +1,6 @@
 [Desktop Entry]
 Exec=urxvtd -o -f -q
+Hidden=true
 Name=Urxvt daemon
 Type=Application
 Version=1.0
