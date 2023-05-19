@@ -4,7 +4,9 @@
 ### PERSONAL AUTOSTART ###
 ###
 
-pkill dunst
+set $XDG_DESKTOP_SESSION=KDE
+
+# pkill dunst
 
 #Kill unneeded apps
 pkill pasystray 
