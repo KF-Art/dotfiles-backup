@@ -3,14 +3,13 @@
 
 if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
 	export QT_QPA_PLATFORMTHEME="kde"
-	notify-send "hola"
 fi
 if [ "$XDG_CURRENT_DESKTOP" = "LXQt" ]; then
 	export QT_QPA_PLATFORMTHEME="lxqt"
 fi
-#if ! [ "$XDG_CURRENT_DESKTOP" = "LXQt" ] || ! [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
-#	export QT_QPA_PLATFORMTHEME="qt5ct"
-#fi
+if ! [ "$XDG_CURRENT_DESKTOP" = "LXQt" ] || [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
+	export QT_QPA_PLATFORMTHEME="qt5ct"
+fi
 
 # The bar that you will use
 export BAR_APPLICATION="tint2"
