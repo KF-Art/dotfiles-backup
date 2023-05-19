@@ -21,7 +21,7 @@ export LOCK_TIME="300"
 export SUSPEND_TIME="300"
 
 # Change Plasma WM
-#export KDEWM=/usr/bin/kwin_x11
+export KDEWM=/usr/bin/kwin_x11
 
 export GDK_SCALE=1.16
 export EDITOR=micro
@@ -34,7 +34,7 @@ export REPO_VOID="https://repo-fastly.voidlinux.org/current/"
 export PATH=$PATH:~/scripts:~/cereus/scripts/
 export MOZ_GTK_TITLEBAR_DECORATION=client
 export MANGOHUD=1
-export KDEWM="/home/kevin/scripts/plasma-icewm"
+#export KDEWM="/home/kevin/scripts/plasma-icewm"
 export WINEFSYNC=1
 export DXVK_ASYNC=1
 export mesa_glthread=true
