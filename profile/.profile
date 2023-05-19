@@ -1,13 +1,17 @@
+#!/bin/zsh
 # Allows to change Qt theme
 #export QT_QPA_PLATFORMTHEME=kde
 
 if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
+	unset QT_QPA_PLATFORMTHEME
 	export QT_QPA_PLATFORMTHEME="kde"
 fi
 if [ "$XDG_CURRENT_DESKTOP" = "LXQt" ]; then
+	unset QT_QPA_PLATFORMTHEME
 	export QT_QPA_PLATFORMTHEME="lxqt"
 fi
 if ! [ "$XDG_CURRENT_DESKTOP" = "LXQt" ] || [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
+	unset QT_QPA_PLATFORMTHEME
 	export QT_QPA_PLATFORMTHEME="qt5ct"
 fi
 
