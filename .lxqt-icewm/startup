@@ -8,7 +8,7 @@
 #~/scripts/wait-wm-apps &
 
 # Load wallpaper
-#~/.fehbg &
+~/.fehbg &
 
 # Video Wallpaper
 # sleep 3 && gpu-video-wallpaper --start $(cat ~/.config/video-wallpaper/settings.conf | grep lastfile | cut -d"=" -f2 | cut -d'"' -f2) &
