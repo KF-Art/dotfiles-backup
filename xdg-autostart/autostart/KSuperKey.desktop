@@ -1,6 +1,6 @@
 [Desktop Entry]
 Exec=ksuperkey
-Hidden=false
+Hidden=true
 Name=KSuperKey
 Type=Application
 Version=1.0
