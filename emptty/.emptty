@@ -8,4 +8,4 @@ Selection=true
 . /etc/profile &
 . $HOME/.profile &
 ~/.xsession &
-exec dbus-run-session $@
+exec dbus-launch $@
