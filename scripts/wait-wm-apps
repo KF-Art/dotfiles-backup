@@ -17,6 +17,7 @@ checkwm
     #~/scripts/patray &
     # nitrogen --restore &
     wpa-cute -qt &
+    pentablet.sh /mini
  else
     echo "Window manager not running"
     while [ "$exitstatus" = 1 ]; do checkwm; sleep 2; done
@@ -26,4 +27,5 @@ checkwm
     #~/scripts/patray &
     # nitrogen --restore &
     wpa-cute -qt &
+    pentablet.sh /mini
  fi
