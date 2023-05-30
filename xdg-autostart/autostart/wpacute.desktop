@@ -9,5 +9,5 @@ X-GNOME-Autostart-Delay=5
 X-MATE-Autostart-Delay=2
 Comment=
 RunHook=0
-Hidden=true
+Hidden=false
 
