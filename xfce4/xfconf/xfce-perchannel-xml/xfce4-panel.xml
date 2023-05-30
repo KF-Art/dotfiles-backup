@@ -125,7 +125,7 @@
     <property name="plugin-3" type="string" value="notification-plugin"/>
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="firefox.instance1575;strawberry;youtube-music"/>
+      <property name="mpris-players" type="string" value="firefox.instance1575;firefox.instance5028;strawberry;youtube-music"/>
     </property>
   </property>
 </channel>
