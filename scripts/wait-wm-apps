@@ -16,6 +16,7 @@ checkwm
     #sleep 2
     #~/scripts/patray &
     # nitrogen --restore &
+    xfsettingsd  &
     wpa-cute -qt &
     pentablet.sh /mini
  else
@@ -26,6 +27,7 @@ checkwm
     #sleep 2
     #~/scripts/patray &
     # nitrogen --restore &
+    xfsettingsd &
     wpa-cute -qt &
     pentablet.sh /mini
  fi
