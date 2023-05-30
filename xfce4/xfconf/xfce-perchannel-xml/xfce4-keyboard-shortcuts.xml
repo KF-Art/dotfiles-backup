@@ -60,10 +60,10 @@
       <property name="&lt;Primary&gt;&lt;Shift&gt;p" type="string" value="pavucontrol"/>
       <property name="&lt;Alt&gt;F5" type="string" value="xkill"/>
       <property name="&lt;Super&gt;space" type="string" value="rofi.sh"/>
-      <property name="&lt;Alt&gt;F1" type="string" value="xfce4-popup-whiskermenu"/>
       <property name="&lt;Shift&gt;&lt;Alt&gt;r" type="string" value="xfwm4 --replace"/>
       <property name="&lt;Alt&gt;p" type="string" value="/home/kevin/scripts/toggle-picom"/>
       <property name="&lt;Shift&gt;&lt;Alt&gt;e" type="string" value="xfce4-session-logout"/>
+      <property name="&lt;Alt&gt;F1" type="string" value="xfce4-popup-whiskermenu"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
