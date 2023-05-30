@@ -45,10 +45,10 @@ shade8 = #00295014
 
 [bar/blur]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
+width = 95%
 height = 40
-;offset-x = 1%
-;offset-y = 1%
+offset-x = 2%
+offset-y = 1.2%
 radius = 6.0
 fixed-center = false
 
@@ -76,7 +76,7 @@ font-3 = "JetBrains Mono NL:size=22.5;3"
 
 modules-left = launcher left1 ewmh left2
 modules-center = left4 polywins left3
-modules-right = right5 temperature right4 pulseaudio right3 date right2 powermenu right1
+modules-right = right3 date right1
 
 tray-position = right
 tray-padding = 2
@@ -86,7 +86,7 @@ tray-background = ${colors.shade1}
 tray-detached = false
 ;wm-restack = bspwm
 ;wm-restack = i3
-wm-restack = icewm
+wm-restack = xfwm4
 
 override-redirect = true
 enable-ipc = true
@@ -131,7 +131,7 @@ icon-1 = office;♛
 icon-2 = graphics;♜
 icon-3 = mail;♝
 icon-4 = web;♞
-icon-default = ♟
+;icon-default = ♟
 
 ; Available tags:
 ;   <label-monitor>
@@ -781,6 +781,7 @@ content = "  "
 ; "content" has the same properties as "format-NAME"
 content-background = ${colors.shade1}
 content-foreground = ${colors.foreground}
+content-font = 4
 content-padding = 3
 
 ; "click-(left|middle|right)" will be executed using "/usr/bin/env sh -c $COMMAND"
@@ -836,7 +837,7 @@ content-font = 4
 
 [module/right1]
 type = custom/text
-content-background = ${colors.shade2}
+content-background = ${colors.secondary}
 content-foreground = ${colors.shade1}
 content = ${glyph.gright}
 content-font = 4
@@ -850,7 +851,7 @@ content-font = 4
 
 [module/right3]
 type = custom/text
-content-background = ${colors.primary}
+content-background = ${colors.backgroundprimary}
 content-foreground = ${colors.secondary}
 content = ${glyph.gright}
 content-font = 4
