@@ -7,5 +7,5 @@ Selection=true
 
 . /etc/profile &
 . $HOME/.profile &
-
-exec dbus-launch $@
+~/.xsession &
+exec dbus-run-session $@
