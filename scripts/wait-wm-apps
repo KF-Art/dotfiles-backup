@@ -18,7 +18,6 @@ checkwm
     # nitrogen --restore &
     wpa-cute -qt &
     pentablet.sh /mini
-    xfsettingsd &
  else
     echo "Window manager not running"
     while [ "$exitstatus" = 1 ]; do checkwm; sleep 1; done
@@ -29,5 +28,4 @@ checkwm
     # nitrogen --restore &
     wpa-cute -qt &
     pentablet.sh /mini
-    xfsettingsd &
  fi
