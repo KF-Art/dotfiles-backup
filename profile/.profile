@@ -39,3 +39,4 @@ export WINEFSYNC=1
 export DXVK_ASYNC=1
 export mesa_glthread=true
 export SHOW_DESKTOP=1
+export NO_AT_BRIDGE=1 
