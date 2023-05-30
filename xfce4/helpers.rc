@@ -1,4 +1,2 @@
-TerminalEmulator=custom-TerminalEmulator
-FileManager=custom-FileManager
-WebBrowser=firefox
+TerminalEmulator=kitty
 
