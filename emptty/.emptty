@@ -1,3 +1,4 @@
+
 #!/bin/sh
 Selection=true
 
@@ -7,5 +8,5 @@ Selection=true
 
 . /etc/profile &
 . $HOME/.profile &
-~/.xsession &
+#~/.xsession &
 exec dbus-launch $@
