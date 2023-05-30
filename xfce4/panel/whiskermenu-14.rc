@@ -1,5 +1,5 @@
 favorites=xfce4-web-browser.desktop,xfce4-mail-reader.desktop,xfce4-file-manager.desktop,xfce4-terminal-emulator.desktop
-recent=youtube-music.desktop,ungoogled-chromium.desktop,xfce4-settings-editor.desktop,qps.desktop,xfce-session-settings.desktop,xfce-keyboard-settings.desktop,org.telegram.desktop._3f83b0001c446a94143485ba3d1bf6b1.desktop,lightdm-gtk-greeter-settings.desktop,gparted.desktop,com.github.joseexposito.touche.desktop
+recent=xfce-workspaces-settings.desktop,youtube-music.desktop,ungoogled-chromium.desktop,xfce4-settings-editor.desktop,qps.desktop,xfce-session-settings.desktop,xfce-keyboard-settings.desktop,org.telegram.desktop._3f83b0001c446a94143485ba3d1bf6b1.desktop,lightdm-gtk-greeter-settings.desktop,gparted.desktop
 button-title=\ \ Cereus Linux\ \ \ 
 button-icon=cereus-logo
 button-single-row=false
