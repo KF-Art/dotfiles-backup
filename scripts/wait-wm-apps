@@ -16,6 +16,8 @@ checkwm
     #sleep 2
     #~/scripts/patray &
     # nitrogen --restore &
+    # Keyboard shortcuts
+    sxhkd &
     wpa-cute -qt &
     pentablet.sh /mini
  else
@@ -26,6 +28,8 @@ checkwm
     #sleep 2
     #~/scripts/patray &
     # nitrogen --restore &
+    # Keyboard shortcuts
+    sxhkd &
     wpa-cute -qt &
     pentablet.sh /mini
  fi
