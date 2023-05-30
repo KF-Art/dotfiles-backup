@@ -9,7 +9,7 @@ checkwm
 
  if [ "$exitstatus" = 0 ]; then
     echo "Opening apps"
-    while [ "$exitstatus" = 1 ]; do checkwm; sleep 0.5; done
+    while [ "$exitstatus" = 1 ]; do checkwm; sleep 1; done
     #gpu-video-wallpaper --start "$(cat ~/.config/video-wallpaper/settings.conf | grep lastfile | cut -d"=" -f2 | cut -d'"' -f2)" &
     #wallengine /media/DATOS/Videos/2393427663 --assets install/linux-wallpaperengine/build/assets/ --screen-root eDP-1 --fps 60
     #$BAR_APPLICATION &
@@ -21,7 +21,7 @@ checkwm
     pentablet.sh /mini
  else
     echo "Window manager not running"
-    while [ "$exitstatus" = 1 ]; do checkwm; sleep 0.5; done
+    while [ "$exitstatus" = 1 ]; do checkwm; sleep 1; done
     #gpu-video-wallpaper --start "$(cat ~/.config/video-wallpaper/settings.conf | grep lastfile | cut -d"=" -f2 | cut -d'"' -f2)" &
     #$BAR_APPLICATION &
     #sleep 2
