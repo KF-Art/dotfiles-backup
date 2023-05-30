@@ -1,6 +1,9 @@
 [Desktop Entry]
-Exec=nemo-desktop
+Exec=nemo-desktop  &
 Hidden=true
 Name=Nemo Desktop
 Type=Application
 Version=1.0
+Comment=
+RunHook=0
+

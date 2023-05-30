@@ -1,11 +1,77 @@
-@import 'colors.css';
-#fast-user-switch-applet * {
- padding: 0 1px 0 1px;
+/*
+ XFCE4 CHEATS
+*/
+
+.xfce4-panel {
+   border-radius: 24px;
+	margin-bottom: 10px;
+	padding: 0px;
+	padding-left: 15px;
+	padding-right: 15px;
+    background: rgba(20,20,20,0.8);
+ border-top: 1px rgba(255,255,255,0.2) solid;
+border-bottom: 1px rgba(255,255,255,0.2) solid;
+font-weight: normal;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+margin-bottom: 2px; 
+}
+.xfce4-panel.background button {
+  min-height: 22px;
+  min-width: 22px;
+box-shadow: none;
+  background-color: transparent;
+padding: 0;
+margin: 0;
+  border-radius: 0;
+}
+.xfce4-panel.background .tasklist button image {
+  padding: 2px;
 }
 
-#na-tray-applet *
-{
-	margin: 6px; 
+#XfcePanelWindowWrapper{
+
+border: 0px #333333 solid !important;
+box-shadow:none;
+ height: 20px;
+ max-height: 20px;
+border-radius: 0;
+border:;
+}
+
+#whiskermenu-button{
+  background-color: transparent;         /* whisker menu button has two background layers */
+}
+.xfce4-panel.background .tasklist button {
+    font-size: ;
+    background: transparent;
+	}
+.xfce4-panel .tasklist .toggle {
+    background-color: rgba(255,255,255,0.0);
+    color: white;
+    border-radius: 2px; 
+    margin: 4px;
+    padding: 0px;
+    border-bottom: 3px rgba(55,55,55,0.0) solid;
+    transition: 100ms;
+}
+.xfce4-panel .tasklist button image  {
+
+-gtk-icon-transform: scale(1.8);
+width: 80px;
+height: 80px;
+}
+
+.xfce4-panel .tasklist .toggle:hover, 
+.xfce4-panel .tasklist .toggle:active {
+    background: rgba(255,255,255,0.08);
+    border-bottom: 3px rgba(240,240,40,0.8) solid;
+}
+
+.xfce4-panel .tasklist .toggle:focus, 
+.xfce4-panel .tasklist .toggle:checked {
+    background: rgba(255,255,255,0.2);
+    border-bottom: 3px rgba(40,160,240,0.9) solid;
 }
 
 /*

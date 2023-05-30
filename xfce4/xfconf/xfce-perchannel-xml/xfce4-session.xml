@@ -12,12 +12,12 @@
       <property name="IsFailsafe" type="empty"/>
       <property name="Count" type="empty"/>
       <property name="Client0_Command" type="array">
-        <value type="string" value="/home/kevin/scripts/xfce-icewm"/>
+        <value type="string" value="xfwm4"/>
       </property>
       <property name="Client0_Priority" type="empty"/>
       <property name="Client0_PerScreen" type="empty"/>
       <property name="Client1_Command" type="array">
-        <value type="string" value="/home/kevin/scripts/xfce-icewm"/>
+        <value type="string" value="xfwm4"/>
       </property>
       <property name="Client1_Priority" type="empty"/>
       <property name="Client1_PerScreen" type="empty"/>
@@ -31,5 +31,8 @@
       <property name="Client4_Priority" type="empty"/>
       <property name="Client4_PerScreen" type="empty"/>
     </property>
+  </property>
+  <property name="shutdown" type="empty">
+    <property name="LockScreen" type="bool" value="true"/>
   </property>
 </channel>

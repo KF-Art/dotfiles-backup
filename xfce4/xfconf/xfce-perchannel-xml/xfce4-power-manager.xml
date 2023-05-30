@@ -18,5 +18,6 @@
     <property name="brightness-exponential" type="bool" value="false"/>
     <property name="brightness-step-count" type="uint" value="15"/>
     <property name="show-presentation-indicator" type="bool" value="true"/>
+    <property name="lock-screen-suspend-hibernate" type="bool" value="true"/>
   </property>
 </channel>
