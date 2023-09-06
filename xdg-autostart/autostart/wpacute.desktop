@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=wpa-cute -qt &
+Exec=wpa-cute -qt
 Name=wpacute
 Type=Application
 Version=1.0
@@ -9,5 +9,5 @@ X-GNOME-Autostart-Delay=5
 X-MATE-Autostart-Delay=2
 Comment=
 RunHook=0
-Hidden=false
+Hidden=true
 

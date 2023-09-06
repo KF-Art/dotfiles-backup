@@ -13,7 +13,8 @@ alias xisu="doas xbps-install -Su"      # Actualiza el sistema.
 alias xrr="doas xbps-remove -R"         # Elimina un paquete y sus dependencias.
 alias xrro="doas xbps-remove -RoO"      # Elimina un paquete y limpia la caché.
 alias xra="xbps-rindex -a *.xbps"       # Indexa los paquetes en el directorio actual.
-alias xsrc="~/void-packages/xbps-src"   # xbps-src
+alias xsrc="~/cereus/pkgs/xbps-src"   # xbps-src
+alias xic="doas xbps-install -R ~/cereus/pkgs/hostdir/binpkgs/cereus-extra"
 
 alias ls="ls --color=auto"
 alias su='su -c "/bin/bash"'

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Exec=nemo-desktop  &
-Hidden=true
+Hidden=false
 Name=Nemo Desktop
 Type=Application
 Version=1.0

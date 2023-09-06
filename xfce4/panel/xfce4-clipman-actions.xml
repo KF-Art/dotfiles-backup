@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+	<action>
+		<name>Dirección URL larga</name>
+		<regex>http://[^\s]{120,}</regex>
+		<group>0</group>
+		<commands>
+			<command>
+				<name>Acortar la dirección URL</name>
+				<exec>exo-open http://tinyurl.com/create.php?url=\0</exec>
+			</command>
+		</commands>
+	</action>
+	<action>
+		<name>Fallos</name>
+		<regex>bug\s*#?\s*([0-9]+)</regex>
+		<group>0</group>
+		<commands>
+			<command>
+				<name>Fallo de Xfce</name>
+				<exec>exo-open http://bugzilla.xfce.org/show_bug.cgi?id=\1</exec>
+			</command>
+			<command>
+				<name>Fallo de GNOME</name>
+				<exec>exo-open http://bugzilla.gnome.org/show_bug.cgi?id=\1</exec>
+			</command>
+		</commands>
+	</action>
+	<action>
+		<name>Imagen</name>
+		<regex>(http|ftp).+\.(jpg|png|gif)</regex>
+		<group>0</group>
+		<commands>
+			<command>
+				<name>Ver con Ristretto</name>
+				<exec>ristretto &quot;\0&quot;</exec>
+			</command>
+			<command>
+				<name>Editar con GIMP</name>
+				<exec>gimp-remote &quot;\0&quot;</exec>
+			</command>
+		</commands>
+	</action>
+</actions>

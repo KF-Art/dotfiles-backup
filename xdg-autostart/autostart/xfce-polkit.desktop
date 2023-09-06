@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment=Policykit Authentication Agent
 Exec=/usr/libexec/xfce-polkit
-Hidden=true
+Hidden=false
 Icon=gtk-dialog-authentication
 Name=XFCE PolKit
 NotShowIn=GNOME;KDE;

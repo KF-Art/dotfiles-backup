@@ -17,10 +17,12 @@ checkwm
     #~/scripts/patray &
     # nitrogen --restore &
     # Keyboard shortcuts
-    sleep 2; sxhkd &
+#    sleep 2; sxhkd &
+	sleep 2
     wpa-cute -qt &
-    pentablet.sh /mini
- else
+	#pentablet.sh /mini &
+	echo prueba >> ~/.xsession-errors
+	else
     echo "Window manager not running"
     while [ "$exitstatus" = 1 ]; do checkwm; sleep 1; done
     #gpu-video-wallpaper --start "$(cat ~/.config/video-wallpaper/settings.conf | grep lastfile | cut -d"=" -f2 | cut -d'"' -f2)" &
@@ -29,7 +31,8 @@ checkwm
     #~/scripts/patray &
     # nitrogen --restore &
     # Keyboard shortcuts
-    sleep 2; sxhkd &
+ #   sleep 2; sxhkd &
     wpa-cute -qt &
-    pentablet.sh /mini
+	/usr/lib/pentablet/pentablet.sh /mini &
+	echo prueba2 >> ~/.xsession-errors
  fi

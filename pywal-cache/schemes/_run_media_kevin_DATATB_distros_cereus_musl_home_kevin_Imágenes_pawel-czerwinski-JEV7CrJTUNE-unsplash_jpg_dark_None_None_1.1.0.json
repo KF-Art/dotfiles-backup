@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/run/media/kevin/DATATB/distros/cereus_musl/home/kevin/Im\u00e1genes/pawel-czerwinski-JEV7CrJTUNE-unsplash.jpg",
+    "alpha": "60",
+    "special": {
+        "background": "#0b0e0a",
+        "foreground": "#c2c6c5",
+        "cursor": "#c2c6c5"
+    },
+    "colors": {
+        "color0": "#0b0e0a",
+        "color1": "#596F5F",
+        "color2": "#21843C",
+        "color3": "#168C53",
+        "color4": "#5E8F66",
+        "color5": "#879177",
+        "color6": "#779086",
+        "color7": "#c2c6c5",
+        "color8": "#878a89",
+        "color9": "#596F5F",
+        "color10": "#21843C",
+        "color11": "#168C53",
+        "color12": "#5E8F66",
+        "color13": "#879177",
+        "color14": "#779086",
+        "color15": "#c2c6c5"
+    }
+}

@@ -7,6 +7,6 @@ Selection=true
 # redshift -O 4000
 
 . /etc/profile &
-. $HOME/.profile &
+. ~/.profile &
 #~/.xsession &
 exec dbus-launch $@

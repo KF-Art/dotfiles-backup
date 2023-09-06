@@ -9,5 +9,5 @@ Type=Application
 X-LXQt-Need-Tray=true
 Comment=
 RunHook=0
-Hidden=true
+Hidden=false
 

@@ -8,7 +8,8 @@
  */
 
 configuration {
-	font:							"Roboto 11";
+	font:							"Roboto 12";
+    bold-font:                      "Roboto bold 12";
     show-icons:                     true;
     display-drun: 					"";
     drun-display-format:            "{name}";
@@ -24,7 +25,7 @@ configuration {
   al:    #00000000;
 
     /* background */
-  bg:    #0F0F0F90;
+  bg:    #00000080;
 
     /* light 1 */
   bg1:   #0F0F0FFF;
@@ -42,8 +43,8 @@ window {
     transparency:                   "real";
     background-color:               @bg;
     text-color:                     @fg;
-	border:							0px;
-	border-color:					@ac;
+	border:							2px;
+	border-color:					@bg2;
     border-radius:                  10px;
 	width:							750px;
     location:                       center;
@@ -132,6 +133,7 @@ element-text selected {
     expand:                         true;
     horizontal-align:               0;
     vertical-align:                 0.5;
+    font:                           @font-bold;
     margin:                         0px 2.5px 0px 2.5px;
     background-color:		    @al; 
     text-color:			    #000000FF;

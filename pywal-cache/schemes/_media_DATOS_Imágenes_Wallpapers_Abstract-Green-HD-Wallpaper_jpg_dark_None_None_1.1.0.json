@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Wallpapers/Abstract-Green-HD-Wallpaper.jpg",
+    "alpha": "60",
+    "special": {
+        "background": "#054623",
+        "foreground": "#e4eadf",
+        "cursor": "#e4eadf"
+    },
+    "colors": {
+        "color0": "#054623",
+        "color1": "#57AB4F",
+        "color2": "#75C55C",
+        "color3": "#88BD6B",
+        "color4": "#8DCB6A",
+        "color5": "#76AD88",
+        "color6": "#B5D69A",
+        "color7": "#e4eadf",
+        "color8": "#9fa39c",
+        "color9": "#57AB4F",
+        "color10": "#75C55C",
+        "color11": "#88BD6B",
+        "color12": "#8DCB6A",
+        "color13": "#76AD88",
+        "color14": "#B5D69A",
+        "color15": "#e4eadf"
+    }
+}

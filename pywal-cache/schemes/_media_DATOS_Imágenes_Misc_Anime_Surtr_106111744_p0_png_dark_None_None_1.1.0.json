@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Misc/Anime/Surtr/106111744_p0.png",
+    "alpha": "60",
+    "special": {
+        "background": "#06060E",
+        "foreground": "#f3dbd4",
+        "cursor": "#f3dbd4"
+    },
+    "colors": {
+        "color0": "#06060E",
+        "color1": "#94152B",
+        "color2": "#D53C4B",
+        "color3": "#A45F63",
+        "color4": "#B57389",
+        "color5": "#AD9DA2",
+        "color6": "#E1A59E",
+        "color7": "#f3dbd4",
+        "color8": "#aa9994",
+        "color9": "#94152B",
+        "color10": "#D53C4B",
+        "color11": "#A45F63",
+        "color12": "#B57389",
+        "color13": "#AD9DA2",
+        "color14": "#E1A59E",
+        "color15": "#f3dbd4"
+    }
+}

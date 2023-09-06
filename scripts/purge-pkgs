@@ -1,0 +1,107 @@
+#!/bin/sh
+#
+# Script que elimina paquetes de la caché que ya no están instalados en el sistema
+#
+# NOTA: En caso de usar doas, es necesario que en el archivo de configuración se 
+# tenga configurada la persistencia, de lo contrario por cada archivo por eliminar
+# será necesario confirmar introduciendo lo contraseña.
+#
+# Lista de códigos de salida
+#       0 - éxito
+#       9 - operación exitosa, pero no se encontraron archivos para eliminar
+#       10 - operación exitosa, pero no se eliminaron los archivos encontrados 
+#       11 - respuesta seleccionada inválida
+#       12 - mensaje de ayuda mostrado
+#
+# Shell: POSIX compliant
+# Autor: O. Sánchez <o-sanchez@linuxmail.org>
+
+script="${0##*/}"
+
+ayuda () {
+printf %s "\
+$script ayuda a eliminar definitivamente aquellos paquetes que quedan guardados en la caché del sistema.
+
+Modo de uso:
+ $script <argumento>
+
+ --list | -l	Muestra una lista de los paquetes que ya no están en uso
+ --help | -h	Muestra este mensaje de ayuda
+
+"
+}
+
+# Identificar cómo escalar permisos de administrador
+admin () {
+	if command -v sudo >/dev/null && id | grep -q wheel; then
+		echo sudo
+	elif command -v doas >/dev/null && [ -f /etc/doas.conf ]; then
+		echo doas
+	elif [ "$(id -u)" != 0 ]; then
+		echo su
+	fi
+}
+
+cache_dir=/var/cache/xbps
+_arch=$(xbps-uhelper arch)	# Obtener arquitectura
+
+lista () {
+# Obtener lista de paquetes instalados en el sistema
+xbps-query -l | awk '{print $2}' > /tmp/installed.txt
+
+# Obtener lista de paquetes en la caché del sistema
+for package in /var/cache/xbps/*.xbps; do
+	base=${package##*/}
+	echo "${base%."$_arch".xbps}"
+done > /tmp/cache.txt
+_diff=$(diff /tmp/cache.txt /tmp/installed.txt | awk '/</ {print $2}')
+
+if [ -n "$_diff" ]; then
+	# Mostrar lista de paquetes que no están en la caché y que no se encuentran instalados
+	printf '%s\n' "Los siguiente paquetes ya no se encuentran instalados en el sistema:"
+	printf '%s\n' "$_diff" | column
+else
+	printf '%s\n' "No hay paquetes por eliminar"
+	exit 9
+fi
+}
+
+case $1 in
+	-l|--list)
+		lista
+		printf '\n%s\n' "¿Deseas eliminar los paquetes? s/n"
+		read -r respuesta
+
+		case "$respuesta" in
+			[sS])
+				diff /tmp/cache.txt /tmp/installed.txt | awk '/</ {print $2}' > /tmp/delete.txt
+				echo "Ingrese la contraseña de administrador:"
+				echo "Eliminando los paquetes..."
+				while read -r pkg; do
+					cmd=$(admin)
+					if [ "$cmd" = "sudo" ]; then
+						sudo rm -fv "${cache_dir}/${pkg}.${_arch}.xbps"
+					elif [ "$cmd" = "doas" ]; then
+						doas rm -fv "${cache_dir}/${pkg}.${_arch}.xbps"
+					elif [ "$cmd" = "su" ]; then
+						su -c "rm -fv ${cache_dir}/${pkg}.${_arch}.xbps"
+					fi
+				done < /tmp/delete.txt
+				rm -f /tmp/*.txt
+				exit 0
+				;;
+			[nN])
+				rm -f /tmp/*.txt
+				exit 10
+				;;
+			*)
+				echo "Respuesta inválida."
+				rm -f /tmp/*.txt
+				exit 11
+		esac
+		;;
+	-h|--help|*)
+		ayuda
+		exit 12
+esac
+

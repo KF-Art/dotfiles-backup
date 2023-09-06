@@ -8,5 +8,5 @@ X-GNOME-Autostart-Delay=1
 X-KDE-AutostartScript=true
 Comment=
 RunHook=0
-Hidden=true
+Hidden=false
 

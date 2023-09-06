@@ -73,3 +73,5 @@ export GPG_TTY=$(tty)
 #POWERLINE_BASH_CONTINUATION=1
 #POWERLINE_BASH_SELECT=1
 #. /usr/lib/python3.11/site-packages/powerline/bindings/shell/powerline.sh
+
+#trap 'echo -ne "\033]2;$(history 1 | sed "s/^[ ]*[0-9]*[ ]*//g")\007"' DEBUG

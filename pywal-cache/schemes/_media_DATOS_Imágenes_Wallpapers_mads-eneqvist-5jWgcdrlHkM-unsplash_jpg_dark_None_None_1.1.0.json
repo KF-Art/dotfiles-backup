@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Wallpapers/mads-eneqvist-5jWgcdrlHkM-unsplash.jpg",
+    "alpha": "60",
+    "special": {
+        "background": "#011F27",
+        "foreground": "#b0caba",
+        "cursor": "#b0caba"
+    },
+    "colors": {
+        "color0": "#011F27",
+        "color1": "#2C6C52",
+        "color2": "#4F7360",
+        "color3": "#0B823E",
+        "color4": "#30885E",
+        "color5": "#5B9372",
+        "color6": "#85917A",
+        "color7": "#b0caba",
+        "color8": "#7b8d82",
+        "color9": "#2C6C52",
+        "color10": "#4F7360",
+        "color11": "#0B823E",
+        "color12": "#30885E",
+        "color13": "#5B9372",
+        "color14": "#85917A",
+        "color15": "#b0caba"
+    }
+}

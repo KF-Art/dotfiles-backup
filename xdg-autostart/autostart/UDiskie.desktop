@@ -1,6 +1,6 @@
 [Desktop Entry]
-Exec=udiskie &
-Hidden=true
+Exec=udiskie
+Hidden=false
 Name=UDiskie
 Type=Application
 Version=1.0

@@ -1,16 +1,17 @@
 # Allows to change Qt theme
 #export QT_QPA_PLATFORMTHEME=kde
 
-unset QT_QPA_PLATFORMTHEME
-case $XDG_CURRENT_DESKTOP in
-	KDE)
-		export QT_QPA_PLATFORMTHEME="kde" ;;
-	LXQt)
-		export QT_QPA_PLATFORMTHEME="lxqt" ;;
-	*)
-		export QT_QPA_PLATFORMTHEME="qt5ct" ;;
-esac
+#unset QT_QPA_PLATFORMTHEME
+#case $XDG_CURRENT_DESKTOP in
+#	KDE)
+#		export QT_QPA_PLATFORMTHEME="kde" ;;
+#	LXQt)
+#		export QT_QPA_PLATFORMTHEME="lxqt" ;;
+#	*)
+#		export QT_QPA_PLATFORMTHEME="qt5ct" ;;
+#esac
 
+export QT_QPA_PLATFORMTHEME=qt5ct
 # The bar that you will use
 export BAR_APPLICATION="tint2"
 #export BAR_APPLICATION="budgie-panel"
@@ -31,7 +32,7 @@ export REPO_CEREUS="https://osdn.mirror.constant.com/storage/g/c/ce/cereuslinux/
 export REPO_CORE="${REPO_CEREUS}/cereus-core"
 export REPO_EXTRA="${REPO_CEREUS}/cereus-extra"
 export REPO_VOID="https://repo-fastly.voidlinux.org/current/"
-export PATH=$PATH:~/scripts:~/cereus/scripts/
+export PATH=$PATH:~/scripts:~/cereus/scripts/:~/.local/bin
 export MOZ_GTK_TITLEBAR_DECORATION=client
 export MANGOHUD=1
 #export KDEWM="/home/kevin/scripts/plasma-icewm"

@@ -76,12 +76,13 @@ Comment[tr]=Color temperature adjustment tool
 Comment[uk]=Color temperature adjustment tool
 Comment[zh_CN]=Color temperature adjustment tool
 Comment[zh_TW]=Color temperature adjustment tool
-Exec=redshift-gtk
+Exec=sleep 4 && redshift-gtk
 Icon=redshift
 Terminal=false
 Type=Application
 Categories=Utility;
 StartupNotify=true
-Hidden=true
-X-GNOME-Autostart-enabled=false
+Hidden=false
+X-GNOME-Autostart-enabled=true
+RunHook=0
 
