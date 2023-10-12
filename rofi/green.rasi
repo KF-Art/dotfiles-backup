@@ -9,8 +9,8 @@
  */
 
 configuration {
-	font:							"Roboto 12";
-    bold-font:                      "Roboto bold 12";
+	font:							"Roboto 13";
+    bold-font:                      "Roboto bold 13";
     show-icons:                     true;
     display-drun: 					"";
     drun-display-format:            "{name}";

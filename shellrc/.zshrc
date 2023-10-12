@@ -90,7 +90,7 @@ bindkey '^[[B'    down-line-or-beginning-search # down       next command in his
 
 powerline-daemon -q
 #. /home/kevin/.local/lib/python3.11/site-packages/powerline/bindings/zsh/powerline.zsh
-. /usr/lib/python3.11/site-packages/powerline/bindings/zsh/powerline.zsh
+. /usr/lib/python3.12/site-packages/powerline/bindings/zsh/powerline.zsh
 
 mdl () {
 url=$(curl -Lqs "$1"|grep "href.*download.*media.*"|tail -1|cut -d '"' -f 2)

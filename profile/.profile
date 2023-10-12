@@ -41,3 +41,4 @@ export DXVK_ASYNC=1
 export mesa_glthread=true
 export SHOW_DESKTOP=1
 export NO_AT_BRIDGE=1 
+export GDK_DPI_SCALE=1.05

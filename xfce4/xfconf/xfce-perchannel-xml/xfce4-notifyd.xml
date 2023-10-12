@@ -28,12 +28,14 @@
       <value type="string" value="org.telegram.desktop"/>
       <value type="string" value="org.telegram.desktop._3f83b0001c446a94143485ba3d1bf6b1"/>
       <value type="string" value="org.x.Warpinator"/>
+      <value type="string" value="pasystray"/>
       <value type="string" value="pentablet"/>
       <value type="string" value="resolution-hooks"/>
       <value type="string" value="SchildiChat"/>
       <value type="string" value="Thunderbird"/>
       <value type="string" value="tutanota-desktop"/>
       <value type="string" value="udiskie"/>
+      <value type="string" value="uGet"/>
       <value type="string" value="ungoogled-chromium"/>
       <value type="string" value="wpa-cute"/>
       <value type="string" value="Xfce volume control"/>
