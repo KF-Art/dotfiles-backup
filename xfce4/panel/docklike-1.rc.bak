@@ -1,0 +1,10 @@
+[user]
+indicatorColor=rgb(82,218,116)
+inactiveColor=rgb(0,82,43)
+noWindowsListIfSingle=true
+onlyDisplayVisible=true
+onlyDisplayScreen=true
+showWindowCount=true
+indicatorStyle=1
+indicatorOrientation=1
+pinned=/usr/share/applications/librewolf.desktop;/usr/share/applications/xed.desktop;/usr/share/applications/krita_brush.desktop;/var/lib/flatpak/exports/share/applications/chat.schildi.desktop.desktop;/home/kevin/.local/share/applications/nemo.desktop;
