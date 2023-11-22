@@ -32,8 +32,8 @@
 # pulseaudio --start &
 
 #Notification daemon
-#/usr/lib/xfce4/notifyd/xfce4-notifyd &
-dunst &
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
+#dunst &
 
 #NetworkManager applet 
 # nm-applet &
@@ -94,7 +94,7 @@ ksuperkey &
 xrdb -merge ~/.Xresources &
 
 # rxvt-unicode daemon 
-urxvtd -q -f -o &
+#urxvtd -q -f -o &
 
 # Battery status icon
 # xfce4-power-manager &

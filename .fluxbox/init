@@ -2,9 +2,9 @@ session.screen0.menu.alpha:	255
 session.screen0.tabs.usePixmap:	true
 session.screen0.tabs.maxOver:	false
 session.screen0.tabs.intitlebar:	true
-session.screen0.iconbar.mode:	{static groups} (workspace)
-session.screen0.iconbar.usePixmap:	true
-session.screen0.iconbar.iconWidth:	250
+session.screen0.iconbar.mode:	{static groups}
+session.screen0.iconbar.usePixmap:	false
+session.screen0.iconbar.iconWidth:	0
 session.screen0.iconbar.iconTextPadding:	10
 session.screen0.iconbar.alignment:	Left
 session.screen0.window.focus.alpha:	255
@@ -18,7 +18,7 @@ session.screen0.slit.acceptKdeDockapps:	true
 session.screen0.slit.autoRaise:	false
 session.screen0.slit.maxOver:	false
 session.screen0.slit.placement:	RightBottom
-session.screen0.toolbar.height:	36
+session.screen0.toolbar.height:	28
 session.screen0.toolbar.visible:	true
 session.screen0.toolbar.layer:	Normal
 session.screen0.toolbar.maxOver:	false

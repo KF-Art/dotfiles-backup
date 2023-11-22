@@ -1,12 +1,12 @@
 #!/bin/sh
 alttab -fg "#ffffff" \
--bg "#0f0f0f" \
--frame "#77201B" \
--inact "#77201B" \
+-bg "#000000" \
+-frame "#008746" \
+-inact "#008746" \
 -t 400x30 \
 -i 64x64 \
 -w 1 \
 -font xft:roboto-11 \
 -vertical \
--bc "#77201B" \
+-bc "#008746" \
 -bw 0

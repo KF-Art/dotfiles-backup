@@ -292,7 +292,7 @@ Mod4 F3 :Exec doas brillo -A 20%
 
 #App launcher
 Mod4 space :Exec ~/scripts/rofi.sh
-Mod1 F1 :Exec ~/scripts/rofi-panel.sh
+Mod1 F1 :Exec jgmenu_run
 
 #URxvt
 Mod1 Return :Exec urxvtc
