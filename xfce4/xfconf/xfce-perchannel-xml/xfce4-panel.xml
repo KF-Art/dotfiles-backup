@@ -10,7 +10,7 @@
       <property name="length" type="double" value="98.59375"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="icon-size" type="uint" value="16"/>
-      <property name="size" type="uint" value="44"/>
+      <property name="size" type="uint" value="42"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="2"/>
         <value type="int" value="7"/>
@@ -113,9 +113,10 @@
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-12" type="string" value="clock">
-      <property name="digital-date-format" type="string" value="|  %A, %d %B  |  %H:%M  |"/>
-      <property name="digital-layout" type="uint" value="2"/>
+      <property name="digital-date-format" type="string" value=" %A, %d %B  "/>
+      <property name="digital-layout" type="uint" value="3"/>
       <property name="digital-date-font" type="string" value="Roboto Medium 11"/>
+      <property name="digital-time-font" type="string" value="Roboto Medium 11"/>
     </property>
     <property name="plugin-13" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
@@ -142,16 +143,16 @@
         <value type="string" value="xfce4-terminal-emulator.desktop"/>
       </property>
       <property name="recent" type="array">
+        <value type="string" value="im.fluffychat.Fluffychat.desktop"/>
+        <value type="string" value="org.kde.kdeconnect.app.desktop"/>
+        <value type="string" value="qps.desktop"/>
+        <value type="string" value="thunderbird.desktop"/>
+        <value type="string" value="chat.schildi.desktop.desktop"/>
+        <value type="string" value="org.telegram.desktop._3f83b0001c446a94143485ba3d1bf6b1.desktop"/>
         <value type="string" value="timeshift-gtk.desktop"/>
         <value type="string" value="xfce4-notifyd-config.desktop"/>
         <value type="string" value="xppentablet.desktop"/>
         <value type="string" value="xfce-ui-settings.desktop"/>
-        <value type="string" value="xfce-session-settings.desktop"/>
-        <value type="string" value="chat.schildi.desktop.desktop"/>
-        <value type="string" value="xfce4-power-manager-settings.desktop"/>
-        <value type="string" value="vivaldi-stable.desktop"/>
-        <value type="string" value="xfce-display-settings.desktop"/>
-        <value type="string" value="im.riot.Riot.desktop"/>
       </property>
     </property>
     <property name="plugin-14" type="string" value="showdesktop"/>
