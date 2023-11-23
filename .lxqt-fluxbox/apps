@@ -19,9 +19,9 @@
 [end]
 [app] (name=nemo-desktop) (class=Nemo-desktop)
   [Head]	{1}
-  [Dimensions]	{100% 105%}
-  [Position]	(UPPERLEFT)	{-2% 3%}
-  [Maximized]	{yes}
+  [Dimensions]	{100% 100%}
+  [Position]	(UPPERLEFT)	{0% 0%}
+  [Maximized]	{no}
   [Layer]	{12}
   [Close]	{yes}
 [end]

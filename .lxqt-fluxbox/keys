@@ -99,6 +99,7 @@ OnToolbar Mouse5 :NextWindow {static groups} (workspace=[current])  (workspace=[
 #OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
 OnWindowBorder Move1 :StartMoving
 
+#OnWindow Mod1 Shift Mouse1 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
 OnWindow Mod1 Shift Mouse1 :MacroCmd {Raise} {Focus} {StartResizing NearestCorner}
 OnLeftGrip Move1 :StartResizing bottomleft
 OnRightGrip Move1 :StartResizing bottomright

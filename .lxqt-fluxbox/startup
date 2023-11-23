@@ -86,7 +86,7 @@ fi
 
 #Pulseaudio applet
 # pasystray --notify=all &
-#sleep 3 && ~/scripts/patray &
+sleep 3 && ~/scripts/patray &
 
 # Enable Super key for menu
 ksuperkey &
@@ -99,7 +99,7 @@ ksuperkey &
 
 # Battery status icon
 # xfce4-power-manager &
-#lxqt-powermanagement &
+lxqt-powermanagement &
 
 # Touchpad and touchscreen gestures
 #touchegg &
