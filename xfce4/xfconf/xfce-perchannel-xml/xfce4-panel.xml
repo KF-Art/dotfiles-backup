@@ -7,10 +7,10 @@
     <property name="dark-mode" type="bool" value="true"/>
     <property name="panel-1" type="empty">
       <property name="position" type="string" value="p=0;x=957;y=1046"/>
-      <property name="length" type="double" value="97.65625"/>
+      <property name="length" type="double" value="98.59375"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="icon-size" type="uint" value="16"/>
-      <property name="size" type="uint" value="42"/>
+      <property name="size" type="uint" value="44"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="2"/>
         <value type="int" value="7"/>
@@ -44,7 +44,11 @@
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-4" type="string" value="pager"/>
+    <property name="plugin-4" type="string" value="pager">
+      <property name="rows" type="uint" value="1"/>
+      <property name="miniature-view" type="bool" value="true"/>
+      <property name="numbering" type="bool" value="false"/>
+    </property>
     <property name="plugin-5" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
       <property name="expand" type="bool" value="true"/>
@@ -138,6 +142,8 @@
         <value type="string" value="xfce4-terminal-emulator.desktop"/>
       </property>
       <property name="recent" type="array">
+        <value type="string" value="timeshift-gtk.desktop"/>
+        <value type="string" value="xfce4-notifyd-config.desktop"/>
         <value type="string" value="xppentablet.desktop"/>
         <value type="string" value="xfce-ui-settings.desktop"/>
         <value type="string" value="xfce-session-settings.desktop"/>
@@ -146,7 +152,6 @@
         <value type="string" value="vivaldi-stable.desktop"/>
         <value type="string" value="xfce-display-settings.desktop"/>
         <value type="string" value="im.riot.Riot.desktop"/>
-        <value type="string" value="org.telegram.desktop._3f83b0001c446a94143485ba3d1bf6b1.desktop"/>
       </property>
     </property>
     <property name="plugin-14" type="string" value="showdesktop"/>
