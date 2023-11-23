@@ -116,6 +116,9 @@ ksuperkey &
 # Backup dotfiles
 ~/scripts/backup-dotfiles &
 
+# dockx
+dockx &
+
 ###
 ### END OF PERSONAL AUTOSTART ###
 ###
