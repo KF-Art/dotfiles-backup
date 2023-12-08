@@ -20,9 +20,9 @@
         <property name="Y" type="int" value="0"/>
       </property>
     </property>
-    <property name="HDMI-1" type="string" value="BBY 40&quot;">
+    <property name="HDMI-1" type="string" value="XXX 55&quot;">
       <property name="Active" type="bool" value="true"/>
-      <property name="EDID" type="string" value="2afb0f58bc4db64b10983244c91eb494584b916b"/>
+      <property name="EDID" type="string" value="036792fe48d06f9be1e4d0a4cc7adce727c93b26"/>
       <property name="Resolution" type="string" value="1920x1080"/>
       <property name="RefreshRate" type="double" value="60"/>
       <property name="Rotation" type="int" value="0"/>
@@ -56,9 +56,9 @@
         <property name="Y" type="int" value="0"/>
       </property>
     </property>
-    <property name="HDMI-1" type="string" value="BBY 40&quot;">
+    <property name="HDMI-1" type="string" value="XXX 55&quot;">
       <property name="Active" type="bool" value="true"/>
-      <property name="EDID" type="string" value="2afb0f58bc4db64b10983244c91eb494584b916b"/>
+      <property name="EDID" type="string" value="036792fe48d06f9be1e4d0a4cc7adce727c93b26"/>
       <property name="Resolution" type="string" value="1920x1080"/>
       <property name="RefreshRate" type="double" value="60"/>
       <property name="Rotation" type="int" value="0"/>
