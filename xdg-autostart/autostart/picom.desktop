@@ -2,7 +2,7 @@
 Comment=
 Comment[es_US]=
 Exec=picom -b
-Hidden=false
+Hidden=true
 Name=Compositor
 Name[es_US]=Compositor
 Type=Application

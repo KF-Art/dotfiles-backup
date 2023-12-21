@@ -18,6 +18,7 @@
       <value type="string" value="hp-systray"/>
       <value type="string" value="io.github.tdesktop_x64.TDesktop"/>
       <value type="string" value="KeePassXC"/>
+      <value type="string" value="kitty"/>
       <value type="string" value="moment"/>
       <value type="string" value="nheko"/>
       <value type="string" value="org.eu.encom.spectral"/>
@@ -37,6 +38,7 @@
       <value type="string" value="udiskie"/>
       <value type="string" value="uGet"/>
       <value type="string" value="ungoogled-chromium"/>
+      <value type="string" value="Waterfox"/>
       <value type="string" value="wpa-cute"/>
       <value type="string" value="Xfce volume control"/>
       <value type="string" value="Xfce4-notifyd settings"/>

@@ -24,10 +24,10 @@ elif [[ "$current" == "$formal" ]]; then
 	wall="$last"
 elif [[ "$current" = "$last" ]]; then
 	wall=$formal
-	echo $(detect) > ~/.config/last-wallpaper.conf
+	echo "$(detect)" > ~/.config/last-wallpaper.conf
 else
     wall=$formal
-	echo $(detect) > ~/.config/last-wallpaper.conf
+	echo "$(detect)" > ~/.config/last-wallpaper.conf
 fi
 
 echo "wall $wall"

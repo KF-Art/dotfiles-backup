@@ -68,6 +68,8 @@
       <property name="&lt;Shift&gt;&lt;Alt&gt;r" type="string" value="xfwm4 --replace"/>
       <property name="&lt;Super&gt;Print" type="string" value="flameshot full --path /media/DATOS/Imágenes/screenshots"/>
       <property name="&lt;Super&gt;KP_5" type="string" value="resize_and_center.sh"/>
+      <property name="&lt;Alt&gt;w" type="string" value="toggle-formal-wall"/>
+      <property name="&lt;Alt&gt;c" type="string" value="toggle-compfy"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

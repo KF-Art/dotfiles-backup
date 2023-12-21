@@ -28,7 +28,7 @@ export GDK_SCALE=1.16
 export EDITOR=micro
 
 export XBPS_ARCH=$(xbps-uhelper arch)
-export REPO_CEREUS="https://osdn.mirror.constant.com/storage/g/c/ce/cereuslinux/repos/"
+export REPO_CEREUS="https://sourceforge.net/projects/cereus-linux/files/repos/"
 export REPO_CORE="${REPO_CEREUS}/cereus-core"
 export REPO_EXTRA="${REPO_CEREUS}/cereus-extra"
 export REPO_VOID="https://repo-fastly.voidlinux.org/current/"

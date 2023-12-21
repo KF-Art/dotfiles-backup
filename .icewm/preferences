@@ -116,7 +116,7 @@ ConfirmLogout=1 # 0/1
 ConsiderHBorder=0 # 0/1
 
 #  Consider XSizeHints if frame is maximized.
-# ConsiderSizeHintsMaximized=1 # 0/1
+ConsiderSizeHintsMaximized=0 # 0/1
 
 #  Consider border frames when maximizing vertically.
 ConsiderVBorder=0 # 0/1
@@ -773,7 +773,7 @@ ShowWorkspaceStatus=0 # 0/1
 ShutdownCommand="loginctl poweroff"
 
 #  Maximized windows can be resized.
-# SizeMaximized=0 # 0/1
+SizeMaximized=1 # 0/1
 
 #  Smart window placement with minimal overlap.
 # SmartPlacement=1 # 0/1
@@ -782,7 +782,7 @@ ShutdownCommand="loginctl poweroff"
 # SnapDistance=8 # [0-64]
 
 #  Snap to nearest screen edge/window when moving windows.
-# SnapMove=1 # 0/1
+SnapMove=1 # 0/1
 
 #  Always maintain focus under mouse window (makes some keyboard support non-functional or unreliable)
 # StrongPointerFocus=0 # 0/1

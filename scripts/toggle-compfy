@@ -1,0 +1,19 @@
+#!/bin/bash
+
+function detect {
+	 pgrep -u $UID -x compfy
+	 exitstatus=$?
+}
+
+detect
+
+if [ $exitstatus = 0 ]; then
+	echo "Stopping compositor"
+	#sed -i 's|background_color = #000000 0|background_color = #000000 100|g' ~/.config/tint2/tint2rc
+	pkill compfy
+	#pkill tint2; sleep 1.5; tint2 &
+else
+	compfy -b
+	#sed -i 's|background_color = #000000 100|background_color = #000000 0|g' ~/.config/tint2/tint2rc
+	#pkill tint2; sleep 1.5; tint2 &
+fi

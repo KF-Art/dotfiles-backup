@@ -3,7 +3,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt SHARE_HISTORY
 
-export PATH=$PATH:~/scripts:~/cereus/scripts/
+export PATH=$PATH:~/scripts:~/cereus/manage-scripts/
 
 ### ALIASES ###
 # XBPS
