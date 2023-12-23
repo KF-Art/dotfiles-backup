@@ -24,6 +24,7 @@
       <value type="string" value="org.eu.encom.spectral"/>
       <value type="string" value="org.kde.kdeconnect.daemon"/>
       <value type="string" value="org.kde.neochat"/>
+      <value type="string" value="org.kde.plasmashell"/>
       <value type="string" value="org.Nemo"/>
       <value type="string" value="org.qbittorrent.qBittorrent"/>
       <value type="string" value="org.telegram.desktop"/>

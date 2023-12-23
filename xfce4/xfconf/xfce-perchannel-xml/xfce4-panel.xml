@@ -149,16 +149,16 @@
         <value type="string" value="xfce4-terminal-emulator.desktop"/>
       </property>
       <property name="recent" type="array">
-        <value type="string" value="xfce-session-settings.desktop"/>
+        <value type="string" value="xrankmirrors.desktop"/>
+        <value type="string" value="yad-settings.desktop"/>
+        <value type="string" value="lightdm-gtk-greeter-settings.desktop"/>
         <value type="string" value="xfce-keyboard-settings.desktop"/>
+        <value type="string" value="xfce-session-settings.desktop"/>
         <value type="string" value="compfy.desktop"/>
         <value type="string" value="org.x.Warpinator.desktop"/>
         <value type="string" value="qps.desktop"/>
         <value type="string" value="xfce-wm-settings.desktop"/>
         <value type="string" value="xfce-wmtweaks-settings.desktop"/>
-        <value type="string" value="waterfox.desktop"/>
-        <value type="string" value="org.gtk.IconBrowser4.desktop"/>
-        <value type="string" value="heroic.desktop"/>
       </property>
     </property>
     <property name="plugin-14" type="string" value="showdesktop"/>

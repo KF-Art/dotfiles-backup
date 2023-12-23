@@ -70,6 +70,7 @@
       <property name="&lt;Super&gt;KP_5" type="string" value="resize_and_center.sh"/>
       <property name="&lt;Alt&gt;w" type="string" value="toggle-formal-wall"/>
       <property name="&lt;Alt&gt;c" type="string" value="toggle-compfy"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;d" type="string" value="pkill xfce4-notifyd"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

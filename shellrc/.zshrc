@@ -49,7 +49,7 @@ alias surtrfetch="neofetch --$imgparam ~/Desktop/surtr/face-full.png"
 alias surtrfetch2="neofetch --$imgparam /home/kevin/Desktop/surtr/Surtr\ elegant\ dress-3.png"
 alias surtrfetch3="neofetch --$imgparam /home/kevin/Desktop/surtr/Surtr\ elegant\ dress-4.png"
 
-(cat ~/.cache/wal/sequences &)
+#(cat ~/.cache/wal/sequences &)
 # source ~/.cache/wal/colors-tty.sh
 
 function getwall {
