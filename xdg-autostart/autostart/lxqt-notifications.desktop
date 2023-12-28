@@ -1,6 +1,5 @@
 [Desktop Entry]
 Exec=lxqt-notificationd
-Hidden=true
 Name=Notification Daemon
 Name[ar]=بريمج الإشعارات
 Name[bg]=Система за известяване

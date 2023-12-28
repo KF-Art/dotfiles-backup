@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/media/DATOS/Im\u00e1genes/Wallpapers/wp11639470-batman-aesthetic-laptop-wallpapers_upscayl_2x_realesrgan-x4plus-anime.png",
+    "alpha": "60",
+    "special": {
+        "background": "#0C0813",
+        "foreground": "#f08893",
+        "cursor": "#f08893"
+    },
+    "colors": {
+        "color0": "#0C0813",
+        "color1": "#AE0E29",
+        "color2": "#B82132",
+        "color3": "#CF0C2C",
+        "color4": "#F50531",
+        "color5": "#F30C32",
+        "color6": "#D12336",
+        "color7": "#f08893",
+        "color8": "#a85f66",
+        "color9": "#AE0E29",
+        "color10": "#B82132",
+        "color11": "#CF0C2C",
+        "color12": "#F50531",
+        "color13": "#F30C32",
+        "color14": "#D12336",
+        "color15": "#f08893"
+    }
+}

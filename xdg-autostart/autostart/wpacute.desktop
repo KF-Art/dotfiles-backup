@@ -1,13 +1,11 @@
 [Desktop Entry]
+Comment=
 Exec=wpa-cute -qt
 Name=wpacute
+RunHook=0
 Type=Application
 Version=1.0
-X-LXQt-Need-Tray=true
-X-GNOME-Autostart-enabled=true
 X-GNOME-Autostart-Delay=5
+X-GNOME-Autostart-enabled=true
+X-LXQt-Need-Tray=true
 X-MATE-Autostart-Delay=2
-Comment=
-RunHook=0
-Hidden=true
-
