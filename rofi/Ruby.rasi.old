@@ -1,4 +1,3 @@
-
 /*
  *
  * Author  : Aditya Shakya
@@ -9,10 +8,9 @@
  */
 
 configuration {
-	font:							"Roboto 13";
-    bold-font:                      "Roboto bold 13";
+	font:							"Roboto 11";
     show-icons:                     true;
-    display-drun: 					"";
+    display-drun: 					"";
     drun-display-format:            "{name}";
     disable-history:                false;
     fullscreen:                     false;
@@ -26,27 +24,26 @@ configuration {
   al:    #00000000;
 
     /* background */
-  bg:    #00000080;
+  bg:    #1F1F1FFF;
 
     /* light 1 */
-  bg1:   #851414;
+  bg1:   #461017FF;
 
     /* light 2 */
-  bg2:   #B71C1C;
+  bg2:   #5F161FFF;
 
     /* light 3 */
-  bg3:   #D02020;
-  bg4:   #DF2B2B;
+  bg3:   #7C1D28FF;
+  bg4:   #7C1D28FF;
   fg:    #FFFFFFFF;
-  fg2:   #FFFFFFFF;
 }
 
 window {
     transparency:                   "real";
     background-color:               @bg;
     text-color:                     @fg;
-	border:							2px;
-	border-color:					@bg2;
+	border:							0px;
+	border-color:					@ac;
     border-radius:                  10px;
 	width:							750px;
     location:                       center;
@@ -65,7 +62,7 @@ prompt {
 entry {
     background-color:               @bg2;
     text-color:                     #FFFFFF;
-    placeholder-color:              #FFFFFFFF;
+    placeholder-color:              #FFFFFF;
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Buscar...";
@@ -130,17 +127,6 @@ element-text {
     background-color:		    @al; 
     text-color:			    @fg;
 }
-
-element-text selected {
-    expand:                         true;
-    horizontal-align:               0;
-    vertical-align:                 0.5;
-    font:                           @font-bold;
-    margin:                         0px 2.5px 0px 2.5px;
-    background-color:		    @al; 
-    text-color:			    @fg2;
-}
-
 
 element selected {
     background-color:               @bg4;
