@@ -27,6 +27,7 @@ dockx &
 #Notification daemon
 #/usr/lib/xfce4/notifyd/xfce4-notifyd &
 dunst &
+#lxqt-notificationd &
 
 #NetworkManager applet 
 # nm-applet &
@@ -59,7 +60,7 @@ octoxbps-notifier &
 lxqt-policykit-agent &
 
 #Blur Compositor
-picom -b &
+compfy -b &
 
 #Update lockscreen wallpaper, based on current desktop wallpaper
 
