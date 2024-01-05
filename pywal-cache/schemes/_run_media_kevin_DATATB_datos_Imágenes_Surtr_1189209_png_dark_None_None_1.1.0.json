@@ -1,14 +1,13 @@
 {
-    "wallpaper": "/run/media/kevin/DATATB/datos/Imágenes/Surtr/1189209.png",
+    "wallpaper": "/run/media/kevin/DATATB/datos/Im\u00e1genes/Surtr/1189209.png",
     "alpha": "60",
-
     "special": {
-        "background": "#000000",
+        "background": "#5f3942",
         "foreground": "#e1ccd1",
         "cursor": "#e1ccd1"
     },
     "colors": {
-        "color0": "#000000",
+        "color0": "#5f3942",
         "color1": "#A5292E",
         "color2": "#B1424E",
         "color3": "#A55860",

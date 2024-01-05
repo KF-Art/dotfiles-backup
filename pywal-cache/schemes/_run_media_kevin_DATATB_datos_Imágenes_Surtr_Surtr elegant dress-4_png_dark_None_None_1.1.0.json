@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/run/media/kevin/DATATB/datos/Im\u00e1genes/Surtr/Surtr elegant dress-4.png",
+    "alpha": "60",
+    "special": {
+        "background": "#341925",
+        "foreground": "#e0c7c3",
+        "cursor": "#e0c7c3"
+    },
+    "colors": {
+        "color0": "#341925",
+        "color1": "#C13F56",
+        "color2": "#A06764",
+        "color3": "#BC8779",
+        "color4": "#734A8F",
+        "color5": "#E16E94",
+        "color6": "#CCA39B",
+        "color7": "#e0c7c3",
+        "color8": "#9c8b88",
+        "color9": "#C13F56",
+        "color10": "#A06764",
+        "color11": "#BC8779",
+        "color12": "#734A8F",
+        "color13": "#E16E94",
+        "color14": "#CCA39B",
+        "color15": "#e0c7c3"
+    }
+}

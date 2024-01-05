@@ -2,19 +2,19 @@
 	"colors": {
         "color0": [0, "000000"],
         "color1": [0, "AE3134"],
-        "color2": [0, "6D1411"],
+        "color2": [0, "851414"],
         "color3": [0, "AF5858"],
         "color4": [0, "D3585D"],
         "color5": [0, "CE7C87"],
         "color6": [0, "DFA99E"],
         "color7": [0, "e9d6d3"],
-        "color8": [0, "a39593"],
+        "color8": [0, "ffffff"],
         "color9": [0, "AE3134"],
-        "color10": [0, "AB2F26"],
+        "color10": [0, "B71C1C"],
         "color11": [0, "AF5858"],
         "color12": [0, "D3585D"],
         "color13": [0, "CE7C87"],
         "color14": [0, "DFA99E"],
-        "color15": [0, "e9d6d3"]
+        "color15": [0, "F44336"]
     }
 }

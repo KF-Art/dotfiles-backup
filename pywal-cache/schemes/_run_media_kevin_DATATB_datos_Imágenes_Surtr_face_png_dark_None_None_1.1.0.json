@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/run/media/kevin/DATATB/datos/Im\u00e1genes/Surtr/face.png",
+    "alpha": "60",
+    "special": {
+        "background": "#6d4645",
+        "foreground": "#f0e5df",
+        "cursor": "#f0e5df"
+    },
+    "colors": {
+        "color0": "#6d4645",
+        "color1": "#AD5756",
+        "color2": "#DC605F",
+        "color3": "#DB8087",
+        "color4": "#E5A99D",
+        "color5": "#D5A1BF",
+        "color6": "#EECBB9",
+        "color7": "#f0e5df",
+        "color8": "#a8a09c",
+        "color9": "#AD5756",
+        "color10": "#DC605F",
+        "color11": "#DB8087",
+        "color12": "#E5A99D",
+        "color13": "#D5A1BF",
+        "color14": "#EECBB9",
+        "color15": "#f0e5df"
+    }
+}
