@@ -16,7 +16,7 @@
 
 # Panel
 #tint2 &
-dockx &
+#dockx &
 
 # Video Wallpaper
 # sleep 3 && gpu-video-wallpaper --start "$(cat ~/.config/video-wallpaper/settings.conf | grep lastfile | cut -d"=" -f2 | cut -d'"' -f2)" &
