@@ -45,7 +45,9 @@ blueman-applet &
  udiskie &
 
 #Desktop icons
-# nemo-desktop &
+if [ "$SHOW_DESKTOP" = "1" ]; then
+	nemo-desktop &
+fi
 
 #Autolock inhibitor
 # xidlehook --not-when-audio --not-when-fullscreen --timer ${LOCK_TIME} "betterlockscreen -l" "" --timer ${SUSPEND_TIME} "loginctl suspend" "" &
@@ -104,7 +106,7 @@ pasystray --notify=sink --notify=source &
 # plasmashell &
 
 # XP-Pen Driver
-/usr/lib/pentablet/pentablet.sh /mini &
+/usr/lib/pentablet/PenTablet.sh /mini &
 
 # wpa-cute
 sleep 2; wpa-cute -qt &
