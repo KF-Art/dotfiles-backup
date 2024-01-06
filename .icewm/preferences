@@ -890,7 +890,7 @@ TaskBarShowShowDesktopButton=2 # [0-2]
 # TaskBarShowTray=1 # 0/1
 
 #  Show icons of windows on the task bar.
-TaskBarShowWindowIcons=1 # 0/1
+TaskBarShowWindowIcons=1QQQ # 0/1
 
 #  Show 'window list' menu on task bar.
 # TaskBarShowWindowListMenu=1 # 0/1
