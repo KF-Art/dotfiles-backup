@@ -33,7 +33,7 @@ HugeIconSize=48					# ?  Cannot identify what it applies to
 Gradients="taskbuttonactive.xpm taskbuttonminimized.xpm"
 
 ColorNormalBorder="#0d0d0d"
-ColorActiveBorder="#77201B"
+ColorActiveBorder="#0f0f0f"
 
 ColorNormalTitleBar="#0f0f0f"
 ColorActiveTitleBar="#0f0f0f"
@@ -59,7 +59,7 @@ ColorMinimizedTaskBarApp="#0f0f0f"
 ColorMinimizedTaskBarAppText="#7a7a7a"
 ColorNormalWorkspaceButton="#151515"
 #ColorNormalWorkspaceButtonText=" "
-ColorActiveWorkspaceButton="#77201B"
+ColorActiveWorkspaceButton="#B71C1C"
 ColorActiveWorkspaceButtonText="white"
 
 ColorNormalButton="#0f0f0f"
@@ -67,7 +67,7 @@ ColorNormalButtonText="#dfdbd2"
 
 ColorListBox="#0f0f0f"
 ColorListBoxText="#dfdbd2"
-ColorListBoxSelection="#77201B"
+ColorListBoxSelection="#B71C1C"
 ColorListBoxSelectionText="white"
 
 #ColorScrollBar=" "
@@ -99,7 +99,7 @@ ColorLabelText="#dfdbd2"
 ColorDialog="#0f0f0f"
 
 ColorQuickSwitch="#0f0f0f"
-ColorQuickSwitchActive="#77201B"
+ColorQuickSwitchActive="#B71C1C"
 ColorQuickSwitchText="#dfdbd2"
 ColorQuickSwitchSelectionText="#dfdbd2"
 
