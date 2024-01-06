@@ -12,3 +12,112 @@ VteTerminal, vte-terminal {
     padding-left: 0px; padding-right: 6px;
 	padding-top: 0px; padding-bottom: 46px;
 }
+
+/*
+ WHISKERS CHEATS
+*/
+
+#whiskermenu-window * {
+  border: 0px #000 solid;
+  outline: none;
+  overflow: auto;
+  
+  
+
+}
+
+window#whiskermenu-window box {
+padding: 5px;
+}
+
+#whiskermenu-window {
+  background-color: rgba(0,0,0,0.80);
+  color: #ccc;
+border-radius: 0px 0px 0px 0px;
+padding: 20px;
+  
+}
+
+
+
+#whiskermenu-window scrollbar {
+background: transparent;
+}
+
+
+
+
+#whiskermenu-window entry {
+  background-color: rgba(0,0,0,0.8);
+  color: #eee;
+}
+
+#whiskermenu-window button {
+  background-color: rgba(0,0,0,0.4);
+  color: #CDCDCD;
+margin:1px;
+margin-right: 8px;
+border-radius: 6px;
+background-image: none;
+font-weight: normal;
+}
+
+#whiskermenu-window treeview {
+  background-color: rgba(0,0,0,0);
+  color: #ccc;
+	background-image: none;
+outline-color: #F00;
+
+}
+
+#whiskermenu-window button:focus,
+#whiskermenu-window button:hover,
+#whiskermenu-window button:active,
+#whiskermenu-window button:selected,
+#whiskermenu-window treeview:selected,
+#whiskermenu-window treeview:hover,
+#whiskermenu-window treeview:active,
+#whiskermenu-window treeview:focus
+{
+  background-color: #323292;
+  color: #CDCDCD;
+  transition: 200ms;
+
+  
+}
+#whiskermenu-window button:active {
+background: #F00;
+
+}
+#whiskermenu-window treeview:focus {
+background: transparent;
+}
+
+
+#whiskermenu-window iconview{
+background: transparent;
+border-radius: 10px;
+}
+#whiskermenu-window iconview:hover{
+background: rgba(255,255,255,0.15);
+border: 1px rgba(255,255,255,0.25) solid;
+}
+
+#whiskermenu-window iconview{
+background: transparent;
+border-radius: 10px;
+}
+#whiskermenu-window iconview:hover{
+background: rgba(255,255,255,0.15);
+border: 1px rgba(255,255,255,0.25) solid;
+}
+
+#whiskermenu-window .frame:first-child {
+background: rgba(255,255,255,0.05);
+border-radius: 8px;
+}
+
+#whiskermenu-window iconview {
+color: #EFEFEF;
+}
+window#whiskermenu-window box widget {color: transparent;}

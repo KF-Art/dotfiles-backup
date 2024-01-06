@@ -11,7 +11,7 @@
 #		export QT_QPA_PLATFORMTHEME="qt5ct" ;;
 #esac
 
-export QT_QPA_PLATFORMTHEME=KDE
+export QT_QPA_PLATFORMTHEME=lxqt
 # The bar that you will use
 export BAR_APPLICATION="tint2"
 #export BAR_APPLICATION="budgie-panel"
@@ -22,7 +22,7 @@ export LOCK_TIME="300"
 export SUSPEND_TIME="300"
 
 # Change Plasma WM
-export KDEWM=kwin_x11
+export KDEWM=xfwm4
 
 export GDK_SCALE=1.16
 export EDITOR=micro
@@ -44,3 +44,4 @@ export NO_AT_BRIDGE=1
 export GDK_DPI_SCALE=1.05
 export "MICRO_TRUECOLOR=1"
 export KRITA_NO_STYLE_OVERRIDE=1
+export CLUTTER_VBLANK=none
