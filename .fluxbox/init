@@ -4,7 +4,7 @@ session.screen0.tabs.maxOver:	false
 session.screen0.tabs.intitlebar:	true
 session.screen0.iconbar.mode:	{static groups}
 session.screen0.iconbar.usePixmap:	false
-session.screen0.iconbar.iconWidth:	0
+session.screen0.iconbar.iconWidth:	250
 session.screen0.iconbar.iconTextPadding:	10
 session.screen0.iconbar.alignment:	Left
 session.screen0.window.focus.alpha:	255

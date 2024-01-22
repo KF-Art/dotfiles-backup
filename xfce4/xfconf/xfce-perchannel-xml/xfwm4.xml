@@ -61,7 +61,7 @@
     <property name="snap_to_windows" type="bool" value="false"/>
     <property name="snap_width" type="int" value="10"/>
     <property name="vblank_mode" type="string" value="auto"/>
-    <property name="theme" type="string" value="Espectro-Xfce"/>
+    <property name="theme" type="string" value="Jasper-Light"/>
     <property name="tile_on_move" type="bool" value="true"/>
     <property name="tile_ratio" type="int" value="50"/>
     <property name="title_alignment" type="string" value="center"/>
